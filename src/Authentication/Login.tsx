@@ -3,13 +3,13 @@ import { Button, Col, Form, Row,Alert} from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from '../Firebase/firebase';
 import validator from 'validator'
-import { FALSE } from 'sass';
 
 const SignIn = () => {
   const [err, setError] = useState("");
-  const [errorMessage, setErrorMessage] = useState('')
+  //const [errorMessage, setErrorMessage] = useState('')
   const [errorEmailmessage,setErrorEmailMessage] = useState(" ")
   const [errorPassmessage,setErrorPassMessage] = useState(" ")
+  const [check,setCheck]= useState(false)
   
   //const [message, setMessage] = useState('');
   const [data, setData] = useState({
@@ -27,20 +27,21 @@ const SignIn = () => {
 
   const { email, password } = data;
 
-  
-
 
   const changeHandler = (e:any) => {
+
+
     if(e.target.name === "email"){
       //si no es digitado el correo o esta vacio . saldra error si tambien se verifica que lo que se este verificando sea el campo correo o pass
       if (!isValidEmail(e.target.value) || e.target.value.lenght === 0) {
         validator.isEmail(e.target.value)
+
         setErrorEmailMessage("Correo Invalido o vacio")
+       
         } else {
           setErrorEmailMessage("")
         }
     }else{
-
       //Password debe rener 1 mayuscula- minimo 8 letras - 1 numero - 1 caracter especial
       if(!validator.isAlphanumeric(e.target.value) || e.target.value === ""){
         setErrorPassMessage("Password Debil o vacio")
@@ -50,6 +51,14 @@ const SignIn = () => {
       }
       
     }
+    //Se evalua si el checkbox a sido clickeado y se actualiza el estado
+    if(e.target.type === "checkbox"){
+      setCheck(e.target.checked)
+    }else{
+      setCheck(e.target.checked)
+    }
+
+
     setData({ ...data, [e.target.name]: e.target.value })
     //setError("");
   }
@@ -148,7 +157,7 @@ const SignIn = () => {
                               </Form.Group>
                               <Button
                                 variant=""
-                                disabled={!validator.isEmail(email) || !validator.isAlphanumeric(password) }
+                                disabled={!validator.isEmail(email) || !validator.isAlphanumeric(password) || !check }
                                 type='submit'
                                 className="btn btn-primary btn-block"
                                 onClick={()=>[Login]}
@@ -161,6 +170,7 @@ const SignIn = () => {
                                       type="checkbox"
                                       className="form-check-input"
                                       id="validationFormCheck1"
+                                      onChange={changeHandler}
                                       required
                                     />
                                     
