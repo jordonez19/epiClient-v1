@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, Form, Row,Alert} from 'react-bootstrap';
+import { Button, Col, Form, Row,Alert,Modal} from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from '../Firebase/firebase';
 import validator from 'validator'
@@ -10,6 +10,7 @@ const SignIn = () => {
   const [errorEmailmessage,setErrorEmailMessage] = useState(" ")
   const [errorPassmessage,setErrorPassMessage] = useState(" ")
   const [check,setCheck]= useState(false)
+  const [basic, setbasic] = useState(false);
   
   //const [message, setMessage] = useState('');
   const [data, setData] = useState({
@@ -18,6 +19,7 @@ const SignIn = () => {
 
   })
 
+  
 
   function isValidEmail(email:any) {
     return /\S+@\S+\.\S+/.test(email);
@@ -62,15 +64,39 @@ const SignIn = () => {
     setData({ ...data, [e.target.name]: e.target.value })
     //setError("");
   }
-/*
+
+
+
+  let viewDemoClose = (modal:any) => {
+    switch (modal) {
+      case "Basic":
+        setbasic(false)
+        break;
+    }
+  }
+
+  let viewDemoShow = (modal:any) => {
+    console.log("........--------------................-----------------..........")
+    switch (modal) {
+      case "Basic":
+        console.log("Aqui desde el modal")
+        setbasic(true)
+        break;
+    }
+  }
+
   const lostHandler = (e:any) =>{
+    viewDemoShow('Basic')
 
   }
+
+                                
+
 
   const leftHandler = (e:any)=>{
   
 }
-*/
+
 
 
 
@@ -151,6 +177,7 @@ const SignIn = () => {
                                   type='password'
                                   value={password}
                                   onChange={changeHandler}
+                                  onClick={lostHandler}
                                   required
                                 />
                                 <span className="tag-outline-info">{errorPassmessage}</span>
@@ -160,10 +187,12 @@ const SignIn = () => {
                                 disabled={!validator.isEmail(email) || !validator.isAlphanumeric(password) || !check }
                                 type='submit'
                                 className="btn btn-primary btn-block"
-                                onClick={()=>[Login]}
+                                onClick={()=>[Login,viewDemoShow]}
+
                               >
                                 Sign In
                               </Button>
+                              
                               <div className="was-validated">
                                 <div className="form-check mb-3 mt-3">
                                     <input
@@ -172,6 +201,7 @@ const SignIn = () => {
                                       id="validationFormCheck1"
                                       onChange={changeHandler}
                                       required
+                                      
                                     />
                                     
                                     <label
@@ -191,6 +221,32 @@ const SignIn = () => {
                                     </div>
                                   </div>
                                 </div>
+                                <Modal show={basic} >
+                                  <Modal.Header>
+                                    <Modal.Title>Basic Modal</Modal.Title>
+                                    <Button variant="" className="btn btn-close" onClick={() => { viewDemoClose("Basic") }}>
+                                      x
+                                    </Button>
+                                  </Modal.Header>
+                                  <Modal.Body>
+                                    <h6>Modal Body</h6>
+                                    <p>
+                                      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                      fugit, sed quia consequuntur magni dolores eos qui ratione
+                                      voluptatem sequi nesciunt.
+                                    </p>
+                                  </Modal.Body>
+                                  <Modal.Footer>
+                                    <Button variant="primary" onClick={() => { viewDemoClose("Basic") }}>
+                                      Save Changes
+                                    </Button>
+                                    <Button variant="secondary" onClick={() => { viewDemoClose("Basic") }}>
+                                      Close
+                                    </Button>
+                                  </Modal.Footer>
+                                </Modal>
+                                
+
                               <div className="mt-4 d-flex text-center justify-content-center mb-2">
                                 <Link
                                   to="https://www.facebook.com/"

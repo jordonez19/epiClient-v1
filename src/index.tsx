@@ -315,12 +315,15 @@ const AuthSignup = React.lazy(() => import("./Authentication/Signup"))
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+
 root.render(
+  
   <React.Fragment>
   <BrowserRouter>
     <React.Suspense fallback={<Loader/>}>
       <Routes>
-        <Route path={`${process.env.PUBLIC_URL}/`} element={<Auth />}>
+      <Route path={`${process.env.PUBLIC_URL}/`} element={<Auth />}>
           <Route index element={<AuthLogin />} />
           
           <Route
@@ -332,7 +335,7 @@ root.render(
             element={<AuthSignup />}
           />
           </Route> 
-          
+
         <Route path={`${process.env.PUBLIC_URL}/`} element={<App />}>
         <Route
               path={`${process.env.PUBLIC_URL}/`}
