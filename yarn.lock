@@ -13041,7 +13041,12 @@
     "picocolors" "^1.0.0"
     "stable" "^0.1.8"
 
-"sweetalert2@^11.4.29":
+"sweetalert2-react-content@^5.0.7":
+  "integrity" "sha512-8Fk82Mpk45lFXpJWKIFF/lq8k/dJKDDQGFcuqVosaL/qRdViyAs5+u37LoTGfnOIvf+rfQB3PAXcp1XLLn+0ew=="
+  "resolved" "https://registry.npmjs.org/sweetalert2-react-content/-/sweetalert2-react-content-5.0.7.tgz"
+  "version" "5.0.7"
+
+"sweetalert2@^11.0.0", "sweetalert2@^11.4.29":
   "integrity" "sha512-UMCZgyEk0m+KizxspB8Bsm5ZQRdguba2t2+Rf0r8XBmq5YqhXq7ItV2C15A3VLfRlxHnEJBTYg6hkSk/x+5Ofw=="
   "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.4.29.tgz"
   "version" "11.4.29"

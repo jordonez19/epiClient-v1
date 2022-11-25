@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, Form, Row,Alert,Modal} from 'react-bootstrap';
+import { Button, Col, Form, Row,Alert} from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from '../Firebase/firebase';
 import validator from 'validator'
@@ -10,22 +10,18 @@ const SignIn = () => {
   const [errorEmailmessage,setErrorEmailMessage] = useState(" ")
   const [errorPassmessage,setErrorPassMessage] = useState(" ")
   const [check,setCheck]= useState(false)
-  const [basic, setbasic] = useState(false);
-  
   //const [message, setMessage] = useState('');
+
+
   const [data, setData] = useState({
-   "email": "",
+  "email": "",
   "password": "",
 
   })
 
-  
-
   function isValidEmail(email:any) {
     return /\S+@\S+\.\S+/.test(email);
   }
-
-  
 
   const { email, password } = data;
 
@@ -62,42 +58,43 @@ const SignIn = () => {
 
 
     setData({ ...data, [e.target.name]: e.target.value })
-    //setError("");
+    setError("");
   }
 
-
-
-  let viewDemoClose = (modal:any) => {
-    switch (modal) {
-      case "Basic":
-        setbasic(false)
-        break;
+  function handler(){
+    /*
+      const MySwal = withReactContent(Swal)
+    
+      
+    
+      MySwal.fire({
+        title: <b>'Nexos'</b>,
+        text:'Subtitulo desde el backend',
+        icon:'success',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Cerrar!',
+    
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+        },
+      }).then((result:any) => {
+        if (result.isConfirmed) {
+          MySwal.fire(
+            'Lo has cerrado Fine',
+            'blablabla',
+            'success'
+          )
+        }else{
+          MySwal.fire(
+            'Se preciona cancelar',
+            'ñañañañañña',
+            'warning'
+          )
+        }
+      })
+      */
     }
-  }
-
-  let viewDemoShow = (modal:any) => {
-    console.log("........--------------................-----------------..........")
-    switch (modal) {
-      case "Basic":
-        console.log("Aqui desde el modal")
-        setbasic(true)
-        break;
-    }
-  }
-
-  const lostHandler = (e:any) =>{
-    viewDemoShow('Basic')
-
-  }
-
-                                
-
-
-  const leftHandler = (e:any)=>{
-  
-}
-
-
 
 
   let navigate = useNavigate(); 
@@ -177,7 +174,6 @@ const SignIn = () => {
                                   type='password'
                                   value={password}
                                   onChange={changeHandler}
-                                  onClick={lostHandler}
                                   required
                                 />
                                 <span className="tag-outline-info">{errorPassmessage}</span>
@@ -187,8 +183,7 @@ const SignIn = () => {
                                 disabled={!validator.isEmail(email) || !validator.isAlphanumeric(password) || !check }
                                 type='submit'
                                 className="btn btn-primary btn-block"
-                                onClick={()=>[Login,viewDemoShow]}
-
+                                onClick={()=>[Login]}
                               >
                                 Sign In
                               </Button>
@@ -200,10 +195,8 @@ const SignIn = () => {
                                       className="form-check-input"
                                       id="validationFormCheck1"
                                       onChange={changeHandler}
-                                      required
-                                      
+                                      required 
                                     />
-                                    
                                     <label
                                       className="form-check-label"
                                       htmlFor="validationFormCheck1"
@@ -221,30 +214,6 @@ const SignIn = () => {
                                     </div>
                                   </div>
                                 </div>
-                                <Modal show={basic} >
-                                  <Modal.Header>
-                                    <Modal.Title>Basic Modal</Modal.Title>
-                                    <Button variant="" className="btn btn-close" onClick={() => { viewDemoClose("Basic") }}>
-                                      x
-                                    </Button>
-                                  </Modal.Header>
-                                  <Modal.Body>
-                                    <h6>Modal Body</h6>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                                      fugit, sed quia consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt.
-                                    </p>
-                                  </Modal.Body>
-                                  <Modal.Footer>
-                                    <Button variant="primary" onClick={() => { viewDemoClose("Basic") }}>
-                                      Save Changes
-                                    </Button>
-                                    <Button variant="secondary" onClick={() => { viewDemoClose("Basic") }}>
-                                      Close
-                                    </Button>
-                                  </Modal.Footer>
-                                </Modal>
                                 
 
                               <div className="mt-4 d-flex text-center justify-content-center mb-2">

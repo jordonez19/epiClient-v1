@@ -5,6 +5,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "./Authentication/auth";
 import "./index.scss";
 import Loader from "./shade/Loaders/Loaders"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 const App = React.lazy(() => import("../src/shade/layouts/App"));
 const Switcherapp = React.lazy(() => import("../src/shade/layouts/Switcherapp"));
 const Custompages = React.lazy(() => import("../src/shade/layouts/custompages"));
@@ -315,20 +318,20 @@ const AuthSignup = React.lazy(() => import("./Authentication/Signup"))
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+ 
 
 
 root.render(
-  
   <React.Fragment>
   <BrowserRouter>
     <React.Suspense fallback={<Loader/>}>
-      <Routes>
+      <Routes >
       <Route path={`${process.env.PUBLIC_URL}/`} element={<Auth />}>
           <Route index element={<AuthLogin />} />
           
           <Route
             path={`${process.env.PUBLIC_URL}/authentication/login`}
-            element={<AuthLogin />}
+            element={<AuthLogin/>}
           />
             <Route
             path={`${process.env.PUBLIC_URL}/authentication/signup`}
@@ -845,6 +848,7 @@ root.render(
       </Routes>
     </React.Suspense>
   </BrowserRouter>
+  
 </React.Fragment>
 );
 
