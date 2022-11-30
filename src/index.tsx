@@ -7,7 +7,7 @@ import Auth from "./Authentication/auth";
 import "./index.scss";
 import Loader from "./shade/Loaders/Loaders"
 
-
+  
 const App = React.lazy(() => import("../src/shade/layouts/App"));
 const Switcherapp = React.lazy(() => import("../src/shade/layouts/Switcherapp"));
 const Custompages = React.lazy(() => import("../src/shade/layouts/custompages"));
