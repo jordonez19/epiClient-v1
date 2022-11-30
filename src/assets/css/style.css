@@ -3291,6 +3291,30 @@ input[type=button].btn-block {
     box-shadow: 1px 1px 7px rgba(154, 154, 204, 0.1);
 }
 
+.card-aux{
+    min-width: 0;
+}
+
+.card-hover:hover{
+    background: #fff;
+    box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    margin-top: 50px;
+}
+.card-hover:not(:hover){
+    
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+
 .card>hr {
     margin-right: 0;
     margin-left: 0;

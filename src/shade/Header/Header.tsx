@@ -78,7 +78,6 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
       return e.id === id
     });
     setData(comparedata);
-    console.log(comparedata, Data);
    
   }
 

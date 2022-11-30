@@ -1,16 +1,17 @@
 import reportWebVitals from './reportWebVitals';
+import { modalGlobal } from './components/Nexos/Funciones/Funciones';
 import React from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "./Authentication/auth";
 import "./index.scss";
 import Loader from "./shade/Loaders/Loaders"
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+
 
 const App = React.lazy(() => import("../src/shade/layouts/App"));
 const Switcherapp = React.lazy(() => import("../src/shade/layouts/Switcherapp"));
 const Custompages = React.lazy(() => import("../src/shade/layouts/custompages"));
+
 const Dashboard = React.lazy(() =>
   import("./components/Dashboard/Dashboard-1/Dashboard")
 );
@@ -20,6 +21,9 @@ const Dashboard2 = React.lazy(() =>
 const Dashboard3 = React.lazy(() =>
   import("./components/Dashboard/Dashboard-3/Dashboard3")
 );
+
+const Nexos = React.lazy(()=>import('./components/Nexos/Greeting/saludo'))
+
 //App
 const Cards = React.lazy(() => import("./components/App/Cards/Cards"));
 const Contacts = React.lazy(() => import("./components/App/Contacts/Contacts"));
@@ -320,25 +324,13 @@ const root = ReactDOM.createRoot(
 );
  
 
-
 root.render(
   <React.Fragment>
   <BrowserRouter>
+  {/*Aqui se invoca la funcion del modal -- (pendiente a la response del api modificar intermnamente la respuesta)*/}
+  <div /*onAuxClick={modalGlobal}*/>
     <React.Suspense fallback={<Loader/>}>
       <Routes >
-      <Route path={`${process.env.PUBLIC_URL}/`} element={<Auth />}>
-          <Route index element={<AuthLogin />} />
-          
-          <Route
-            path={`${process.env.PUBLIC_URL}/authentication/login`}
-            element={<AuthLogin/>}
-          />
-            <Route
-            path={`${process.env.PUBLIC_URL}/authentication/signup`}
-            element={<AuthSignup />}
-          />
-          </Route> 
-
         <Route path={`${process.env.PUBLIC_URL}/`} element={<App />}>
         <Route
               path={`${process.env.PUBLIC_URL}/`}
@@ -361,6 +353,11 @@ root.render(
               path={`${process.env.PUBLIC_URL}/dashboard/dashboard-3`}
               element={<Dashboard3 />}
             />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/greeting`}
+              element={<Nexos />}
+            />
+            
           </Route>
           <Route>
             <Route
@@ -837,7 +834,7 @@ root.render(
           />
           <Route path="*" element={<Error404 />} />
         </Route> 
-        
+
          <Route>
           <Route
             path={`${process.env.PUBLIC_URL}/pages/switcher/switcher-1`}
@@ -847,8 +844,8 @@ root.render(
         <Route></Route>
       </Routes>
     </React.Suspense>
+    </div>
   </BrowserRouter>
-  
 </React.Fragment>
 );
 
