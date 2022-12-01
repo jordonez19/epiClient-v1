@@ -22,7 +22,10 @@ const Dashboard3 = React.lazy(() =>
   import("./components/Dashboard/Dashboard-3/Dashboard3")
 );
 
-const Nexos = React.lazy(()=>import('./components/Nexos/Greeting/saludo'))
+//NEXOS MODULES//
+const Nexos = React.lazy(()=>import('./components/Nexos/Greeting/saludo'));
+const Confirmaciones = React.lazy(()=>import('./components/Nexos/Confirmaciones/Confirmaciones'));
+
 
 //App
 const Cards = React.lazy(() => import("./components/App/Cards/Cards"));
@@ -353,12 +356,21 @@ root.render(
               path={`${process.env.PUBLIC_URL}/dashboard/dashboard-3`}
               element={<Dashboard3 />}
             />
-            <Route
+            
+          </Route>
+            
+          <Route>
+          <Route
               path={`${process.env.PUBLIC_URL}/nexos/greeting`}
               element={<Nexos />}
             />
-            
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/confirmaciones`}
+              element={<Confirmaciones />}
+            />
+
           </Route>
+
           <Route>
             <Route
               path={`${process.env.PUBLIC_URL}/app/cards`}
@@ -405,6 +417,8 @@ root.render(
               element={<Rangeslider />}
             />
           </Route>
+
+          
           <Route>
             <Route
               path={`${process.env.PUBLIC_URL}/elements/alerts`}

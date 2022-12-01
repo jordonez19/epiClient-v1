@@ -92,10 +92,10 @@ export const MENUITEMS = [
         type: "link",
         selected:false,
         active:false,
-        title: "Venta",
+        title: "VENTA",
       },
       {
-        path: `${process.env.PUBLIC_URL}/dashboard/dashboard-3`,
+        path: `${process.env.PUBLIC_URL}/nexos/confirmaciones`,
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
