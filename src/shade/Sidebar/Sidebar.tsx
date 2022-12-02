@@ -225,7 +225,7 @@ const Sidebar = () => {
                 alt="logo"
               />
               <img
-                src={require("../../assets/img/brand/favicon.png")}
+                src={require("../../assets/img/brand/logo-nexos.png")}
                 className="main-logo  mobile-logo"
                 alt="logo"
               />

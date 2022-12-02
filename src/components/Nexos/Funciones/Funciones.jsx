@@ -2,6 +2,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 
+//Funcion de el lanzamiento del Modal forma global
 export function modalGlobal(){
 
     const MySwal = withReactContent(Swal)
@@ -34,5 +35,35 @@ export function modalGlobal(){
         )
       }
     })
+
+}
+
+//Datos de exportacion para tablas 
+export function DatosTabla(){
+  const data = [
+    {
+       "id":"1",
+       "nombre":"Carla",
+       "apellido":"Cifuentes",
+       "email":"gowtham@outlook.com",
+       "path":"outlook010"
+    },
+    {
+       "id":"2",
+       "nombre":"Mario",
+       "apellido":"Duarte",
+       "email":"ss@ss.com",
+       "path":"ss"
+    },
+    {
+       "id":"3",
+       "nombre":"Luisa",
+       "apellido":"Fernandes",
+       "email":"gow@gow.com",
+       "path":"gow"
+    }
+  ]
+
+  return data
 
 }

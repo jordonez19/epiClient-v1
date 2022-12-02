@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from '../Firebase/firebase';
 import validator from 'validator'
 
+
 const SignIn = () => {
   const [err, setError] = useState("");
   //const [errorMessage, setErrorMessage] = useState('')
@@ -18,6 +19,8 @@ const SignIn = () => {
   "password": "",
 
   })
+
+  
 
   function isValidEmail(email:any) {
     return /\S+@\S+\.\S+/.test(email);
