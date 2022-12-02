@@ -12,7 +12,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatosTabla } from './../Funciones/Funciones'
 
 
-
+  
 
 
 const Confirmaciones = () => {
