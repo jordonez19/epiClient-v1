@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import { Row, Col, Card , Breadcrumb } from 'react-bootstrap'
 
-export default class saludo extends Component {
+export default class VentasConfirmaciones extends Component {
   render() {
     return (
       

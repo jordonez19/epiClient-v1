@@ -4,15 +4,13 @@ import dayjs from 'dayjs';
 import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { TextField } from '@mui/material';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+//import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-import { DatosTabla } from './../Funciones/Funciones'
+import { DatosTablaConfirmacion } from './../Funciones/Funciones'
 
-
-  
 
 
 const Confirmaciones = () => {
@@ -48,15 +46,17 @@ return(
         </div>
         <div className="justify-content-center mt-2">
           <Breadcrumb className="breadcrumb">
-            <Breadcrumb.Item className="breadcrumb-item tx-15" href="#">
-              Pages
+            <Breadcrumb.Item className="breadcrumb-item tx-15">
+            <Link to={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`}>
+              INICIO
+              </Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item
               className="breadcrumb-item "
               active
               aria-current="page"
             >
-              Empty Page
+              CONFIRMACIONES
             </Breadcrumb.Item>
           </Breadcrumb>
         </div>
@@ -120,7 +120,7 @@ return(
             </tr>
         </thead>
         <tbody>
-            {DatosTabla().map(d =>(
+            {DatosTablaConfirmacion().map(d =>(
               <tr key={d.id}>
                 <th scope="row">{d.id}</th>
                 <th>{d.nombre}</th>

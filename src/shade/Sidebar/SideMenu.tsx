@@ -69,11 +69,11 @@ export const MENUITEMS = [
         active:false,
         children: [
           {
-            path: `${process.env.PUBLIC_URL}/nexos/greeting`,
+            path: `${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`,
             type: "link",
             active:false,
             selected:false,
-            title: "Saludo",
+            title: "VentasConfirmaciones",
           },
         ],
       },
@@ -114,6 +114,42 @@ export const MENUITEMS = [
         selected:false,
         active:false,
         title: "CONFIRMACIÓN",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/vistalistadocotizaciones`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "COTIZACIONES",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/cotizar`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "COTIZAR",
       },
     ],
   },

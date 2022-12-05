@@ -23,8 +23,11 @@ const Dashboard3 = React.lazy(() =>
 );
 
 //NEXOS MODULES//
-const Nexos = React.lazy(()=>import('./components/Nexos/Greeting/saludo'));
+const Nexos = React.lazy(()=>import('./components/Nexos/VentaConfirmaciones/VentasConfirmaciones'));
 const Confirmaciones = React.lazy(()=>import('./components/Nexos/Confirmaciones/Confirmaciones'));
+const VistaListadoCotizaciones = React.lazy(()=>import('./components/Nexos/VistaListadoCotizaciones/VistaListadoCotizaciones'))
+const Cotizar = React.lazy(()=>import('./components/Nexos/Cotizar/Cotizar'))
+
 
 
 //App
@@ -361,12 +364,20 @@ root.render(
             
           <Route>
           <Route
-              path={`${process.env.PUBLIC_URL}/nexos/greeting`}
+              path={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`}
               element={<Nexos />}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/nexos/confirmaciones`}
               element={<Confirmaciones />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/vistalistadocotizaciones`}
+              element={<VistaListadoCotizaciones />}
+            />
+             <Route
+              path={`${process.env.PUBLIC_URL}/nexos/cotizar`}
+              element={<Cotizar />}
             />
 
           </Route>
