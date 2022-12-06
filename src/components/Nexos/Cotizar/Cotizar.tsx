@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { Breadcrumb, Card, Col, Form, FormGroup, Button} from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Breadcrumb, Card, Col, Form, FormGroup, Button , Popover, OverlayTrigger } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -26,10 +27,8 @@ return(
         </div>
         <div className="justify-content-center mt-2">
           <Breadcrumb className="breadcrumb">
-            <Breadcrumb.Item className="breadcrumb-item tx-15">
-            <Link to={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`}>
+            <Breadcrumb.Item href={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`} className="breadcrumb-item tx-15">
               INICIO
-              </Link>
             </Breadcrumb.Item>
             
             <Breadcrumb.Item
@@ -43,10 +42,9 @@ return(
               className="breadcrumb-item "
               active
               aria-current="page"
+              href={`${process.env.PUBLIC_URL}/nexos/vistalistadocotizaciones`}
             >
-            <Link to={`${process.env.PUBLIC_URL}/nexos/vistalistadocotizaciones`}>
               COTIZACIONES
-              </Link>
             </Breadcrumb.Item>
              <Breadcrumb.Item
               className="breadcrumb-item "
@@ -81,9 +79,22 @@ return(
                         value="option1"
                         defaultChecked
                       />
-                      <span className="custom-control-label custom-control-label-md  tx-17">
+                      <OverlayTrigger
+                        trigger={["hover", 'focus']}
+                        placement="right"
+                        overlay={
+                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                            <Popover.Body style={{ margin: "0px" }}>
+                              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                              Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                            </Popover.Body>
+                          </Popover>
+                        }
+                      >
+                      <span className="custom-control-label custom-control-label-md  tx-17 ">
                         Vitual
                       </span>
+                      </OverlayTrigger>
                     </Form.Label>
                     <Form.Label className="custom-control custom-radio custom-control-md">
                       <Form.Control
@@ -92,9 +103,22 @@ return(
                         name="example-radios1"
                         value="option2"
                       />
-                      <span className="custom-control-label custom-control-label-md  tx-17">
+                      <OverlayTrigger
+                        trigger={["hover", 'focus']}
+                        placement="right"
+                        overlay={
+                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                            <Popover.Body style={{ margin: "0px" }}>
+                              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                              Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                            </Popover.Body>
+                          </Popover>
+                        }
+                      >
+                      <span className="custom-control-label custom-control-label-md  tx-17 ">
                         Mixta
                       </span>
+                      </OverlayTrigger>
                     </Form.Label>
                     <Form.Label className="custom-control custom-radio custom-control-md">
                       <Form.Control
@@ -103,9 +127,22 @@ return(
                         name="example-radios1"
                         value="option3"
                       />
-                      <span className="custom-control-label custom-control-label-md  tx-17">
+                     <OverlayTrigger
+                        trigger={["hover", 'focus']}
+                        placement="right"
+                        overlay={
+                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                            <Popover.Body style={{ margin: "0px" }}>
+                              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                              Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                            </Popover.Body>
+                          </Popover>
+                        }
+                      >
+                      <span className="custom-control-label custom-control-label-md  tx-17 ">
                         Presencial
                       </span>
+                      </OverlayTrigger>
                     </Form.Label>
                     <Form.Label className="custom-control custom-radio custom-control-md">
                       <Form.Control
@@ -114,9 +151,22 @@ return(
                         name="example-radios1"
                         value="option4"
                       />
-                      <span className="custom-control-label custom-control-label-md  tx-17">
+                      <OverlayTrigger
+                        trigger={["hover", 'focus']}
+                        placement="right"
+                        overlay={
+                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                            <Popover.Body style={{ margin: "0px" }}>
+                              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                              Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                            </Popover.Body>
+                          </Popover>
+                        }
+                      >
+                      <span className="custom-control-label custom-control-label-md  tx-17 ">
                         ELECTROVOTES
                       </span>
+                      </OverlayTrigger>
                     </Form.Label>
                     <Form.Label className="custom-control custom-radio custom-control-md">
                       <Form.Control
@@ -125,9 +175,22 @@ return(
                         name="example-radios1"
                         value="option5"
                       />
-                      <span className="custom-control-label custom-control-label-md  tx-17">
+                      <OverlayTrigger
+                        trigger={["hover", 'focus']}
+                        placement="right"
+                        overlay={
+                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                            <Popover.Body style={{ margin: "0px" }}>
+                              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                              Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                            </Popover.Body>
+                          </Popover>
+                        }
+                      >
+                      <span className="custom-control-label custom-control-label-md  tx-17 ">
                         OTROS
                       </span>
+                      </OverlayTrigger>
                     </Form.Label>
                     <Form.Label className="custom-control custom-radio custom-control-md">
                       <Form.Control
@@ -136,10 +199,24 @@ return(
                         name="example-radios1"
                         value="option6"
                       />
-                      <span className="custom-control-label custom-control-label-md  tx-17">
+                      <OverlayTrigger
+                        trigger={["hover", 'focus']}
+                        placement="right"
+                        overlay={
+                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                            <Popover.Body style={{ margin: "0px" }}>
+                              Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                              Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                            </Popover.Body>
+                          </Popover>
+                        }
+                      >
+                      <span className="custom-control-label custom-control-label-md  tx-17 ">
                         ALIANZA
                       </span>
+                      </OverlayTrigger>
                     </Form.Label>
+                    
                     </div>
                 </FormGroup>
             </Col>
@@ -147,11 +224,12 @@ return(
           </Card>
         </Col>
         </div>
-
         <div className='d-flex justify-content-end'>
+        <Link to={`${process.env.PUBLIC_URL}/nexos/cotizacionformulario/`} className="text-muted">
         <Button variant="" className="btn me-5 mt-3 px-5 py-3 btn-primary">
           CONTINUAR
       </Button>
+      </Link>
       </div>
 
     </div>

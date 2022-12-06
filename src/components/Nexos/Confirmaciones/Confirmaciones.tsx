@@ -16,7 +16,7 @@ import { DatosTablaConfirmacion } from './../Funciones/Funciones'
 const Confirmaciones = () => {
 
 const [value, setValue] = React.useState(dayjs('2023-01-01T21:11:54'));
-console.log(value)
+
 
 const current = new Date();
 
@@ -46,10 +46,8 @@ return(
         </div>
         <div className="justify-content-center mt-2">
           <Breadcrumb className="breadcrumb">
-            <Breadcrumb.Item className="breadcrumb-item tx-15">
-            <Link to={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`}>
+            <Breadcrumb.Item href={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`} className="breadcrumb-item tx-15">
               INICIO
-              </Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item
               className="breadcrumb-item "
