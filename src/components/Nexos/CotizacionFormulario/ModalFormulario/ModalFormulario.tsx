@@ -1,11 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Breadcrumb, Button, Card, Col, Dropdown, Form, FormGroup, Row, Modal } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
-const ModalFormulario =() =>
+const ModalFormulario =({correo22,correo33}:any) =>
 {
     const [show, setShow] = React.useState(false);
     const handleShow = () => setShow(true);
+
+const [correos,setCorreos] = useState({
+    'correo2':'',
+    'correo3':'',
+})
+
+
+
+const {correo2,correo3} = correos
+
+if(correo22!=='' && correo33!==''){
+    const newArray = {correo2:correo22,correo3:correo33}
+    setCorreos(newArray)  
+}else{
+    console.log('Estan vacios')
+}
+
+const handlerChange = ((e:any)=>{
+    setCorreos({...correos, [e.target.name]:e.target.value})
+})
+
+
 
   return (
     <div>
@@ -14,7 +36,7 @@ const ModalFormulario =() =>
                 <span className="material-icons md-36 md-dark"  onClick={handleShow}>
                 &#xeff3;
                 </span>
-                <Modal show={show}>
+                <Modal show={show} centered >
                     <Modal.Body className="modal-body pd-sm-40">
                     <Button
                         onClick={() => setShow(false)}
@@ -30,18 +52,16 @@ const ModalFormulario =() =>
                         </p>
                     </div>
                     <FormGroup className="form-group">
-                        <Form.Control placeholder="Email-1" type="text" />
+                        <Form.Control placeholder="Email-1" name='correo2' value={correo2} onChange={handlerChange} type="email" />
                     </FormGroup>
                     <FormGroup className="form-group">
-                        <Form.Control placeholder="Email-2" type="text" />
-                    </FormGroup>
-                    <FormGroup className="form-group">
-                        <Form.Control placeholder="Email-3" type="text" />
+                        <Form.Control placeholder="Email-2"  name='correo3' value={correo3} onChange={handlerChange} type="email" />
                     </FormGroup>
                     <Button
                         variant=""
                         className="btn btn-primary btn-block"
-                        onClick={() => setShow(false)}
+                        onClick={() => [setShow(false)]}
+
                     >
                         Continue
                     </Button>
