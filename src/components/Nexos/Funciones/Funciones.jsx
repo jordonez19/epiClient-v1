@@ -118,3 +118,38 @@ export function DatosTablaCotizaciones(){
   return data
 
 }
+
+export function ciudadesColombia(){
+
+  const ciudades= [
+    {
+    id:"1",
+    value:"Bogota-1",  
+    label:"Bogota"
+    },
+    {
+      id:"2",
+      value:"Inirida-2",  
+      label:"Inirida"  
+    },
+    {
+      id:"3",
+      value:"Tunja-3",  
+      label:"Tunja"  
+    },
+    {
+      id:"4",
+      value:"Florencia-4",  
+      label:"Florencia"   
+    },
+    {
+      id:"5",
+      value:"Neiva-5",  
+      label:"Neiva" 
+    },
+
+  ]
+
+  return ciudades
+
+}

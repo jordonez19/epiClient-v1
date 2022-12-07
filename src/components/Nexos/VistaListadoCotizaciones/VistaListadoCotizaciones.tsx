@@ -26,10 +26,8 @@ return(
         </div>
         <div className="justify-content-center mt-2">
           <Breadcrumb className="breadcrumb">
-            <Breadcrumb.Item className="breadcrumb-item tx-15">
-            <Link to={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`}>
+            <Breadcrumb.Item href={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`} className="breadcrumb-item tx-15">
               INICIO
-              </Link>
             </Breadcrumb.Item>
             
             <Breadcrumb.Item
