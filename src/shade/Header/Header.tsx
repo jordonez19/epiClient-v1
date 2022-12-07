@@ -114,7 +114,7 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
           <div className="responsive-logo">
             <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
               <img
-                src={require("../../assets/img/brand/logo.png")}
+                src={require("../../assets/img/brand/sinjirafas.png")}
                 className="mobile-logo logo-1"
                 alt="logo"
               />

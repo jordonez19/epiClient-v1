@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Breadcrumb, Card, Col, Form, FormGroup, Button} from 'react-bootstrap';
 import { Link } from "react-router-dom";
@@ -10,7 +9,7 @@ const Cotizar = () => {
 
 
 return(
-    
+
   <div>
       {/* <!-- breadcrumb --> */}
       <div className="breadcrumb-header justify-content-between">

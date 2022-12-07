@@ -215,7 +215,7 @@ const Sidebar = () => {
           <div className="main-sidebar-header active">
             <NavLink className="header-logo active" to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`}>
               <img
-                src={require("../../assets/img/brand/logo.png")}
+                src={require("../../assets/img/brand/sinjirafas.png")}
                 className="main-logo  desktop-logo"
                 alt="logo"
               />
@@ -225,7 +225,7 @@ const Sidebar = () => {
                 alt="logo"
               />
               <img
-                src={require("../../assets/img/brand/logo-nexos.png")}
+                src={require("../../assets/img/brand/logo.png")}
                 className="main-logo  mobile-logo"
                 alt="logo"
               />
