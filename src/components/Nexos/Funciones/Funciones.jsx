@@ -125,27 +125,32 @@ export function ciudadesColombia(){
     {
     id:"1",
     value:"Bogota-1",  
-    label:"Bogota"
+    label:"Bogota",
+    name:'ciudad'
     },
     {
       id:"2",
       value:"Inirida-2",  
-      label:"Inirida"  
+      label:"Inirida",
+      name:'ciudad'
     },
     {
       id:"3",
       value:"Tunja-3",  
-      label:"Tunja"  
+      label:"Tunja",
+      name:'ciudad'  
     },
     {
       id:"4",
       value:"Florencia-4",  
-      label:"Florencia"   
+      label:"Florencia",
+      name:'ciudad'   
     },
     {
       id:"5",
       value:"Neiva-5",  
-      label:"Neiva" 
+      label:"Neiva",
+      name:'ciudad' 
     },
 
   ]

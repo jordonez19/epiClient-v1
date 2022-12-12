@@ -26,7 +26,7 @@ const Sidebar = () => {
     return () => {
       mainContent.removeEventListener('click', mainContentClickFn);
     }
-  },[location])
+  },/*[location]*/)
 
   // location
   useEffect(() => {
@@ -220,12 +220,12 @@ const Sidebar = () => {
                 alt="logo"
               />
               <img
-                src={require("../../assets/img/brand/logo-white.png")}
+                src={require("../../assets/img/brand/LOGO-NEXOS- negativo-SIN-JIRAFA2.png")}
                 className="main-logo  desktop-dark"
                 alt="logo"
               />
               <img
-                src={require("../../assets/img/brand/logo.png")}
+                src={require("../../assets/img/brand/favicon.png")}
                 className="main-logo  mobile-logo"
                 alt="logo"
               />

@@ -2,15 +2,8 @@ import React from 'react';
 import { Breadcrumb, Card, Col, Form, FormGroup, Button , Popover, OverlayTrigger } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-
-
-
-
 const Cotizar = () => {
-
-
 return(
-
   <div>
       {/* <!-- breadcrumb --> */}
       <div className="breadcrumb-header justify-content-between">
@@ -82,7 +75,7 @@ return(
                         trigger={["hover", 'focus']}
                         placement="right"
                         overlay={
-                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                          <Popover className="popover-primary">
                             <Popover.Body style={{ margin: "0px" }}>
                               Sed posuere consectetur est at lobortis. Aenean eu leo quam.
                               Pellentesque ornare sem lacinia quam venenatis vestibulum.
@@ -90,7 +83,7 @@ return(
                           </Popover>
                         }
                       >
-                      <span className="custom-control-label custom-control-label-md  tx-17 ">
+                      <span className="custom-control-label custom-control-label-md tx-17 px-3 ">
                         Vitual
                       </span>
                       </OverlayTrigger>
@@ -106,7 +99,7 @@ return(
                         trigger={["hover", 'focus']}
                         placement="right"
                         overlay={
-                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                          <Popover  className="popover-primary">
                             <Popover.Body style={{ margin: "0px" }}>
                               Sed posuere consectetur est at lobortis. Aenean eu leo quam.
                               Pellentesque ornare sem lacinia quam venenatis vestibulum.
@@ -114,7 +107,7 @@ return(
                           </Popover>
                         }
                       >
-                      <span className="custom-control-label custom-control-label-md  tx-17 ">
+                      <span className="custom-control-label custom-control-label-md  tx-17 px-3 ">
                         Mixta
                       </span>
                       </OverlayTrigger>
@@ -130,7 +123,7 @@ return(
                         trigger={["hover", 'focus']}
                         placement="right"
                         overlay={
-                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                          <Popover  className="popover-primary">
                             <Popover.Body style={{ margin: "0px" }}>
                               Sed posuere consectetur est at lobortis. Aenean eu leo quam.
                               Pellentesque ornare sem lacinia quam venenatis vestibulum.
@@ -138,7 +131,7 @@ return(
                           </Popover>
                         }
                       >
-                      <span className="custom-control-label custom-control-label-md  tx-17 ">
+                      <span className="custom-control-label custom-control-label-md  tx-17 px-3 ">
                         Presencial
                       </span>
                       </OverlayTrigger>
@@ -154,7 +147,7 @@ return(
                         trigger={["hover", 'focus']}
                         placement="right"
                         overlay={
-                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                          <Popover  className="popover-primary">
                             <Popover.Body style={{ margin: "0px" }}>
                               Sed posuere consectetur est at lobortis. Aenean eu leo quam.
                               Pellentesque ornare sem lacinia quam venenatis vestibulum.
@@ -162,7 +155,7 @@ return(
                           </Popover>
                         }
                       >
-                      <span className="custom-control-label custom-control-label-md  tx-17 ">
+                      <span className="custom-control-label custom-control-label-md  tx-17 px-3 ">
                         ELECTROVOTES
                       </span>
                       </OverlayTrigger>
@@ -178,7 +171,7 @@ return(
                         trigger={["hover", 'focus']}
                         placement="right"
                         overlay={
-                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                          <Popover  className="popover-primary">
                             <Popover.Body style={{ margin: "0px" }}>
                               Sed posuere consectetur est at lobortis. Aenean eu leo quam.
                               Pellentesque ornare sem lacinia quam venenatis vestibulum.
@@ -186,7 +179,7 @@ return(
                           </Popover>
                         }
                       >
-                      <span className="custom-control-label custom-control-label-md  tx-17 ">
+                      <span className="custom-control-label custom-control-label-md  tx-17 px-3 ">
                         OTROS
                       </span>
                       </OverlayTrigger>
@@ -202,7 +195,7 @@ return(
                         trigger={["hover", 'focus']}
                         placement="right"
                         overlay={
-                          <Popover style={{ margin: "0px", marginLeft: "20px" }} className="popover-primary">
+                          <Popover  className="popover-primary">
                             <Popover.Body style={{ margin: "0px" }}>
                               Sed posuere consectetur est at lobortis. Aenean eu leo quam.
                               Pellentesque ornare sem lacinia quam venenatis vestibulum.
@@ -210,7 +203,7 @@ return(
                           </Popover>
                         }
                       >
-                      <span className="custom-control-label custom-control-label-md  tx-17 ">
+                      <span className="custom-control-label custom-control-label-md  tx-17 px-3 ">
                         ALIANZA
                       </span>
                       </OverlayTrigger>

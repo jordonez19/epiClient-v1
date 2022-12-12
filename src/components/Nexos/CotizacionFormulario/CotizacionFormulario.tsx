@@ -2,7 +2,7 @@ import React , {useState} from 'react'
 import { Breadcrumb, Row ,Col,Card, Button ,Modal,FormGroup,Form } from 'react-bootstrap'
 import Select from 'react-select';
 import { TextField } from '@mui/material';
-import ModalFormulario from './ModalFormulario/ModalFormulario';
+//import ModalFormulario from './ModalFormulario/ModalFormulario';
 import { ciudadesColombia } from '../Funciones/Funciones';
 import {
   CForm,
@@ -31,7 +31,7 @@ const CotizacionFormulario =() => {
     //If del handler para llamar la funcion de relleno a formulario
     if(e.target.value.length>=5){
       console.log('Se paso de los 5 caractares')
-      console.log(e.target.name)
+      console.log(data)
       llenar()
     }
     setNit(e.target.value)
@@ -41,6 +41,9 @@ const CotizacionFormulario =() => {
   const [show, setShow] = React.useState(false);
   const handleShow = () => setShow(true);
 
+  const [show2, setShow2] = React.useState(false);
+  const handleShow2 = () => setShow2(true);
+
   //UseState de los datos del formularoi
 
   const [data,setData] = useState({
@@ -49,37 +52,40 @@ const CotizacionFormulario =() => {
     "correo2":'',
     "correo3":'',
     "direccion":'',
+    "ciudad":'',
     "unidad":'',
-    'telefono':'',
+    'telefono1':'',
+    'telefono2':'',
+    'telefono3':'',
     'dirigir': ''
 
   })
 
-  const handlerFormulario= ((e:any)=>{
+  const handlerSelect = ((e:any)=>{
+    setData({...data,[e.name]:e.value})
+  })
 
-    if(e.target.name ==='telefono'){
+  const handlerFormulario= ((e:any)=>{
+    if(e.target.type === 'tel'){
       const resultPhone = e.target.value.replace(/\D/g, '');
       setData({...data,[e.target.name]:resultPhone})
     }else{
+    setData({...data,[e.target.name]:e.target.value})
+    }})
 
-    setData({...data,[e.target.name]:[e.target.value]})
-    }
-  })
-
-  const {entidad,correo1,correo2,correo3,direccion,unidad,telefono,dirigir} = data
+  const {entidad,correo1,correo2,correo3,direccion,ciudad,unidad,telefono1,telefono2,telefono3,dirigir} = data
 
   const llenar = (()=>{
-    const newArray ={entidad:'Bosques Azules',correo1:'Marisol_Milk@gomail.com',correo2:'Carmensa_joda@gomail.com',correo3:'Gildegart_Passion@gomail.com',direccion:'Calle58 # 58 - 68',unidad:'1-52',telefono:'3252541452',dirigir:'Esperanza'}
+    const newArray ={entidad:'Bosques Azules',correo1:'Marisol_Milk@gomail.com',correo2:'Carmensa_joda@gomail.com',correo3:'Gildegart_Passion@gomail.com',direccion:'Calle58 # 58 - 68',ciudad:'Neiva',unidad:'1-52',telefono1:'1111111111',telefono2:'2222222222',telefono3:'3333333333',dirigir:'Esperanza'}
+
     setData(newArray)
+
+
   })
 
 
-  //custom validation
-  const [Custom, setCustom] = useState("");
 
-  const handleOnchangeCustom = () => {
-    setCustom(Custom);
-  };
+
   const [validatedCustom, setValidatedCustom] = useState(false);
 
   const handleSubmitCustom = (event:any) => {
@@ -211,7 +217,7 @@ const CotizacionFormulario =() => {
        
       </CCol>
     
-    {/* <!-- /MODAL INTEGRADO --> */}
+    {/* <!-- /MODAL INTEGRADO CORREO --> */}
       <CCol md={2} className='d-flex align-items-end' >
       <div>
         <Row>
@@ -254,7 +260,7 @@ const CotizacionFormulario =() => {
         </Row>
     </div>
       </CCol>
-      {/* <!-- / FIN MODAL INTEGRADO --> */}
+      {/* <!-- / FIN MODAL INTEGRADO CORREO --> */}
       
       
       <CCol md={4}>
@@ -264,32 +270,80 @@ const CotizacionFormulario =() => {
       </CCol>
       <CCol md={4}>
         <CFormLabel htmlFor="validationCustom04">Ciudad</CFormLabel>
-       
+
         <Select
         classNamePrefix="selectproduct"
-        onChange={handleOnchangeCustom}
+        onChange={handlerSelect}
         options={ciudadesColombia()}
         isSearchable
-        placeholder="--Select--"
+        placeholder={ciudad}
 		    />
         <CFormFeedback invalid>Seleciona una ciudad</CFormFeedback>
       </CCol>
+      
       <CCol md={4}>
         <CFormLabel htmlFor="validationCustom03">Unidades</CFormLabel>
         <CFormInput type="text" id="validationCustom03" name='unidad' onChange={handlerFormulario} value={unidad} required />
         <CFormFeedback invalid>Porfavor provee una Unidad</CFormFeedback>
       </CCol>
 
-      <CCol md={4}>
+      <CCol md={3}>
         <CFormLabel htmlFor="validationCustom03">Telefono</CFormLabel>
-        <CFormInput type="" id="validationCustom03" name='telefono'  onChange={handlerFormulario} value={telefono} required />
+        <CFormInput type="tel" id="validationCustom03" name='telefono1'  onChange={handlerFormulario} value={telefono1} required />
         <CFormFeedback invalid>Porfavor provee un telefono</CFormFeedback>
       </CCol>
+
+      {/* <!-- /MODAL INTEGRADO TELEFONO --> */}
+      <CCol md={1} className='d-flex align-items-end' >
+      <div>
+        <Row>
+            <Col lg={6} md={6}>
+                <span className="material-icons md-36 md-dark"  onClick={handleShow2}>
+                &#xeff3;
+                </span>
+                <Modal show={show2} centered >
+                    <Modal.Body className="modal-body pd-sm-40">
+                    <Button
+                        onClick={() => setShow2(false)}
+                        className="close pos-absolute t-15 r-20 tx-26"
+                        variant=""
+                    >
+                        
+                    </Button>
+                    <div className='text-center'>
+                        <h5 className="modal-title mg-b-5">Telefonos</h5>
+                        <p className="mg-b-20">
+                            Se pueden ingresar maximo 3 telefonos
+                        </p>
+                    </div>
+                    <FormGroup className="form-group">
+                        <Form.Control placeholder="Telefono-2"  name='telefono2' onChange={handlerFormulario} value={telefono2} type="tel" />
+                    </FormGroup>
+                    <FormGroup className="form-group">
+                        <Form.Control placeholder="Telefono-3"  name='telefono3' onChange={handlerFormulario} value={telefono3}  type="tel" />
+                    </FormGroup>
+                    <Button
+                        variant=""
+                        className="btn btn-primary btn-block"
+                        onClick={() => [setShow2(false)]}
+
+                    >
+                        Continue
+                    </Button>
+                    </Modal.Body>
+                </Modal>
+            </Col>
+        </Row>
+    </div>
+      </CCol>
+      {/* <!-- / FIN MODAL INTEGRADO TELEFONO --> */}
+
 
       <CCol md={4}>
         <CFormLabel htmlFor="validationCustom03">Dirigir a</CFormLabel>
         <CFormInput type="text" id="validationCustom03" name='dirigir' onChange={handlerFormulario} value={dirigir} required />
         <CFormFeedback invalid>¿a quien va dirigido?</CFormFeedback>
+        
       </CCol>
 
       <CCol md={4} className='d-flex align-items-end'>

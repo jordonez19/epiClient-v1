@@ -161,10 +161,10 @@ const FormValidation = () =>{
        
         <Select
         classNamePrefix="selectproduct"
-			onChange={handleOnchangeCustom}
-			options={optionCustom}
-			isSearchable
-			placeholder="--Select--"
+        onChange={handleOnchangeCustom}
+        options={optionCustom}
+        isSearchable
+        placeholder="--Select--"
 		  />
         <CFormFeedback invalid>Please provide a valid city.</CFormFeedback>
       </CCol>
