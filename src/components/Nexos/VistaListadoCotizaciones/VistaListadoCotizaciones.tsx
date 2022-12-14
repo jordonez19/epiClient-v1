@@ -113,24 +113,24 @@ return(
                 <th>{d.consecutivo}</th>
                 <th>{d.estado}</th>
                 <th>
-                    <a href="" >
+                    <Link to={'#'}>
                         <span className="material-icons md-36 md-dark" >&#xe873;</span>
-                    </a>
+                    </Link>
                 </th>
                 <th>
-                    <a href="" >
+                <Link to={'#'}>
                         <span className="material-icons md-36 md-dark" >&#xe3c9;</span>
-                    </a>
+                    </Link>
                 </th>
                 <th>
-                    <a href="" >
+                    <Link to={'#'}>
                         <span className="material-icons md-36 md-dark" >&#xe148;</span>
-                    </a>
+                    </Link>
                 </th>
                 <th>
-                    <a href="" >
+                    <Link to={'#'}>
                         <span className="material-icons md-36 md-dark" >&#xe145;</span>
-                    </a>
+                    </Link>
                 </th>
             
               </tr>

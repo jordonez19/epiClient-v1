@@ -1,6 +1,7 @@
 import React , {useState} from 'react'
 import { Breadcrumb, Row ,Col,Card, Button ,Modal,FormGroup,Form } from 'react-bootstrap'
 import Select from 'react-select';
+import { Link } from 'react-router-dom'
 import { TextField } from '@mui/material';
 //import ModalFormulario from './ModalFormulario/ModalFormulario';
 import { ciudadesColombia } from '../Funciones/Funciones';
@@ -308,7 +309,7 @@ const CotizacionFormulario =() => {
                         className="close pos-absolute t-15 r-20 tx-26"
                         variant=""
                     >
-                        
+                     x   
                     </Button>
                     <div className='text-center'>
                         <h5 className="modal-title mg-b-5">Telefonos</h5>
@@ -361,11 +362,15 @@ const CotizacionFormulario =() => {
         />
       </LocalizationProvider>
       </CCol>
-      <CCol className=' d-flex justify-content-end mt-5'>
-        <CButton color="primary" type="submit">
-          Submit form
-        </CButton>
-      </CCol>
+     
+        <CCol className=' d-flex justify-content-end mt-5'>
+          <Link to={`${process.env.PUBLIC_URL}/nexos/serviciosacotizar`}>
+            <CButton color="primary" type="submit">
+              Continuar
+            </CButton>
+          </Link>
+        </CCol>
+      
     </CForm>
             </Card.Body>
           </Card>

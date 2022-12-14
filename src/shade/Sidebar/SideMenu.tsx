@@ -167,8 +167,44 @@ export const MENUITEMS = [
         type: "link",
         selected:false,
         active:false,
-        title: "COTIZAR_formaurio",
+        title: "COTIZAR(formulario)",
       },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/serviciosacotizar`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "SERVICIOS A COTIZAR",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/resumendeservicios`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "ITEMS COTIZADOS",
+      }
     ],
   },
 

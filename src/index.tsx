@@ -28,6 +28,8 @@ const Confirmaciones = React.lazy(()=>import('./components/Nexos/Confirmaciones/
 const VistaListadoCotizaciones = React.lazy(()=>import('./components/Nexos/VistaListadoCotizaciones/VistaListadoCotizaciones'))
 const Cotizar = React.lazy(()=>import('./components/Nexos/Cotizar/Cotizar'))
 const CotizarFormulario = React.lazy(()=>import('./components/Nexos/CotizacionFormulario/CotizacionFormulario'))
+const ServiciosACotizar = React.lazy(()=>import('./components/Nexos/ServiciosACotizar/ServiciosACotizar'))
+const ResumenDeServicios = React.lazy(()=>import('./components/Nexos/ResumenDeServicios/ResumenDeServicios'))
 
 
 
@@ -383,6 +385,14 @@ root.render(
             <Route
               path={`${process.env.PUBLIC_URL}/nexos/cotizacionformulario`}
               element={<CotizarFormulario />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/serviciosacotizar`}
+              element={<ServiciosACotizar/>}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/resumendeservicios`}
+              element={<ResumenDeServicios/>}
             />
 
           </Route>
