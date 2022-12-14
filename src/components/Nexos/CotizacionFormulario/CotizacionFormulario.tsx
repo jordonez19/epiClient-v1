@@ -78,7 +78,6 @@ const CotizacionFormulario =() => {
 
   const llenar = (()=>{
     const newArray ={entidad:'Bosques Azules',correo1:'Marisol_Milk@gomail.com',correo2:'Carmensa_joda@gomail.com',correo3:'Gildegart_Passion@gomail.com',direccion:'Calle58 # 58 - 68',ciudad:'Neiva',unidad:'1-52',telefono1:'1111111111',telefono2:'2222222222',telefono3:'3333333333',dirigir:'Esperanza'}
-
     setData(newArray)
 
 

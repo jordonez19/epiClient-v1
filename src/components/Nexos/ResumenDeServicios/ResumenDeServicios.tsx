@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Breadcrumb, Row, Col, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 
-import { DatosTablaCotizaciones } from './../Funciones/Funciones'
+import { formularioResumenServicios } from './../Funciones/Funciones'
 
 const ResumenDeServicios = () => {
+
+    const [item,setItem] = useState(formularioResumenServicios())
+    
+    const handleDelete = (index:any,e:any) => {
+      console.log(item)
+      setItem(item.filter((v, i) => i !== index));
+      
+  }
+
     return (
         <div>
         
@@ -57,7 +66,7 @@ const ResumenDeServicios = () => {
             </div>
         
     {/* <!-- modulo de search --> */}
-    <div className='container'>
+    <div className='container mt-5'>
         <Row className='d-flex text-center'>
             <Col sm={10} className='px-0'>
                 <div className="table-responsive container">
@@ -69,19 +78,19 @@ const ResumenDeServicios = () => {
                         <th scope="col">Nombre Item</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Precio</th>
-                        <th scope="col">Ver</th>
+                        <th scope="col">Quitar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {DatosTablaCotizaciones().map(d =>(
-                        <tr key={d.id} className='text-center'>
+                        {item.map((d:any,index) =>(
+                        <tr key={index} className='text-center'>
                             <th scope="row">{d.id}</th>
-                            <th>{d.conjunto}</th>
-                            <th>{d.nit}</th>
-                            <th>{d.consecutivo}</th>
+                            <th>{d.item}</th>
+                            <th>{d.cantidad}</th>
+                            <th>{d.precio}</th>
                             <th>
                                 <Link to={'#'}>
-                                    <span className="material-icons md-36 md-dark" >&#xe873;</span>
+                                    <span onClick={e => handleDelete(index,e)}className="material-icons md-36 md-dark" >&#xe92b;</span>
                                 </Link>
                             </th>
                         
@@ -92,9 +101,9 @@ const ResumenDeServicios = () => {
                 </div>
             </Col>
             <Col sm={2} >
-                <Link to={`${process.env.PUBLIC_URL}/nexos/cotizacionformulario/`} className="text-muted">
-                <Button variant="" className="btn me-5  px-5 py-3 btn-primary">
-                    CONTINUAR
+                <Link to={`${process.env.PUBLIC_URL}/nexos/serviciosacotizar`} className="text-muted">
+                <Button variant="" className="btn  btn-primary">
+                    MODIFICAR ITEMS
                 </Button>
                 </Link>
             </Col>

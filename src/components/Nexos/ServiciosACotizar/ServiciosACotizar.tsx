@@ -1,5 +1,8 @@
 import React from 'react';
-import { Breadcrumb} from 'react-bootstrap';
+import { Breadcrumb,Row,Col,Button} from 'react-bootstrap';
+import Highcharts from '../../../assets/plugins/HighChart/highcharts.js'
+import { Link } from 'react-router-dom'
+
 
 const ServiciosACotizar = () => {
   return (
@@ -51,7 +54,24 @@ const ServiciosACotizar = () => {
      <div className='text-center mt-5'>
           <h1 > <strong>PASO 3</strong></h1>
           <h2>SELECCIONE LOS SERVICIOS A COTIZAR</h2>
-        </div>
+      </div>
+
+      <div id="container" style={{width:"100%",height:"400px"}}>
+        
+      </div>
+
+      <Row>
+        <Col>
+        <div className='d-flex justify-content-end'>
+        <Link to={`${process.env.PUBLIC_URL}/nexos/resumendeservicios`} className="text-muted">
+          <Button variant="" className="btn me-5 mt-3 px-5 py-3 btn-primary">
+            CONTINUAR
+          </Button>
+        </Link>
+      </div>
+        </Col>
+    </Row>  
+
     </div>
   )
 }

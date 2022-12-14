@@ -158,3 +158,48 @@ export function ciudadesColombia(){
   return ciudades
 
 }
+
+export function formularioResumenServicios(){
+
+  const data= [
+    {
+      id: "1",
+      SNO: 1,
+      item: "Mixta",
+      cantidad: "6",
+      precio: "$798,654",
+    },
+    {
+      id: "2",
+      SNO: 2,
+      item: "Presencial",
+      cantidad: "3",
+      precio: "$743,654",
+    },
+    {
+      id: "3",
+      SNO: 3,
+      item: "Vitual",
+      cantidad: "9",
+      precio: "$1.443,654", 
+    },
+    {
+      id: "4",
+      SNO: 4,
+      item: "Presencial",
+      cantidad: "5",
+      precio: "$843,654", 
+    },
+    {
+      id: "5",
+      SNO: 5,
+      item: "Electrovotes",
+      cantidad: "1",
+      precio: "$1043,654",
+    },
+
+  ]
+
+  return data
+
+}

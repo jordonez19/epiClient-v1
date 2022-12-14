@@ -91,7 +91,7 @@ return(
       {/* <!-- modulo de search --> */}
       <div className="table-responsive container">
       <table className="table">
-        <thead>
+        <thead className='bg-primary bg-gradient'>
             <tr className='text-center'>
             <th scope="col">#</th>
             <th scope="col">Conjunto</th>
