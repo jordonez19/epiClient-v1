@@ -340,6 +340,20 @@ root.render(
   <div /*onAuxClick={modalGlobal}*/>
     <React.Suspense fallback={<Loader/>}>
       <Routes >
+
+      <Route path={`${process.env.PUBLIC_URL}/`} element={<Auth />}>
+          <Route index element={<AuthLogin />} />
+          
+          <Route
+            path={`${process.env.PUBLIC_URL}/authentication/login`}
+            element={<AuthLogin />}
+          />
+            <Route
+            path={`${process.env.PUBLIC_URL}/authentication/signup`}
+            element={<AuthSignup />}
+          />
+          </Route>
+
         <Route path={`${process.env.PUBLIC_URL}/`} element={<App />}>
         <Route
               path={`${process.env.PUBLIC_URL}/`}

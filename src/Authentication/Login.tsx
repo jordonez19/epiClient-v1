@@ -4,13 +4,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from '../Firebase/firebase';
 import validator from 'validator'
 
+//Importando el servicio post 
+ import { PostLogin } from '../components/Nexos/Servicios/Services';
+
+
 
 const SignIn = () => {
   const [err, setError] = useState("");
   //const [errorMessage, setErrorMessage] = useState('')
   const [errorEmailmessage,setErrorEmailMessage] = useState(" ")
   const [errorPassmessage,setErrorPassMessage] = useState(" ")
-  const [check,setCheck]= useState(false)
+  const [check,setCheck]= useState(true)
   //const [message, setMessage] = useState('');
 
 
@@ -20,11 +24,18 @@ const SignIn = () => {
 
   })
 
-  
+  let mensaje = ()=>{
+    let Mapa  = JSON.stringify(data)
+    console.log(typeof(Mapa))
+    console.log(Mapa)
+    PostLogin(Mapa)
+  }
 
   function isValidEmail(email:any) {
     return /\S+@\S+\.\S+/.test(email);
   }
+
+
 
   const { email, password } = data;
 
@@ -42,26 +53,29 @@ const SignIn = () => {
         } else {
           setErrorEmailMessage("")
         }
-    }else{
-      //Password debe rener 1 mayuscula- minimo 8 letras - 1 numero - 1 caracter especial
-      if(!validator.isAlphanumeric(e.target.value) || e.target.value === ""){
+
+        setData({ ...data, [e.target.name]: e.target.value })
+        setError("");
+    }
+
+    if(e.target.name === 'password'){
+      //Password solo numeros
+      if(!validator.isNumeric(e.target.value) || e.target.value === ""){
         setErrorPassMessage("Password Debil o vacio")
       }else{
         setErrorPassMessage("")
         
       }
+
+    setData({ ...data, [e.target.name]: e.target.value })
+    setError("");
       
     }
     //Se evalua si el checkbox a sido clickeado y se actualiza el estado
     if(e.target.type === "checkbox"){
-      setCheck(e.target.checked)
-    }else{
-      setCheck(e.target.checked)
+      setCheck(!e.target.checked)
     }
 
-
-    setData({ ...data, [e.target.name]: e.target.value })
-    setError("");
   }
 
   
@@ -110,7 +124,7 @@ const SignIn = () => {
                   <div className="">
                     <div className="main-signup-header">
                       <div className='text-center'>
-                        <h2 >Nexos</h2>
+                        <h2 onClick={mensaje}>Nexos</h2>
                         <h6 className="font-weight-semibold mb-4 ">
                           Mensaje de bienvenida.
                         </h6>
@@ -150,7 +164,7 @@ const SignIn = () => {
                               </Form.Group>
                               <Button
                                 variant=""
-                                disabled={!validator.isEmail(email) || !validator.isAlphanumeric(password) || !check }
+                                disabled={!validator.isEmail(email) || !validator.isNumeric(password) || check}
                                 type='submit'
                                 className="btn btn-primary btn-block"
                                 onClick={()=>[Login]}
@@ -162,6 +176,7 @@ const SignIn = () => {
                                 <div className="form-check mb-3 mt-3">
                                     <input
                                       type="checkbox"
+                                      name='terminos'
                                       className="form-check-input"
                                       id="validationFormCheck1"
                                       onChange={changeHandler}
