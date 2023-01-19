@@ -6,6 +6,9 @@ import { auth } from "../../Firebase/firebase";
 import { useDispatch, useSelector } from 'react-redux';
 import { Delete } from '../../redux/actions/action';
 import ProductService from '../../services/ProductService';
+import { userInfo } from "os";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { Serializer } from "v8";
 
 export default function Header() {
   const [Lang, setLang] = React.useState(false);
@@ -26,6 +29,7 @@ const Fullscreen: any = (vale: any) => {
   }
 }
 
+let user_name = localStorage.getItem('nombre')
 
   //leftsidemenu
   const openCloseSidebar = () => {
@@ -80,6 +84,12 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
     setData(comparedata);
    
   }
+
+  const salir = (()=>{
+    localStorage.clear();
+  })
+
+  
 
   React.useEffect(() => {
     compare();
@@ -1136,7 +1146,7 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
                         </div>
                         <div className="ms-3 my-auto">
                           <h6 className="tx-15 font-weight-semibold mb-0">
-                            Teri Dactyl
+                            {user_name}
                           </h6>
                           <span className="dropdown-title-text subtext op-6  tx-12">
                             Premium Member
@@ -1165,7 +1175,7 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
                     >
                       <i className="far fa-sun"></i> Settings
                     </Dropdown.Item>
-                    <Dropdown.Item className="dropdown-item" onClick={() => {auth.signOut();routeChange()}} >
+                    <Dropdown.Item className="dropdown-item" onClick={() => {auth.signOut();routeChange();salir()}} >
                       <i className="far fa-arrow-alt-circle-left"></i> Sign Out
                     </Dropdown.Item>
                   </Dropdown.Menu>

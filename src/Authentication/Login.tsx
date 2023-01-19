@@ -9,6 +9,8 @@ import validator from 'validator'
 
 
 
+
+
 const SignIn = () => {
   const [err, setError] = useState("");
   //const [errorMessage, setErrorMessage] = useState('')
@@ -17,19 +19,12 @@ const SignIn = () => {
   const [check,setCheck]= useState(true)
   //const [message, setMessage] = useState('');
 
-
   const [data, setData] = useState({
   "email": "",
   "password": "",
 
   })
 
-  let mensaje = ()=>{
-    let Mapa  = JSON.stringify(data)
-    console.log(typeof(Mapa))
-    console.log(Mapa)
-    PostLogin(Mapa)
-  }
 
   function isValidEmail(email:any) {
     return /\S+@\S+\.\S+/.test(email);
@@ -63,8 +58,7 @@ const SignIn = () => {
       if(!validator.isNumeric(e.target.value) || e.target.value === ""){
         setErrorPassMessage("Password Debil o vacio")
       }else{
-        setErrorPassMessage("")
-        
+        setErrorPassMessage("")   
       }
 
     setData({ ...data, [e.target.name]: e.target.value })
@@ -78,19 +72,23 @@ const SignIn = () => {
 
   }
 
-  
-
-
   let navigate = useNavigate(); 
-  const routeChange = () =>{ 
+   const routeChange = () =>{ 
     let path = `${process.env.PUBLIC_URL}/dashboard/dashboard-1/`; 
     navigate(path);
   }
 
-  const Login = (e:any) => {
-    e.preventDefault();
-    auth.signInWithEmailAndPassword(email, password).then(
-      user => {console.log(user);routeChange()}).catch(err => {console.log(err);setError(err.message)})
+  const Login = async (e:any) => {
+    e.preventDefault()
+    let Mapa  = JSON.stringify(data)
+    let datt = await PostLogin(Mapa)
+
+    if(datt?.['success']){
+      routeChange()
+    }else{
+      let mensaje = (datt?.['success'] === false) ? datt?.['message'] : 'lo que sea'
+      setError(mensaje)
+    }
   }
   
   return (
@@ -124,7 +122,7 @@ const SignIn = () => {
                   <div className="">
                     <div className="main-signup-header">
                       <div className='text-center'>
-                        <h2 onClick={mensaje}>Nexos</h2>
+                        <h2>Nexos</h2>
                         <h6 className="font-weight-semibold mb-4 ">
                           Mensaje de bienvenida.
                         </h6>
@@ -132,7 +130,9 @@ const SignIn = () => {
                       <div className="panel panel-primary">
                         <div className=" tab-menu-heading mb-2 border-bottom-0">
                           <div className="tabs-menu1">
+                            <div className='text-center'>
                             {err && <Alert variant="danger">{err}</Alert>}
+                            </div>
                             <Form >
                               <Form.Group className="form-group">
                                 <Form.Label className=''>Email</Form.Label>{""}
@@ -167,11 +167,11 @@ const SignIn = () => {
                                 disabled={!validator.isEmail(email) || !validator.isNumeric(password) || check}
                                 type='submit'
                                 className="btn btn-primary btn-block"
-                                onClick={()=>[Login]}
+                                onClick={Login}
                               >
                                 Sign In
                               </Button>
-                              
+
                               <div className="was-validated">
                                 <div className="form-check mb-3 mt-3">
                                     <input
@@ -199,8 +199,6 @@ const SignIn = () => {
                                     </div>
                                   </div>
                                 </div>
-                                
-
                               <div className="mt-4 d-flex text-center justify-content-center mb-2">
                                 <Link
                                   to="https://www.facebook.com/"
@@ -254,8 +252,6 @@ const SignIn = () => {
                             </Form>
                           </div>
                         </div>
-
-                        
                       </div>
                     </div>
                   </div>
