@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Col, Form, Row,Alert} from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from '../Firebase/firebase';
 import validator from 'validator'
 
 //Importando el servicio post 
  import { PostLogin } from '../components/Nexos/Servicios/Services';
-
-
-
-
 
 const SignIn = () => {
   const [err, setError] = useState("");
@@ -22,7 +17,6 @@ const SignIn = () => {
   const [data, setData] = useState({
   "email": "",
   "password": "",
-
   })
 
 
@@ -30,19 +24,14 @@ const SignIn = () => {
     return /\S+@\S+\.\S+/.test(email);
   }
 
-
-
   const { email, password } = data;
 
-
   const changeHandler = (e:any) => {
-
 
     if(e.target.name === "email"){
       //si no es digitado el correo o esta vacio . saldra error si tambien se verifica que lo que se este verificando sea el campo correo o pass
       if (!isValidEmail(e.target.value) || e.target.value.lenght === 0) {
         validator.isEmail(e.target.value)
-
         setErrorEmailMessage("Correo Invalido o vacio")
        
         } else {
@@ -69,7 +58,6 @@ const SignIn = () => {
     if(e.target.type === "checkbox"){
       setCheck(!e.target.checked)
     }
-
   }
 
   let navigate = useNavigate(); 
@@ -90,7 +78,6 @@ const SignIn = () => {
       setError(mensaje)
     }
   }
-  
   return (
     <React.Fragment>
       <div className="square-box"> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> </div>

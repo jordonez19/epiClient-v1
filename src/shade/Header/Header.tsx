@@ -6,9 +6,6 @@ import { auth } from "../../Firebase/firebase";
 import { useDispatch, useSelector } from 'react-redux';
 import { Delete } from '../../redux/actions/action';
 import ProductService from '../../services/ProductService';
-import { userInfo } from "os";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { Serializer } from "v8";
 
 export default function Header() {
   const [Lang, setLang] = React.useState(false);
@@ -29,7 +26,7 @@ const Fullscreen: any = (vale: any) => {
   }
 }
 
-let user_name = localStorage.getItem('nombre')
+let user_name = sessionStorage.getItem('nombre')
 
   //leftsidemenu
   const openCloseSidebar = () => {
@@ -69,8 +66,7 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
     console.log(open)
   };
 
-
-  const [Data, setData] = React.useState([]);
+const [Data, setData] = React.useState([]);
 
   const { id } = useParams();
 
