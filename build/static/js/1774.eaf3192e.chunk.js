@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknowa=self.webpackChunknowa||[]).push([[1774],{11774:function(n,i,a){a.r(i);a(72791);var e=a(80184);i.default=function(){return(0,e.jsx)("div",{children:"ListarTiposCotizacion"})}}}]);
+//# sourceMappingURL=1774.eaf3192e.chunk.js.map
