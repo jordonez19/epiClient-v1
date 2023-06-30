@@ -1,7 +1,6 @@
 {
   "name": "nowa",
   "version": "0.1.0",
-  "homepage": "https://react.spurko.com/nowa-ts/preview/",
   "private": true,
   "dependencies": {
     "@coreui/react": "^4.3.1",
@@ -90,6 +89,8 @@
     "validator": "^13.7.0",
     "web-vitals": "^3.0.0"
   },
+  "homepage":
+    "https://asambleas.grupogift.com/GestorNew/#/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

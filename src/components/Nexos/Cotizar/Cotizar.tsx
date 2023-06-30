@@ -7,6 +7,7 @@ import { isEmpty } from 'lodash';
 const Cotizar = () => {
 
   const [posts, setPosts] = useState<any>([]);
+  
   React.useEffect(() => {
     const fetchService = async () => {
       let resp = await activeTypeServices();

@@ -1,38 +1,63 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom'
 import { TextField } from '@mui/material';
 import { Breadcrumb, Card, Col, Row, Button } from 'react-bootstrap';
+import { modalGlobal } from '../Funciones/Funciones';
 import {
     CFormLabel,
     CFormInput,
 } from "@coreui/react";
 import { isEmpty } from 'lodash';
-import { PostCreateServices } from '../Servicios/Services';
+import { PostCreateServices,PutCreateServices } from '../Servicios/Services';
 
 
 function CreateServiceCotizar(props: any) {
-    const [data, setData] = useState({
-        id: 0,
-        name: "",
-        status_id: "",
-        description: ""
+    const location = useLocation()
+    const model = {id: 0,name: "",status_id: "",description: ""}
 
-    })
+    const [data, setData] = useState<any>(model)
+
+    useEffect(() => {
+        if(location.state!=null) {
+            console.log(location.state)
+            setData(location.state)
+            location.state = null
+            
+        }else{     
+        }
+
+
+    }, [data, location, location.state]);
 
     const changeHandler = (e: any) => {
         setData({ ...data, [e.target.name]: e.target.value })
     }
 
-
-
     const sendData = async () => {
 
         if (data.id === 0 && !isEmpty(data.name) && data.status_id !== '' && !isEmpty(data.description)) {
-            console.log(data)
-            let response = await PostCreateServices(data);
-            console.log(response)
+            PostCreateServices(data);
+                let message = 'El nuevo servicio a sido creado correctamente'
+                let icon = 'success'
+                let title = 'Servicio Creado'
+                modalGlobal(title,message,icon)
+                setData(model)
         } else {
-            console.log('Los datos para enviar no estan completos')
+            if(!isEmpty(data.name) && data.status_id !== '' && !isEmpty(data.description)){
+            PutCreateServices(data);
+                let message = 'La edicion del servicio ha sido exitoso'
+                let icon = 'success'
+                let title = 'Servicio Editado'
+                modalGlobal(title,message,icon)
+                setData(model)
+            }else{
+                let message = 'Los datos para enviar no estan completos'
+                let icon = 'error'
+                let title = 'Falta Datos'
+                modalGlobal(title,message,icon)
+            }
+            
         }
 
     }
@@ -119,13 +144,14 @@ function CreateServiceCotizar(props: any) {
                                 <CFormLabel className='text-center font-weight-bold' htmlFor="validationCustom01">ESTADO</CFormLabel>
                                     <div className="group-btn">
                                         <Row className='d-flex flex-row justify-content-around mt-4'>
-                                            <Col sm={12} md={12} lg={6} xl={6} className='form-check form-check-inline justify-content-around'>
+                                            <Col sm={12} md={12} lg={12} xl={12} className='form-check form-check-inline justify-content-around'>
                                                 <input
                                                     type="radio"
                                                     className="form-check-input"
                                                     name="status_id"
                                                     id="btnradio21"
                                                     value={1}
+                                                    checked={data.status_id==='1'||data.status_id===1?true:false}
                                                     onChange={changeHandler}
                                                 />
                                                 <label
@@ -141,7 +167,10 @@ function CreateServiceCotizar(props: any) {
                                                     name="status_id"
                                                     id="btnradio22"
                                                     value={0}
+                                                    
+                                                    checked={data.status_id==='0'||data.status_id===0?true:false}
                                                     onChange={changeHandler}
+                                                    
                                                 />
                                                 <label
                                                     className="form-check-label"

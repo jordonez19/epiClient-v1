@@ -339,7 +339,7 @@ root.render(
   <React.Fragment>
   <BrowserRouter>
   {/*Aqui se invoca la funcion del modal -- (pendiente a la response del api modificar intermnamente la respuesta)*/}
-  <div /*onAuxClick={modalGlobal}*/>
+  <div >
     <React.Suspense fallback={<Loader/>}>
       <Routes >
 
