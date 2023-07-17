@@ -7,18 +7,15 @@ import { isEmpty } from 'lodash';
 
 function ListarTiposCotizacion() {
     const [posts, setPosts] = useState<any>([]);
-    const [search, setSearch] = useState ('');
+    const [filteredList, setFilteredList] = useState(posts);
 
-    const handleChange = (e:any) => {
-      setSearch (e.target.value);
-      setPosts(FilteredPlayers)
-      };
 
     React.useEffect(() => {
         const fetchService = async () => {
           let resp = await GetAllServices();
           let posts2 = await resp?.['content'];
           setPosts(posts2)
+          setFilteredList(posts2)
         };
         if(isEmpty(posts)){
         fetchService();
@@ -26,12 +23,18 @@ function ListarTiposCotizacion() {
       }, [posts]);
 
 
-      const FilteredPlayers = posts.filter((post:any) => {
-        if (post.name.toUpperCase( ).includes (search.toUpperCase( ))) {
-        return true;
-        }
-        return false;
+      const filterBySearch = (event:any) => {
+        // Access input value
+        const query = event.target.value;
+        // Create copy of item list
+        let updatedList = [...posts];
+        // Include all elements which includes the search query
+        updatedList = updatedList.filter((item) => {
+          return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
         });
+        // Trigger render with updated values
+        setFilteredList(updatedList);
+      };
 
 
     return(
@@ -82,7 +85,7 @@ function ListarTiposCotizacion() {
                   <Col sm={12} md={12} lg={3} xl={3} className=''>
                   <Card>
                       <Card.Body className='mx-auto'>
-                      <TextField id="outlined-basic"  label="Buscar servicio" variant="outlined" value={search} onChange = {handleChange} />
+                      <TextField id="outlined-basic"  label="Buscar servicio" variant="outlined" onChange={filterBySearch}/>
                       </Card.Body>
                   </Card>
                   </Col>
@@ -113,11 +116,11 @@ function ListarTiposCotizacion() {
                   </tr>
               </thead>
               <tbody>
-                  {posts.map((post:any) =>(
+                  {filteredList.map((post:any) =>(
                     <tr key={post.id} className='text-center'>
                       {/* <th scope="row">{d.id}</th> */}
                       <th>{post.name}</th>
-                      <th>{post.status_id}</th>
+                      <th> {post.status_id === 1 ? (<p>Activo</p>):'Inactivo'}</th>
                       <th>
                       <Link to={`${process.env.PUBLIC_URL}/nexos/createservicecotizar`} state={post}>
                               <span className="material-icons md-36 md-dark"  >&#xe3c9;</span>
@@ -126,7 +129,7 @@ function ListarTiposCotizacion() {
                     </tr>
                   ))}
               </tbody>
-              </table>
+              </table>a
           </div>    
       
           </div>

@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { Breadcrumb, Row, Col, Card, Button, Modal, FormGroup, Form } from 'react-bootstrap'
 import Select from 'react-select';
-import { Link } from 'react-router-dom'
 import { TextField } from '@mui/material';
 //import ModalFormulario from './ModalFormulario/ModalFormulario';
-import { ciudadesColombia } from '../Funciones/Funciones';
+import { ciudadesColombia, modalGlobal } from '../Funciones/Funciones';
 import {
   CForm,
   CCol,
@@ -19,13 +18,12 @@ import dayjs, { Dayjs } from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { isEmpty } from 'lodash';
 
 
 const CotizacionFormulario = () => {
-  //Constante de valor acutal de fecha
-  const defaultValue = new Date();
   //State de el campo fecha
-  const [value, setValue] = useState<Dayjs | null>(dayjs(defaultValue));
+  const [date, setDate] = useState<Dayjs | null>(dayjs(' '));
   //
   const [nit, setNit] = useState('');
   const handlerNit = ((e: any) => {
@@ -41,6 +39,7 @@ const CotizacionFormulario = () => {
   //UseState de los datos del formularoi
 
   const [data, setData] = useState({
+    id:0,
     "entidad": '',
     "correo1": '',
     "correo2": '',
@@ -48,11 +47,12 @@ const CotizacionFormulario = () => {
     "direccion": '',
     "ciudad": '',
     "unidad": '',
+    "unidad_cotizada":'',
     'telefono1': '',
     'telefono2': '',
     'telefono3': '',
-    'dirigir': ''
-
+    'dirigir': '',
+    'date_asamblea':''
   })
 
   const handlerSelect = ((e: any) => {
@@ -68,12 +68,12 @@ const CotizacionFormulario = () => {
     }
   })
 
-  const { entidad, correo1, correo2, correo3, direccion, ciudad, unidad, telefono1, telefono2, telefono3, dirigir } = data
+  const { entidad, correo1, correo2, correo3, direccion, ciudad, unidad,unidad_cotizada, telefono1, telefono2, telefono3, dirigir } = data
 
   const llenar = (() => {
-    const newArray = { entidad: 'Bosques Azules', correo1: 'Marisol_Milk@gomail.com', correo2: 'Carmensa_joda@gomail.com', correo3: 'Gildegart_Passion@gomail.com', direccion: 'Calle58 # 58 - 68', ciudad: 'Neiva', unidad: '1-52', telefono1: '1111111111', telefono2: '2222222222', telefono3: '3333333333', dirigir: 'Esperanza' }
+    const newArray = {id:55, entidad: 'Bosques Azules', correo1: 'Marisol_Milk@gomail.com', correo2: 'Carmensa_joda@gomail.com', correo3: 'Gildegart_Passion@gomail.com', direccion: 'Calle58 # 58 - 68', ciudad: 'Neiva', unidad: '500', unidad_cotizada: '200', telefono1: '1111111111', telefono2: '2222222222', telefono3: '3333333333', dirigir: 'Esperanza',date_asamblea:''}
     setData(newArray)
-
+    setDate(dayjs('2023-12-31'))
 
   })
   const [validatedCustom, setValidatedCustom] = useState(false);
@@ -86,11 +86,22 @@ const CotizacionFormulario = () => {
       event.preventDefault();
       event.stopPropagation();
     } else {
-      console.log(data)
-      console.log(value?.format('L'))
+      if(date?.format('L LT') === 'Invalid Date' ||date?.format('L LT') === undefined){
+        let message = 'No se ha seleccionado fecha para la asamblea'
+        let icon = 'error'
+        let title = 'Falta Fecha'
+        modalGlobal(title,message,icon)
+      }else{
+        //Se setea la fecha para la asamblea
+        setData({ ...data, date_asamblea:date?.format('YYYY-MM-DD') })
+        console.log('PASO TODO')
+      }   
     }
-
   };
+
+  const show = ()=>{
+    console.log(data)
+  }
 
   //UseState para collapsar campos como telefonos y correos
   let [isFirstCollapsed, setisFirstCollapsed] = useState(false);
@@ -111,7 +122,6 @@ const CotizacionFormulario = () => {
       setisSecondCollapsed(true);
     }
   };
-
 
   return (
     <div>
@@ -160,7 +170,7 @@ const CotizacionFormulario = () => {
       <div className="text-center mt-5">
         <h1>
           {" "}
-          <strong>PASO 2</strong>
+          <strong onClick={show}>PASO 2</strong>
         </h1>
         <h2>DATOS PARA SU COTIZACIÓN</h2>
       </div>
@@ -207,6 +217,7 @@ const CotizacionFormulario = () => {
                       onChange={handlerFormulario}
                       required
                     />
+                    {/* <CFormFeedback invalid>Porfavor indica una direccion valida.</CFormFeedback> */}
                   </CCol>
 
                   <CCol md={5} >
@@ -224,8 +235,6 @@ const CotizacionFormulario = () => {
 
                     </div>
                     <CFormFeedback invalid>Campo Vacio!</CFormFeedback>
-
-
                   </CCol>
 
 
@@ -246,7 +255,6 @@ const CotizacionFormulario = () => {
                           className=" multi-collapse"
                           id="multiCollapseExample1"
                         >
-
                           <FormGroup className="form-group">
                             <CFormLabel htmlFor="validationCustom03">Correo-2</CFormLabel>
                             <Form.Control name='correo2' onChange={handlerFormulario} value={correo2} type="email" />
@@ -268,24 +276,19 @@ const CotizacionFormulario = () => {
                             <CFormLabel htmlFor="validationCustom03">Correo-3</CFormLabel>
                             <Form.Control name='correo3' onChange={handlerFormulario} value={correo3} type="email" />
                           </FormGroup>
-
                         </div>
                       </div>
                     </CCol>
+
                   ) : null}
-
-
-
-
-
                   <CCol md={4}>
                     <CFormLabel htmlFor="validationCustom03">Direccion</CFormLabel>
                     <CFormInput type="text" id="validationCustom03" name='direccion' onChange={handlerFormulario} required value={direccion} />
-                    <CFormFeedback invalid>Porfavor indica una direccion valida.</CFormFeedback>
+                    {/* <CFormFeedback invalid>Porfavor indica una direccion valida.</CFormFeedback> */}
                   </CCol>
+
                   <CCol md={4}>
                     <CFormLabel htmlFor="validationCustom04">Ciudad</CFormLabel>
-
                     <Select
                       classNamePrefix="selectproduct"
                       onChange={handlerSelect}
@@ -293,19 +296,24 @@ const CotizacionFormulario = () => {
                       isSearchable
                       placeholder={ciudad}
                     />
-                    <CFormFeedback invalid>Seleciona una ciudad</CFormFeedback>
+                    {/* <CFormFeedback invalid>Seleciona una ciudad</CFormFeedback> */}
                   </CCol>
 
-                  <CCol md={4}>
+                  <CCol md={2}>
                     <CFormLabel htmlFor="validationCustom03">Unidades</CFormLabel>
                     <CFormInput type="text" id="validationCustom03" name='unidad' onChange={handlerFormulario} value={unidad} required />
-                    <CFormFeedback invalid>Porfavor provee una Unidad</CFormFeedback>
+                    {/* <CFormFeedback invalid>Porfavor provee una Unidad</CFormFeedback> */}
+                  </CCol>
+                  <CCol md={2}>
+                    <CFormLabel htmlFor="validationCustom03">Unidades Cotizadas</CFormLabel>
+                    <CFormInput type="text" id="validationCustom03" name='unidad_cotizada' onChange={handlerFormulario} value={unidad_cotizada} required />
+                    {/* <CFormFeedback invalid>Porfavor provee una Unidad</CFormFeedback> */}
                   </CCol>
 
                   <CCol md={3}>
                     <CFormLabel htmlFor="validationCustom03">Telefono</CFormLabel>
                     <CFormInput type="tel" id="validationCustom03" name='telefono1' onChange={handlerFormulario} value={telefono1} required />
-                    <CFormFeedback invalid>Porfavor provee un telefono</CFormFeedback>
+                    {/* <CFormFeedback invalid>Porfavor provee un telefono</CFormFeedback> */}
                   </CCol>
                   <>
                     <CCol md={1} className='d-flex align-items-end' >
@@ -361,7 +369,7 @@ const CotizacionFormulario = () => {
                   <CCol md={4}>
                     <CFormLabel htmlFor="validationCustom03">Dirigir a</CFormLabel>
                     <CFormInput type="text" id="validationCustom03" name='dirigir' onChange={handlerFormulario} value={dirigir} required />
-                    <CFormFeedback invalid>¿a quien va dirigido?</CFormFeedback>
+                    {/* <CFormFeedback invalid>¿a quien va dirigido?</CFormFeedback> */}
 
                   </CCol>
                   <CCol md={4} className='d-flex align-items-end'>
@@ -371,9 +379,9 @@ const CotizacionFormulario = () => {
                         label="Fecha de la asamblea"
                         openTo="month"
                         views={['year', 'month', 'day']}
-                        value={value}
+                        value={date}
                         onChange={(newValue) => {
-                          setValue(newValue);
+                          setDate(newValue);
                         }}
                         renderInput={(params) => <TextField {...params} />}
                       />
@@ -382,7 +390,7 @@ const CotizacionFormulario = () => {
 
                   <CCol className=' d-flex justify-content-end mt-5'>
                     {/* <Link to={`${process.env.PUBLIC_URL}/nexos/serviciosacotizar`}> */}
-                    <CButton color="primary" type="submit" >
+                    <CButton color="primary" type="submit" disabled={isEmpty(data.ciudad) || isEmpty(data.telefono1) || isEmpty(data.correo1) || isEmpty(data.direccion) || isEmpty(data.unidad) || isEmpty(data.dirigir) || isEmpty(data.entidad) || date?.format('L LT') === 'Invalid Date' ||date?.format('L LT') === undefined}>
                       Continuar
                     </CButton>
                     {/* </Link> */}

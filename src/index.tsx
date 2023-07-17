@@ -418,7 +418,6 @@ root.render(
               path={`${process.env.PUBLIC_URL}/nexos/listartiposcotizacion`}
               element={<ListarTiposCotizacion/>}
             />
-
           </Route>
 
           <Route>

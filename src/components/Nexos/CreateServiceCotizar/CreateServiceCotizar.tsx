@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import { useLocation } from 'react-router-dom'
 import { TextField } from '@mui/material';
 import { Breadcrumb, Card, Col, Row, Button } from 'react-bootstrap';
@@ -20,7 +19,6 @@ function CreateServiceCotizar(props: any) {
 
     useEffect(() => {
         if(location.state!=null) {
-            console.log(location.state)
             setData(location.state)
             location.state = null
             

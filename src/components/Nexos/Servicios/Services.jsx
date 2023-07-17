@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Config } from './config';
 
 //Funcion envio de parametros de logueo
+// VENTAS!!!!!!
 export async function PostLogin (data) {
     let acceso
     await axios({
