@@ -1,13 +1,17 @@
 import reportWebVitals from './reportWebVitals';
+import { modalGlobal } from './components/Nexos/Funciones/Funciones';
 import React from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "./Authentication/auth";
 import "./index.scss";
 import Loader from "./shade/Loaders/Loaders"
+
+  
 const App = React.lazy(() => import("../src/shade/layouts/App"));
 const Switcherapp = React.lazy(() => import("../src/shade/layouts/Switcherapp"));
 const Custompages = React.lazy(() => import("../src/shade/layouts/custompages"));
+
 const Dashboard = React.lazy(() =>
   import("./components/Dashboard/Dashboard-1/Dashboard")
 );
@@ -17,6 +21,20 @@ const Dashboard2 = React.lazy(() =>
 const Dashboard3 = React.lazy(() =>
   import("./components/Dashboard/Dashboard-3/Dashboard3")
 );
+
+//NEXOS MODULES//
+const Nexos = React.lazy(()=>import('./components/Nexos/VentaConfirmaciones/VentasConfirmaciones'));
+const Confirmaciones = React.lazy(()=>import('./components/Nexos/Confirmaciones/Confirmaciones'));
+const VistaListadoCotizaciones = React.lazy(()=>import('./components/Nexos/VistaListadoCotizaciones/VistaListadoCotizaciones'))
+const Cotizar = React.lazy(()=>import('./components/Nexos/Cotizar/Cotizar'))
+const CotizarFormulario = React.lazy(()=>import('./components/Nexos/CotizacionFormulario/CotizacionFormulario'))
+const ServiciosACotizar = React.lazy(()=>import('./components/Nexos/ServiciosACotizar/ServiciosACotizar'))
+const ResumenDeServicios = React.lazy(()=>import('./components/Nexos/ResumenDeServicios/ResumenDeServicios'))
+const CreateServiceCotizar = React.lazy(()=>import('./components/Nexos/CreateServiceCotizar/CreateServiceCotizar'))
+const ListarTiposCotizacion = React.lazy(()=>import('./components/Nexos/ListasTiposCotizacion/ListarTiposCotizacion'))
+
+
+
 //App
 const Cards = React.lazy(() => import("./components/App/Cards/Cards"));
 const Contacts = React.lazy(() => import("./components/App/Contacts/Contacts"));
@@ -315,12 +333,17 @@ const AuthSignup = React.lazy(() => import("./Authentication/Signup"))
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+ 
+
 root.render(
   <React.Fragment>
   <BrowserRouter>
+  {/*Aqui se invoca la funcion del modal -- (pendiente a la response del api modificar intermnamente la respuesta)*/}
+  <div >
     <React.Suspense fallback={<Loader/>}>
-      <Routes>
-        <Route path={`${process.env.PUBLIC_URL}/`} element={<Auth />}>
+      <Routes >
+
+      <Route path={`${process.env.PUBLIC_URL}/`} element={<Auth />}>
           <Route index element={<AuthLogin />} />
           
           <Route
@@ -331,8 +354,8 @@ root.render(
             path={`${process.env.PUBLIC_URL}/authentication/signup`}
             element={<AuthSignup />}
           />
-          </Route> 
-          
+          </Route>
+
         <Route path={`${process.env.PUBLIC_URL}/`} element={<App />}>
         <Route
               path={`${process.env.PUBLIC_URL}/`}
@@ -355,7 +378,48 @@ root.render(
               path={`${process.env.PUBLIC_URL}/dashboard/dashboard-3`}
               element={<Dashboard3 />}
             />
+            
           </Route>
+            
+          <Route>
+          <Route
+              path={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`}
+              element={<Nexos />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/confirmaciones`}
+              element={<Confirmaciones />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/vistalistadocotizaciones`}
+              element={<VistaListadoCotizaciones />}
+            />
+             <Route
+              path={`${process.env.PUBLIC_URL}/nexos/cotizar`}
+              element={<Cotizar />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/cotizacionformulario`}
+              element={<CotizarFormulario />}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/serviciosacotizar`}
+              element={<ServiciosACotizar/>}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/resumendeservicios`}
+              element={<ResumenDeServicios/>}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/createservicecotizar`}
+              element={<CreateServiceCotizar/>}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/nexos/listartiposcotizacion`}
+              element={<ListarTiposCotizacion/>}
+            />
+          </Route>
+
           <Route>
             <Route
               path={`${process.env.PUBLIC_URL}/app/cards`}
@@ -402,6 +466,8 @@ root.render(
               element={<Rangeslider />}
             />
           </Route>
+
+          
           <Route>
             <Route
               path={`${process.env.PUBLIC_URL}/elements/alerts`}
@@ -831,7 +897,7 @@ root.render(
           />
           <Route path="*" element={<Error404 />} />
         </Route> 
-        
+
          <Route>
           <Route
             path={`${process.env.PUBLIC_URL}/pages/switcher/switcher-1`}
@@ -841,6 +907,7 @@ root.render(
         <Route></Route>
       </Routes>
     </React.Suspense>
+    </div>
   </BrowserRouter>
 </React.Fragment>
 );

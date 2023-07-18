@@ -26,6 +26,7 @@ const Fullscreen: any = (vale: any) => {
   }
 }
 
+let user_name = sessionStorage.getItem('nombre')
 
   //leftsidemenu
   const openCloseSidebar = () => {
@@ -65,8 +66,7 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
     console.log(open)
   };
 
-
-  const [Data, setData] = React.useState([]);
+const [Data, setData] = React.useState([]);
 
   const { id } = useParams();
 
@@ -78,9 +78,14 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
       return e.id === id
     });
     setData(comparedata);
-    console.log(comparedata, Data);
    
   }
+
+  const salir = (()=>{
+    localStorage.clear();
+  })
+
+  
 
   React.useEffect(() => {
     compare();
@@ -115,7 +120,7 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
           <div className="responsive-logo">
             <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
               <img
-                src={require("../../assets/img/brand/logo.png")}
+                src={require("../../assets/img/brand/sinjirafas.png")}
                 className="mobile-logo logo-1"
                 alt="logo"
               />
@@ -1137,7 +1142,7 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
                         </div>
                         <div className="ms-3 my-auto">
                           <h6 className="tx-15 font-weight-semibold mb-0">
-                            Teri Dactyl
+                            {user_name}
                           </h6>
                           <span className="dropdown-title-text subtext op-6  tx-12">
                             Premium Member
@@ -1166,7 +1171,7 @@ let getdata:any = useSelector((state:any) => state.cartreducer.carts);
                     >
                       <i className="far fa-sun"></i> Settings
                     </Dropdown.Item>
-                    <Dropdown.Item className="dropdown-item" onClick={() => {auth.signOut();routeChange()}} >
+                    <Dropdown.Item className="dropdown-item" onClick={() => {auth.signOut();routeChange();salir()}} >
                       <i className="far fa-arrow-alt-circle-left"></i> Sign Out
                     </Dropdown.Item>
                   </Dropdown.Menu>

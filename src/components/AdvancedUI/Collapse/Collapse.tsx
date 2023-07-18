@@ -123,7 +123,6 @@ const Collapse = () => {
                     variant=""
 
                     className="btn ripple btn-primary mb-3 mb-xl-0"
-
                     role="button"
                     onClick={() => first()}
                   >
@@ -143,7 +142,7 @@ const Collapse = () => {
                     role="button"
                     onClick={() => both()}
                   >
-                    Toggle Both Contents
+                    Toggle Both Contents  
                   </Button>
                 </div>
                 <Row className="row-sm">

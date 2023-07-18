@@ -26,7 +26,7 @@ const Sidebar = () => {
     return () => {
       mainContent.removeEventListener('click', mainContentClickFn);
     }
-  },[location])
+  },/*[location]*/)
 
   // location
   useEffect(() => {
@@ -215,12 +215,12 @@ const Sidebar = () => {
           <div className="main-sidebar-header active">
             <NavLink className="header-logo active" to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`}>
               <img
-                src={require("../../assets/img/brand/logo.png")}
+                src={require("../../assets/img/brand/sinjirafas.png")}
                 className="main-logo  desktop-logo"
                 alt="logo"
               />
               <img
-                src={require("../../assets/img/brand/logo-white.png")}
+                src={require("../../assets/img/brand/LOGO-NEXOS- negativo-SIN-JIRAFA2.png")}
                 className="main-logo  desktop-dark"
                 alt="logo"
               />

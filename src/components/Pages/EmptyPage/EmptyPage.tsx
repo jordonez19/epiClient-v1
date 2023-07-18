@@ -3,6 +3,7 @@ import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
 
 const EmptyPage = () => (
   <div>
+    
       {/* <!-- breadcrumb --> */}
       <div className="breadcrumb-header justify-content-between">
         <div className="left-content">

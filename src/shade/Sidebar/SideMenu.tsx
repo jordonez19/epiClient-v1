@@ -1,4 +1,5 @@
 export const MENUITEMS = [
+  
   {
     menutitle: "Main",
     Items: [
@@ -40,10 +41,174 @@ export const MENUITEMS = [
             selected:false,
             title: "Dashboard-3",
           },
+          
         ],
       },
     ],
   },
+
+  
+  {
+    menutitle: "NEXOS",
+    Items: [
+      {
+        title: "View-Nexos",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+          </svg>
+        ),
+        type: "sub",
+        selected:false,
+        active:false,
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`,
+            type: "link",
+            active:false,
+            selected:false,
+            title: "VentasConfirmaciones",
+          },
+        ],
+      },
+
+
+      {
+        path: `${process.env.PUBLIC_URL}/dashboard/dashboard-1`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 12.586-2.293-2.293-1.414 1.414L11 15.414l8-8.414-1-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "VENTA",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/confirmaciones`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "CONFIRMACIÓN",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/vistalistadocotizaciones`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "COTIZACIONES",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/cotizar`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "COTIZAR",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/cotizacionformulario`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "COTIZAR(formulario)",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/serviciosacotizar`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "SERVICIOS A COTIZAR",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/nexos/resumendeservicios`,
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="side-menu__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="m11 13-6-7.586-2 2L11 16l8-9-2-2z" />
+          </svg>
+        ),
+        type: "link",
+        selected:false,
+        active:false,
+        title: "ITEMS COTIZADOS",
+      }
+    ],
+  },
+
+  
 
   {
     menutitle: "WEB APPS",
