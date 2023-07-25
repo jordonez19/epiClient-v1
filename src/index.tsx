@@ -34,7 +34,9 @@ const CreateServiceCotizar = React.lazy(()=>import('./components/Nexos/CreateSer
 const ListarTiposCotizacion = React.lazy(()=>import('./components/Nexos/ListasTiposCotizacion/ListarTiposCotizacion'))
 
 
-
+//AUTH
+const AuthLogin = React.lazy(() => import("./Authentication/Login"));
+const AuthSignup = React.lazy(() => import("./Authentication/Signup"))
 //App
 const Cards = React.lazy(() => import("./components/App/Cards/Cards"));
 const Contacts = React.lazy(() => import("./components/App/Contacts/Contacts"));
@@ -327,8 +329,10 @@ const DefaultTables = React.lazy(() =>
 const DataTables = React.lazy(() =>
   import("./components/Tables/DataTables/DataTables")
 );
-const AuthLogin = React.lazy(() => import("./Authentication/Login"));
-const AuthSignup = React.lazy(() => import("./Authentication/Signup"))
+
+
+
+
 //Form
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -381,45 +385,6 @@ root.render(
             
           </Route>
             
-          <Route>
-          <Route
-              path={`${process.env.PUBLIC_URL}/nexos/ventasconfirmaciones`}
-              element={<Nexos />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/nexos/confirmaciones`}
-              element={<Confirmaciones />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/nexos/vistalistadocotizaciones`}
-              element={<VistaListadoCotizaciones />}
-            />
-             <Route
-              path={`${process.env.PUBLIC_URL}/nexos/cotizar`}
-              element={<Cotizar />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/nexos/cotizacionformulario`}
-              element={<CotizarFormulario />}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/nexos/serviciosacotizar`}
-              element={<ServiciosACotizar/>}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/nexos/resumendeservicios`}
-              element={<ResumenDeServicios/>}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/nexos/createservicecotizar`}
-              element={<CreateServiceCotizar/>}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/nexos/listartiposcotizacion`}
-              element={<ListarTiposCotizacion/>}
-            />
-          </Route>
-
           <Route>
             <Route
               path={`${process.env.PUBLIC_URL}/app/cards`}
