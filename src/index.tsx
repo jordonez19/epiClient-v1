@@ -23,16 +23,6 @@ const Dashboard3 = React.lazy(() =>
 );
 
 //NEXOS MODULES//
-const Nexos = React.lazy(()=>import('./components/Nexos/VentaConfirmaciones/VentasConfirmaciones'));
-const Confirmaciones = React.lazy(()=>import('./components/Nexos/Confirmaciones/Confirmaciones'));
-const VistaListadoCotizaciones = React.lazy(()=>import('./components/Nexos/VistaListadoCotizaciones/VistaListadoCotizaciones'))
-const Cotizar = React.lazy(()=>import('./components/Nexos/Cotizar/Cotizar'))
-const CotizarFormulario = React.lazy(()=>import('./components/Nexos/CotizacionFormulario/CotizacionFormulario'))
-const ServiciosACotizar = React.lazy(()=>import('./components/Nexos/ServiciosACotizar/ServiciosACotizar'))
-const ResumenDeServicios = React.lazy(()=>import('./components/Nexos/ResumenDeServicios/ResumenDeServicios'))
-const CreateServiceCotizar = React.lazy(()=>import('./components/Nexos/CreateServiceCotizar/CreateServiceCotizar'))
-const ListarTiposCotizacion = React.lazy(()=>import('./components/Nexos/ListasTiposCotizacion/ListarTiposCotizacion'))
-
 
 //AUTH
 const AuthLogin = React.lazy(() => import("./Authentication/Login"));
