@@ -22993,8 +22993,8 @@ html.fullscreen-button .app-content {
     display: flex;
     align-items: center;
     position: relative;
-    height: 2.5rem;
-    margin: 0 auto;
+    max-height: 2.5rem;
+    margin: auto;
     justify-content: center;
     text-align: center;
 }

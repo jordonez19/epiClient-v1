@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Navigate, HashRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { Navigate, HashRouter, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { PublicRoutes, PrivateRoutes } from ".";
+import { PublicRoutes, PrivateRoutes } from "./";
 import { DashboardPrivateRoutes, DashboardPublicRoutes } from "./dashboards";
 import Loader from "../shade/Loaders/Loaders";
 import "../index.scss";
-import DisableBackButton from "./DisableBackButton";
 
 export const AppRoutes = () => {
   const { user } = useSelector((store: any) => store.user);
@@ -17,7 +16,7 @@ export const AppRoutes = () => {
       <React.Suspense fallback={<Loader />}>
         <Routes>
           <Route
-            path={`${process.env.PUBLIC_URL}/authentication/*`}
+            path={`${process.env.PUBLIC_URL}/*`}
             element={
               <PublicRoutes isAuth={user?.token}>
                 <DashboardPublicRoutes />
@@ -26,7 +25,7 @@ export const AppRoutes = () => {
           />
 
           <Route
-            path={`${process.env.PUBLIC_URL}/*`}
+            path={`${process.env.PUBLIC_URL}/dashboard/*`}
             element={
               <PrivateRoutes isAuth={user?.token}>
                 <DashboardPrivateRoutes />

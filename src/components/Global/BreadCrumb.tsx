@@ -21,7 +21,7 @@ export const BreadCrumb: React.FC<BreadCrumbProps> = ({ items, baseURL }) => {
                     <img
                         alt="avatar"
                         className="rounded-circle"
-                        src={require("../../../assets/img/brand/logo-nexos2.png")}
+                        src={require("../../assets/img/logos/logo_collapse.png")}
                     />
                 </div>
             </div>

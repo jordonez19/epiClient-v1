@@ -9,10 +9,8 @@ export default function Footer() {
         <div className="container-fluid pt-0 ht-100p">
           Copyright © 2022{" "}
           <Link to="#" className="text-primary">
-            Epi
+            Epi Contigo
           </Link>
-          . Designed with <span className="fa fa-heart text-danger"></span> by
-          <Link to="#"> Spruko </Link> All rights reserved
         </div>
       </Col>
     </div>

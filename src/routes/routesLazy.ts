@@ -6,7 +6,7 @@ export interface LazyRoute {
   Component: LazyExoticComponent<JSXComponent> | JSXComponent | any;
 }
 
-const Dashboard = React.lazy(() => import("../containers/dashboard"));
+const Dashboard = React.lazy(() => import("../containers/Dashboard"));
 
 
 //pages
@@ -35,9 +35,6 @@ const Error404 = React.lazy(() =>
 );
 const Error500 = React.lazy(() =>
   import("./../components/Pages/Authentication/500Error/500Error")
-);
-const Error501 = React.lazy(() =>
-  import("./../components/Pages/Authentication/501Error/501Error")
 );
 
 //Auth
