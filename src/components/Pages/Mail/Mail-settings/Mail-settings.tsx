@@ -167,7 +167,7 @@ const Mailsettings = () => {
                         <Form.Control
                           type="text"
                           placeholder="Email"
-                          defaultValue="info@Nowa.in"
+                          defaultValue="info@Epi.in"
                         />
                       </Col>
                     </Row>

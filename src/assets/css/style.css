@@ -2,7 +2,7 @@
 /*------------------------------------------------------------------
 [Master Stylesheet]
 
-Project        :   NOWA - HTML5 Bootstrap Admin Template
+Project        :   Epi - HTML5 Bootstrap Admin Template
 Version        :   V.3
 Copyright      :   Spruko Technologies Private Limited 
 Author         :   Spruko
@@ -3279,12 +3279,29 @@ input[type=button].btn-block {
 
 /* Aqui de google fonts icon */
 
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-.material-icons.md-dark { color: #FFB381 }
-.material-icons.md-dark:hover { color: var(--primary-bg-color) }
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.material-icons.md-dark {
+    color: #FFB381
+}
+
+.material-icons.md-dark:hover {
+    color: var(--primary-bg-color)
+}
 
 
 .card {
@@ -3312,11 +3329,11 @@ input[type=button].btn-block {
 
 
 
-.card-aux{
+.card-aux {
     min-width: 0;
 }
 
-.card-hover:hover{
+.card-hover:hover {
     background: #fff;
     box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
     -webkit-transition: all 0.3s ease-in;
@@ -3326,8 +3343,9 @@ input[type=button].btn-block {
     transition: all 0.3s ease-in;
     margin-top: 50px;
 }
-.card-hover:not(:hover){
-    
+
+.card-hover:not(:hover) {
+
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
@@ -16498,34 +16516,34 @@ a.tag-addon:hover {
 }
 
 :root {
-    --primary-bg-color: #e56e22;
-    --primary-bg-hover: #5cd3b9;
-    --primary-bg-border: #38cab3;
-    --primary02: rgba(28, 213, 174, 0.2);
-    --primary05: rgba(28, 213, 174, 0.5);
-    --primary-transparentcolor: rgba(28, 213, 174, 0.2);
+    --primary-bg-color: #FCB33C;
+    --primary-bg-hover: #FFD27F;
+    --primary-bg-border: #D98E00;
+    --primary02: rgba(250, 179, 63, 0.2);
+    --primary05: rgba(250, 179, 63, 0.5);
+    --primary-transparentcolor: rgba(250, 179, 63, 0.2);
     --transparentprimary-transparentcolor: rgba(255, 255, 255, 0.05);
-    --transparent-body: #38cab3;
+    --transparent-body: #D98E00;
     --transparent-theme: rgba(0, 0, 0, 0.1);
-    --blue: var(--primary-bg-color);
-    --indigo: var(--primary-bg-color);
-    --purple: #ad4ffa;
-    --pink: #f754fa;
-    --red: #f34343;
-    --orange: #fd7e14;
-    --yellow: #ffbd5a;
-    --green: #24d5b8;
-    --teal: #29ddee;
-    --cyan: #4ec2f0;
+    --blue: #456EB3;
+    --indigo: #715AFF;
+    --purple: #9467D6;
+    --pink: #E879F9;
+    --red: #FF6161;
+    --orange: #FCB33C;
+    --yellow: #FFE171;
+    --green: #FCB33C;
+    --teal: #4FC8FF;
+    --cyan: #6AD1FF;
     --white: #fff;
-    --gray: #7987a1;
+    --gray: #7B879F;
     --gray-dark: #383853;
-    --secondary: #7987a1;
-    --success: #24d5b8;
-    --info: #4ec2f0;
-    --warning: #ffbd5a;
-    --danger: #f34343;
-    --light: #f9f9fb;
+    --secondary: #7B879F;
+    --success: #FCB33C;
+    --info: #6AD1FF;
+    --warning: #FFE171;
+    --danger: #FF6161;
+    --light: #FDFDFD;
     --dark: #383853;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;

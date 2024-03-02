@@ -38,9 +38,9 @@ const Imagecompare = () => (
               Horizontal Image Comparision
             </div>
             <p className="mg-b-20">
-              Example of nowa Horizontal Image Comparision.
+              Example of Epi Horizontal Image Comparision.
             </p>
-            <div className="twentytwenty-container"><ReactCompareImage leftImage={img1} rightImage={img2}  /></div>
+            <div className="twentytwenty-container"><ReactCompareImage leftImage={img1} rightImage={img2} /></div>
           </Card.Body>
         </Card>
         {/* <!-- div --> */}
@@ -52,10 +52,10 @@ const Imagecompare = () => (
               Vertical Image Comparision
             </div>
             <p className="mg-b-20">
-              Example of nowa Vertical Image Comparision.
+              Example of Epi Vertical Image Comparision.
             </p>
             <div className="twentytwenty-container" data-orientation="vertical">
-            <ReactCompareImage leftImage={img1} rightImage={img2} vertical={true}/>
+              <ReactCompareImage leftImage={img1} rightImage={img2} vertical={true} />
             </div>
           </Card.Body>
         </Card>

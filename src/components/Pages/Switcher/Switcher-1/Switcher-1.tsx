@@ -7,7 +7,7 @@ export const Switcher1 = () => {
   useEffect(() => {
     Switcherdata.localStorageBackUp();
   });
-  function changePrimaryColor(userColor:any) {
+  function changePrimaryColor(userColor: any) {
     // var userColor = document.getElementById("colorID").value;
     localStorage.setItem("primaryColor", userColor);
     // to store value as opacity 0.95 we use 95
@@ -21,8 +21,8 @@ export const Switcher1 = () => {
 
     Switcherdata.dynamicLightPrimaryColor(dynamicPrimaryLight, userColor);
 
-   let myonoffswitch6:any = document.getElementById("myonoffswitch1") as HTMLInputElement
-   myonoffswitch6.checked = true;
+    let myonoffswitch6: any = document.getElementById("myonoffswitch1") as HTMLInputElement
+    myonoffswitch6.checked = true;
 
     // Adding
     document.querySelector("body")?.classList.add("light-theme");
@@ -43,7 +43,7 @@ export const Switcher1 = () => {
 
     Switcherdata.name();
   }
-  function darkPrimaryColor(userColor:any) {
+  function darkPrimaryColor(userColor: any) {
     // var userColor = document.getElementById("darkPrimaryColorID").value;
 
     localStorage.setItem("darkPrimaryColor", userColor);
@@ -54,8 +54,8 @@ export const Switcher1 = () => {
 
     Switcherdata.dynamicDarkPrimaryColor(dynamicPrimaryDark, userColor);
 
-   let myonoffswitch7:any =document.getElementById("myonoffswitch2") as HTMLInputElement
-   myonoffswitch7.checked = true;
+    let myonoffswitch7: any = document.getElementById("myonoffswitch2") as HTMLInputElement
+    myonoffswitch7.checked = true;
 
     // Adding
     document.querySelector("body")?.classList.add("dark-theme");
@@ -80,7 +80,7 @@ export const Switcher1 = () => {
 
     Switcherdata.name();
   }
-  function transparentPrimaryColor(userColor:any) {
+  function transparentPrimaryColor(userColor: any) {
     // var userColor = document.getElementById("transparentPrimaryColorID").value;
 
     localStorage.setItem("transparentPrimaryColor", userColor);
@@ -91,8 +91,8 @@ export const Switcher1 = () => {
 
     Switcherdata.dynamicTransparentPrimaryColor(PrimaryTransparent, userColor);
 
-    let myonoffswitchTransparent:any = document.getElementById("myonoffswitchTransparent") as HTMLInputElement
-  myonoffswitchTransparent.checked = true;
+    let myonoffswitchTransparent: any = document.getElementById("myonoffswitchTransparent") as HTMLInputElement
+    myonoffswitchTransparent.checked = true;
 
     // Adding
     document.querySelector("body")?.classList.add("transparent-theme");
@@ -115,7 +115,7 @@ export const Switcher1 = () => {
 
     Switcherdata.name();
   }
-  function BgTransparentBackground(userColor:any) {
+  function BgTransparentBackground(userColor: any) {
     // var userColor = document.getElementById("transparentBgColorID").value;
 
     localStorage.setItem("transparentBgColor", userColor);
@@ -129,7 +129,7 @@ export const Switcher1 = () => {
       userColor
     );
 
-    let myonoffswitchTransparent:any = document.getElementById("myonoffswitchTransparent") as HTMLInputElement
+    let myonoffswitchTransparent: any = document.getElementById("myonoffswitchTransparent") as HTMLInputElement
     myonoffswitchTransparent.checked = true;
 
     // Adding
@@ -161,13 +161,13 @@ export const Switcher1 = () => {
 
     Switcherdata.name();
   }
-  function BgImgTransparentPrimaryColor(userColor:any) {
-      
+  function BgImgTransparentPrimaryColor(userColor: any) {
+
     // var userColor = document.getElementById(
     //   "transparentBgImgPrimaryColorID"
     // ).value;
 
-    localStorage.setItem("nowatransparent-bgImgPrimaryColor", userColor);
+    localStorage.setItem("Epitransparent-bgImgPrimaryColor", userColor);
 
     const dynamicPrimaryImgTransparent = document.querySelectorAll(
       "input.color-primary-transparent"
@@ -177,9 +177,9 @@ export const Switcher1 = () => {
       dynamicPrimaryImgTransparent,
       userColor
     );
-// console.log(dynamicPrimaryImgTransparent);
-  let myonoffswitchTransparent:any = document.getElementById("myonoffswitchTransparent") as HTMLInputElement
-  myonoffswitchTransparent.checked = true;
+    // console.log(dynamicPrimaryImgTransparent);
+    let myonoffswitchTransparent: any = document.getElementById("myonoffswitchTransparent") as HTMLInputElement
+    myonoffswitchTransparent.checked = true;
 
     // Adding
     document.querySelector("body")?.classList.add("transparent-theme");
@@ -195,28 +195,28 @@ export const Switcher1 = () => {
     document.querySelector("body")?.classList.remove("color-menu");
     document.querySelector("body")?.classList.remove("dark-menu");
     document.querySelector("body")?.classList.remove("gradient-menu");
-    localStorage.removeItem("nowaPrimaryColor");
-    localStorage.removeItem("nowaprimaryHoverColor");
-    localStorage.removeItem("nowaprimaryBorderColor");
-    localStorage.removeItem("nowaprimaryTransparent");
-    localStorage.removeItem("nowadarkPrimaryColor");
-    localStorage.removeItem("nowatransparentPrimaryColor");
-    localStorage.removeItem("nowatransparentBgColor");
+    localStorage.removeItem("EpiPrimaryColor");
+    localStorage.removeItem("EpiprimaryHoverColor");
+    localStorage.removeItem("EpiprimaryBorderColor");
+    localStorage.removeItem("EpiprimaryTransparent");
+    localStorage.removeItem("EpidarkPrimaryColor");
+    localStorage.removeItem("EpitransparentPrimaryColor");
+    localStorage.removeItem("EpitransparentBgColor");
 
-   let html:any = document.querySelector("html")
-   html.style.removeProperty("--transparent-body");
+    let html: any = document.querySelector("html")
+    html.style.removeProperty("--transparent-body");
 
     if (
       document.querySelector("body")?.classList.contains("bg-img1") ===
-        false &&
+      false &&
       document.querySelector("body")?.classList.contains("bg-img2") ===
-        false &&
+      false &&
       document.querySelector("body")?.classList.contains("bg-img3") ===
-        false &&
+      false &&
       document.querySelector("body")?.classList.contains("bg-img4") === false
     ) {
       document.querySelector("body")?.classList.add("bg-img1");
-      localStorage.setItem("nowaBgImage", "bg-img1");
+      localStorage.setItem("EpiBgImage", "bg-img1");
     }
     Switcherdata.name();
   }
@@ -226,7 +226,7 @@ export const Switcher1 = () => {
       <div className="breadcrumb-header justify-content-between">
         <div className="left-content">
           <span className="main-content-title mg-b-0 mg-b-lg-1">
-           SWITCHER PAGE
+            SWITCHER PAGE
           </span>
         </div>
         <div className="justify-content-center mt-2">
@@ -590,7 +590,7 @@ export const Switcher1 = () => {
                                   type="radio"
                                   name="onoffswitch2"
                                   id="myonoffswitch3"
-                                    onClick={() => Switcherdata.LightMenu()}
+                                  onClick={() => Switcherdata.LightMenu()}
                                   className="onoffswitch2-checkbox"
                                   defaultChecked
                                 />
@@ -607,7 +607,7 @@ export const Switcher1 = () => {
                                   type="radio"
                                   name="onoffswitch2"
                                   id="myonoffswitch4"
-                                    onClick={() => Switcherdata.ColorMenu()}
+                                  onClick={() => Switcherdata.ColorMenu()}
                                   className="onoffswitch2-checkbox"
                                 />
                                 <label
@@ -623,7 +623,7 @@ export const Switcher1 = () => {
                                   type="radio"
                                   name="onoffswitch2"
                                   id="myonoffswitch5"
-                                    onClick={() => Switcherdata.DarkMenu()}
+                                  onClick={() => Switcherdata.DarkMenu()}
                                   className="onoffswitch2-checkbox"
                                 />
                                 <label
@@ -639,7 +639,7 @@ export const Switcher1 = () => {
                                   type="radio"
                                   name="onoffswitch2"
                                   id="myonoffswitch25"
-                                    onClick={() => Switcherdata.GradientMenu()}
+                                  onClick={() => Switcherdata.GradientMenu()}
                                   className="onoffswitch2-checkbox"
                                 />
                                 <label
@@ -662,7 +662,7 @@ export const Switcher1 = () => {
                                   type="radio"
                                   name="onoffswitch3"
                                   id="myonoffswitch6"
-                                    onClick={() => Switcherdata.Lightheader()}
+                                  onClick={() => Switcherdata.Lightheader()}
                                   className="onoffswitch2-checkbox"
                                   defaultChecked
                                 />
@@ -811,7 +811,7 @@ export const Switcher1 = () => {
                               className="btn btn-danger btn-block"
                               onClick={() => {
                                 localStorage.clear();
-                               let html:any = document.querySelector("html")
+                                let html: any = document.querySelector("html")
                                 html.style = "";
                                 Switcherdata.name();
                                 Switcherdata.resetData();

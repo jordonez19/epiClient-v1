@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
 import * as chart from "./data";
-import { Bar, Pie,  Line, Doughnut,  } from "react-chartjs-2";
+import { Bar, Pie, Line, Doughnut, } from "react-chartjs-2";
 const ChartJS = () => (
   <div>
     {/* <!-- breadcrumb --> */}
@@ -34,7 +34,7 @@ const ChartJS = () => (
         <Card className=" overflow-hidden">
           <Card.Body>
             <div className="main-content-label mg-b-5">Line Chart</div>
-            <p className="mg-b-20">Basic Charts Of Nowa template.</p>
+            <p className="mg-b-20">Basic Charts Of Epi template.</p>
             <div className="chartjs-wrapper-demo">
               {/* <canvas > */}
               <Line
@@ -53,7 +53,7 @@ const ChartJS = () => (
         <Card className=" overflow-hidden">
           <Card.Body>
             <div className="main-content-label mg-b-5">Area Chart</div>
-            <p className="mg-b-20">Basic Charts Of Nowa template.</p>
+            <p className="mg-b-20">Basic Charts Of Epi template.</p>
             <div className="chartjs-wrapper-demo">
               <Line
                 options={chart.Areachart}
@@ -75,7 +75,7 @@ const ChartJS = () => (
         <Card className=" overflow-hidden">
           <Card.Body>
             <div className="main-content-label mg-b-5">Stacked Bar Chart</div>
-            <p className="mg-b-20">Basic Charts Of Nowa template.</p>
+            <p className="mg-b-20">Basic Charts Of Epi template.</p>
             <div className="chartjs-wrapper-demo">
               <Bar
                 options={chart.Barchart1}
@@ -93,7 +93,7 @@ const ChartJS = () => (
         <Card className=" overflow-hidden">
           <Card.Body>
             <div className="main-content-label mg-b-5">Stacked Bar Chart</div>
-            <p className="mg-b-20">Basic Charts Of Nowa template.</p>
+            <p className="mg-b-20">Basic Charts Of Epi template.</p>
             <div className="chartjs-wrapper-demo">
               <Bar
                 options={chart.Horizontalbarchart}
@@ -179,7 +179,7 @@ const ChartJS = () => (
             <div className="main-content-label mg-b-5">
               Horizontal Bar Chart
             </div>
-            <p className="mg-b-20">Basic Charts Of Nowa template.</p>
+            <p className="mg-b-20">Basic Charts Of Epi template.</p>
             <div className="chartjs-wrapper-demo">
               {/* <canvas id=""></canvas> */}
               <Bar
@@ -200,7 +200,7 @@ const ChartJS = () => (
             <div className="main-content-label mg-b-5">
               Horizontal Bar Chart
             </div>
-            <p className="mg-b-20">Basic Charts Of Nowa template.</p>
+            <p className="mg-b-20">Basic Charts Of Epi template.</p>
             <div className="chartjs-wrapper-demo">
               {/*<canvas id="chartBar5"></canvas>*/}
 
@@ -225,9 +225,9 @@ const ChartJS = () => (
         <Card className=" mg-b-md-20 overflow-hidden">
           <Card.Body>
             <div className="main-content-label mg-b-5">Pie Chart</div>
-            <p className="mg-b-20">Basic Charts Of Nowa template.</p>
+            <p className="mg-b-20">Basic Charts Of Epi template.</p>
             <div className="chartjs-wrapper-demo">
-              
+
               <Pie data={chart.piechart} id="chartPie" className='chartjs-render-monitor w-250 h-275' />
             </div>
           </Card.Body>
@@ -238,9 +238,9 @@ const ChartJS = () => (
         <Card className=" overflow-hidden">
           <Card.Body>
             <div className="main-content-label mg-b-5">Donut Chart</div>
-            <p className="mg-b-20">Basic Charts Of Nowa template.</p>
+            <p className="mg-b-20">Basic Charts Of Epi template.</p>
             <div className="chartjs-wrapper-demo ">
-              <Doughnut data={chart.dchart} id="chartDonut" className="chartjs-render-monitor w-250 h-275"/>
+              <Doughnut data={chart.dchart} id="chartDonut" className="chartjs-render-monitor w-250 h-275" />
             </div>
           </Card.Body>
         </Card>

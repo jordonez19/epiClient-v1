@@ -6,14 +6,14 @@ export default function Custompagesswitcher() {
     Switcherdatacustam.localStorageBackUp();
   });
 
-  function changePrimaryColor(userColor:any) {
+  function changePrimaryColor(userColor: any) {
     // var userColor:any = document.getElementById("colorID")
     // userColor.value;
-    localStorage.setItem("nowaPrimaryColor", userColor);
+    localStorage.setItem("EpiPrimaryColor", userColor);
     // to store value as opacity 0.95 we use 95
-    localStorage.setItem("nowaprimaryHoverColor", userColor + 95);
-    localStorage.setItem("nowaprimaryBorderColor", userColor);
-    localStorage.setItem("nowaprimaryTransparent", userColor + 20);
+    localStorage.setItem("EpiprimaryHoverColor", userColor + 95);
+    localStorage.setItem("EpiprimaryBorderColor", userColor);
+    localStorage.setItem("EpiprimaryTransparent", userColor + 20);
 
     const dynamicPrimaryLight = document.querySelectorAll(
       "input.color-primary-light"
@@ -27,12 +27,12 @@ export default function Custompagesswitcher() {
     // Adding
     document.querySelector("body")?.classList.add("light-theme");
 
- 
+
 
     Switcherdatacustam.name();
     console.log(userColor)
   }
-  function darkPrimaryColor(userColor:any ) {
+  function darkPrimaryColor(userColor: any) {
     // var userColor:any = document.getElementById("darkPrimaryColorID")
     // userColor.value;
 
@@ -44,8 +44,8 @@ export default function Custompagesswitcher() {
 
     Switcherdatacustam.dynamicDarkPrimaryColor(dynamicPrimaryDark, userColor);
 
-   let myonoffswitch2:any = document.getElementById("myonoffswitch2") as HTMLInputElement
-   myonoffswitch2.checked = true;
+    let myonoffswitch2: any = document.getElementById("myonoffswitch2") as HTMLInputElement
+    myonoffswitch2.checked = true;
 
     // Adding
     document.querySelector("body")?.classList.add("dark-theme");
@@ -68,12 +68,12 @@ export default function Custompagesswitcher() {
             <div className="predefined_styles">
               <div className="swichermainleft text-center">
                 <div className="p-3 d-grid gap-2">
-                  <a target="blank" href="https://react.spruko.com/nowa-ts/"
+                  <a target="blank" href="https://react.spruko.com/Epi-ts/"
                     className="btn ripple btn-primary mt-0"
                   >
                     View Demo
                   </a>
-                  <a target="blank" href="https://themeforest.net/item/nowa-react-js-admin-dashboard-template/39360388"
+                  <a target="blank" href="https://themeforest.net/item/Epi-react-js-admin-dashboard-template/39360388"
                     className="btn ripple btn-info"
                   >
                     Buy Now
@@ -193,7 +193,7 @@ export default function Custompagesswitcher() {
                           className="wd-25 ht-25 input-dark-color-picker color-primary-dark"
                           defaultValue="#38cab3"
                           id="darkPrimaryColorID"
-                          onChange={(e) =>  darkPrimaryColor(e.target.value)}
+                          onChange={(e) => darkPrimaryColor(e.target.value)}
                           type="color"
                           data-id="bg-color"
                           data-id1="bg-hover"
@@ -216,8 +216,8 @@ export default function Custompagesswitcher() {
                       className="btn btn-danger btn-block"
                       onClick={() => {
                         localStorage.clear();
-                       let html:any = document.querySelector("html")
-                       html.style = "";
+                        let html: any = document.querySelector("html")
+                        html.style = "";
                         Switcherdatacustam.name();
                         Switcherdatacustam.resetData();
                       }}

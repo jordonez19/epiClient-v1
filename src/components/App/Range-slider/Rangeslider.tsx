@@ -40,31 +40,31 @@ const Rangeslider = () => (
               It is the modern skin range slider of Redash.
             </p>
             <div className="p-3">
-            <Row className="row-sm">
-              <Col lg={12}>
-                <rangeslider.DiscreteSliderMarks
-                  
-                />
-              </Col>
-              <Col lg={12} className=" mg-t-20">
-                <rangeslider.Rangeslider2
-                 
-                />
-              </Col>
-            </Row>
-            <Row className="row-sm">
-              <Col lg={12} className=" mg-t-20">
-                <rangeslider.RangeSlider3 
-                 
-                />
-              </Col>
-              <Col lg={12} className=" mg-t-20">
-                <rangeslider.RangeSlider4
-                 
-                  
-                />
-              </Col>
-            </Row>
+              <Row className="row-sm">
+                <Col lg={12}>
+                  <rangeslider.DiscreteSliderMarks
+
+                  />
+                </Col>
+                <Col lg={12} className=" mg-t-20">
+                  <rangeslider.Rangeslider2
+
+                  />
+                </Col>
+              </Row>
+              <Row className="row-sm">
+                <Col lg={12} className=" mg-t-20">
+                  <rangeslider.RangeSlider3
+
+                  />
+                </Col>
+                <Col lg={12} className=" mg-t-20">
+                  <rangeslider.RangeSlider4
+
+
+                  />
+                </Col>
+              </Row>
             </div>
           </Card.Body>
         </Card>
@@ -109,24 +109,24 @@ const Rangeslider = () => (
         <Card className="mg-b-20">
           <Card.Body>
             <div className="main-content-label mg-b-5">Range Slider</div>
-            <p className="mg-b-20">Default range slider Of Nowa.</p>
+            <p className="mg-b-20">Default range slider Of Epi.</p>
             <div className="p-3">
-            <Row className="row-sm">
-              <Col lg={12}>
-                <rangeslider.TrackFalseSlider />
-              </Col>
-              <Col lg={12} className=" mg-t-20">
-                <rangeslider.TrackFalseSlider1 />
-              </Col>
-            </Row>
-            <Row className="row-sm">
-              <Col lg={12} className="TrackInvertedSlider mg-t-20">
-                <rangeslider.TrackInvertedSlider />
-              </Col>
-              <Col lg={12} className="TrackInvertedSlider mg-t-20">
-                <rangeslider.TrackInvertedSlider1 />
-              </Col>
-            </Row>
+              <Row className="row-sm">
+                <Col lg={12}>
+                  <rangeslider.TrackFalseSlider />
+                </Col>
+                <Col lg={12} className=" mg-t-20">
+                  <rangeslider.TrackFalseSlider1 />
+                </Col>
+              </Row>
+              <Row className="row-sm">
+                <Col lg={12} className="TrackInvertedSlider mg-t-20">
+                  <rangeslider.TrackInvertedSlider />
+                </Col>
+                <Col lg={12} className="TrackInvertedSlider mg-t-20">
+                  <rangeslider.TrackInvertedSlider1 />
+                </Col>
+              </Row>
             </div>
           </Card.Body>
         </Card>
