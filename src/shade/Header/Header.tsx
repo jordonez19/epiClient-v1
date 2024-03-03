@@ -1,11 +1,10 @@
 import React from "react";
 import { Navbar, Dropdown, Button, Form, Col, Row, Modal } from "react-bootstrap";
-import { Scrollbars } from 'react-custom-scrollbars';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { auth } from "../../Firebase/firebase";
 import { useDispatch, useSelector } from 'react-redux';
 import { Delete } from '../../redux/actions/action';
-import ProductService from '../../services/ProductService';
 
 export default function Header() {
   const [Lang, setLang] = React.useState(false);

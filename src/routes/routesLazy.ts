@@ -74,35 +74,35 @@ export const appRoutes: LazyRoute[] = [
 
 export const customPagesRoutes: LazyRoute[] = [
   {
-    path: `pages/Authentication/sigin`,
+    path: `pages/authentication/sigin`,
     Component: SignIn
   },
   {
-    path: `pages/Authentication/sigup`,
+    path: `pages/authentication/sigup`,
     Component: SignUp
   },
   {
-    path: `pages/Authentication/forgotpassword`,
+    path: `pages/authentication/forgotpassword`,
     Component: ForgotPassword
   },
   {
-    path: `pages/Authentication/resetpassword`,
+    path: `pages/authentication/resetpassword`,
     Component: ResetPassword
   },
   {
-    path: `pages/Authentication/lockscreen`,
+    path: `pages/authentication/lockscreen`,
     Component: Lockscreen
   },
   {
-    path: `pages/Authentication/underconstruction`,
+    path: `pages/authentication/underconstruction`,
     Component: UnderConstruction
   },
   {
-    path: `pages/Authentication/404error`,
+    path: `pages/authentication/404error`,
     Component: Error404
   },
   {
-    path: `pages/Authentication/500error`,
+    path: `pages/authentication/500error`,
     Component: Error500
   },
   {

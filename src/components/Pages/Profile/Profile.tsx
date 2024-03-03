@@ -3,7 +3,6 @@ import React from "react";
 import { Card, Col, Dropdown,Breadcrumb, Nav, Row, Tab, FormGroup, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
-import {LightGallery} from "../Gallery/data";
 const Profile = () =>{
   // const PhotobookImage = ({ url }) => (
   //   <React.Fragment>
@@ -1203,7 +1202,6 @@ const Profile = () =>{
                         >
                           <Card.Body className=" border">
                             <Row className="masonry">
-                            <LightGallery/>
                             </Row>
                           </Card.Body>
                         </div>

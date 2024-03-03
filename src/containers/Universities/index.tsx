@@ -1,11 +1,11 @@
-// MainContainer.tsx
+// UniversitiesContainer.tsx
 import React from "react";
 import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
 
-const MainContainer = () => {
+const UniversitiesContainer = () => {
     return (
         <div>
-            <h1>Página principal</h1>
+            <h1>Página UniversitiesContainer</h1>
             {/* Botón de inicio de sesión */}
             <Link to={`authentication`}>
                 <button>Iniciar sesión</button>
@@ -14,4 +14,4 @@ const MainContainer = () => {
     );
 };
 
-export default MainContainer;
+export default UniversitiesContainer;

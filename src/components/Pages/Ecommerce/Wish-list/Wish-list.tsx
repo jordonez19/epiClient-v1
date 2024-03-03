@@ -1,26 +1,24 @@
 import React from "react";
-import { Breadcrumb, Col, Pagination, Row,Card, Button  } from "react-bootstrap";
+import { Breadcrumb, Col, Pagination, Row, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { ADD, Delete } from '../../../../redux/actions/action';
-import ProductService from "../../../../services/ProductService";
+import { ADD, Delete } from "../../../../redux/actions/action";
 
 const Wishlist = () => {
   const [list, setList] = React.useState<any>({
-    InitialList:ProductService.getProductList()
   });
 
-function handleRemove(id:any) {
- const newList = list.filter((list:any) => list.id !== id);
- setList(newList);
-}
-let {InitialList}= list;
+  function handleRemove(id: any) {
+    const newList = list.filter((list: any) => list.id !== id);
+    setList(newList);
+  }
+  let { InitialList } = list;
   const dispatch = useDispatch();
-  const send = (e:any) => {
+  const send = (e: any) => {
     // console.log(e);
     dispatch(ADD(e));
   }
-  const ondelete = (item:any) => {
+  const ondelete = (item: any) => {
     dispatch(Delete(item))
   }
 
@@ -51,7 +49,7 @@ let {InitialList}= list;
       {/* <!-- ROW-1 OPEN --> */}
       <Col className="p-0" lg={12} xl={12}>
         <Row className="row">
-          {InitialList.map((item:any) => (
+          {InitialList.map((item: any) => (
             <Col xl={3} lg={6} md={4} className="alert" key={item.id}>
               <Card className=" item-card ">
                 <Card.Body className="pb-0">

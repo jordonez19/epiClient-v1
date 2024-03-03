@@ -1,6 +1,6 @@
-import { createStore } from "redux";
 import rootred from "../reducers/main";
 import { guardarLocalStorage, obtenerLocalStorage } from "../../utils";
+import { createStore } from "redux";
 
 const storageState = obtenerLocalStorage();
 

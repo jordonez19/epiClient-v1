@@ -1,8 +1,7 @@
 
 import React, { Fragment, useState, useEffect } from "react";
 import { MENUITEMS } from "./SideMenu";
-import Scrollbars from "react-custom-scrollbars";
-import { NavLink } from "react-router-dom";
+import Scrollbars from "react-custom-scrollbars-2"; import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 let history: any = [];
 

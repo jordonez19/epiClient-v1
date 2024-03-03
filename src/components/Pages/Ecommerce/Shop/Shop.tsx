@@ -1,11 +1,10 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import { useDispatch } from 'react-redux';
-import { ADD } from '../../../../redux/actions/action';
 import { Link } from "react-router-dom";
-import ProductService from "../../../../services/ProductService";
-import { Breadcrumb, Button, Card, Col, Form, FormGroup, Pagination, Row, OverlayTrigger,Tooltip, } from "react-bootstrap";
-import {Optioncategory1,OptionType,OptionMens,OptionWomen,OptionBabyKids,OptionElectronics,OptionSportBooksMore} from "./data"
+import { Breadcrumb, Button, Card, Col, Form, FormGroup, Pagination, Row, OverlayTrigger, Tooltip, } from "react-bootstrap";
+import { Optioncategory1, OptionType, OptionMens, OptionWomen, OptionBabyKids, OptionElectronics, OptionSportBooksMore } from "./data"
+import { ADD } from "../../../../redux/actions/action";
 const Shop = () => {
   const [value, setvalue] = useState<any>("");
   const [Type, setType] = useState<any>("");
@@ -16,14 +15,14 @@ const Shop = () => {
   const [SportBooksMore, setSportBooksMore] = useState<any>("");
 
   const dispatch = useDispatch();
-  const send = (e:any) => {
+  const send = (e: any) => {
     console.log("add to 1");
     dispatch(ADD(e));
   }
   const [list] = React.useState({
-    InitialList:ProductService.getProductList2()
+    InitialList: []
   });
-  let {InitialList} = list;
+  let { InitialList } = list;
 
   return (
     <div>
@@ -53,14 +52,15 @@ const Shop = () => {
       <Row className="row-sm">
         <Col xl={9} lg={8} md={12}>
           <Row className="row-sm">
-            {InitialList.map((item:any, id:any) => (
+            {InitialList.map((item: any, id: any) => (
               <Col sm={6} xl={4} xxl={3} lg={6} md={6} key={id}>
                 <Card>
                   <Card.Body className="h-100  product-grid6">
                     <div className="pro-img-box product-image" >
-                      <div onClick={() => { send(item); 
-                        ProductService.getidfronShop(item.id)
-                         }}>
+                      <div onClick={() => {
+                        send(item);
+                        <></>
+                      }}>
                         <Link to={`${process.env.PUBLIC_URL}/pages/e-commerce/productDetails/`}>
                           <img className=" pic-1" src={item.pic1} alt="product" />
                           <img className="pic-2" src={item.pic2} alt="product" />
@@ -341,7 +341,7 @@ const Shop = () => {
                     classNamePrefix="selectproduct"
                     isSearchable
                   />
-    
+
                 </FormGroup>
               </Card.Body>
               <Card.Header className="border-bottom border-top pt-3 pb-3 mb-0 font-weight-bold text-uppercase rounded-0">
@@ -352,24 +352,24 @@ const Shop = () => {
                   <FormGroup>
                     <Form.Label>Brand</Form.Label>
                     <Select
-                    defaultValue={value}
-                    onChange={setvalue}
-                    options={Optioncategory1}
-                    placeholder="select"
-                    classNamePrefix="selectproduct"
-                    isSearchable
-                  />
+                      defaultValue={value}
+                      onChange={setvalue}
+                      options={Optioncategory1}
+                      placeholder="select"
+                      classNamePrefix="selectproduct"
+                      isSearchable
+                    />
                   </FormGroup>
                   <FormGroup>
                     <Form.Label>Type</Form.Label>
                     <Select
-                    defaultValue={Type}
-                    onChange={setType}
-                    options={OptionType}
-                    placeholder="select"
-                    classNamePrefix="selectproduct"
-                    isSearchable
-                  />
+                      defaultValue={Type}
+                      onChange={setType}
+                      options={OptionType}
+                      placeholder="select"
+                      classNamePrefix="selectproduct"
+                      isSearchable
+                    />
                   </FormGroup>
                 </Form>
               </Card.Body>

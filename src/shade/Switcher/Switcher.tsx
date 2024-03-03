@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Button, Row } from "react-bootstrap";
-import { Scrollbars } from "react-custom-scrollbars";
+import { Scrollbars } from "react-custom-scrollbars-2";
 import * as Switcherdata from '../../data/Switcherdata/Switcherdata';
 import { Link } from "react-router-dom";
 

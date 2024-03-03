@@ -1,29 +1,29 @@
+// appRoutes.tsx
 import React from "react";
 import { Navigate, HashRouter, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { PublicRoutes, PrivateRoutes } from "./";
-import { DashboardPrivateRoutes, DashboardPublicRoutes } from "./dashboards";
 import Loader from "../shade/Loaders/Loaders";
 import "../index.scss";
+import SignIn from "../Authentication/Login";
+import MainContainer from "../containers/Main";
+import { DashboardPrivateRoutes } from "./DashboardRoutesUtils";
+import { PrivateRoutes, PublicRoutes } from "./routesUtils";
 
 export const AppRoutes = () => {
   const { user } = useSelector((store: any) => store.user);
 
-  window.onhashchange = function () { window.location.hash = process.env.PUBLIC_URL; }
+  window.onhashchange = function () {
+    window.location.hash = process.env.PUBLIC_URL;
+  };
 
   return (
     <HashRouter basename="/">
       <React.Suspense fallback={<Loader />}>
         <Routes>
-          <Route
-            path={`${process.env.PUBLIC_URL}/*`}
-            element={
-              <PublicRoutes isAuth={user?.token}>
-                <DashboardPublicRoutes />
-              </PublicRoutes>
-            }
-          />
+          {/* Ruta principal muestra MainContainer */}
+          <Route path="/" element={<MainContainer />} />
 
+          {/* Rutas para el dashboard */}
           <Route
             path={`${process.env.PUBLIC_URL}/dashboard/*`}
             element={
@@ -33,10 +33,18 @@ export const AppRoutes = () => {
             }
           />
 
+          {/* Ruta de inicio de sesión */}
           <Route
-            path="*"
-            element={<Navigate to={`${process.env.PUBLIC_URL}`} />}
+            path={`${process.env.PUBLIC_URL}/authentication`}
+            element={
+              <PublicRoutes isAuth={user?.token}>
+                <SignIn />
+              </PublicRoutes>
+            }
           />
+
+          {/* Redirige cualquier otra ruta a la ruta principal */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </React.Suspense>
     </HashRouter>

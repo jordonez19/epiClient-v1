@@ -1,6 +1,5 @@
 import React from "react";
 import { Breadcrumb, Col, Pagination, Row } from "react-bootstrap";
-import { LightGallery } from "./data"
 const Gallery = () => {
   return (
     <div>
@@ -28,7 +27,6 @@ const Gallery = () => {
 
       <div className="masonry ">
         <Row >
-            <LightGallery />
         </Row>
 
       </div>

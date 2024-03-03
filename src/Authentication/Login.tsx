@@ -1,26 +1,35 @@
 import React, { useState } from 'react';
 import { Button, Col, Form, Row, Alert } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
-import validator from 'validator'
-
 //Importando el servicio post 
-import { PostLogin } from '../Servicios/Services';
+
+import { useDispatch } from 'react-redux';
+import { actionLogin } from '../redux/actions/authActions';
+import validator from 'validator'
+import { InputErrorMessage } from '../components/Global';
+import axios from "axios";
+import Config from '../services/config';
+
+const initialErrors = {
+  email: "",
+  password: ""
+}
 
 const SignIn = () => {
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [err, setError] = useState("");
-  //const [errorMessage, setErrorMessage] = useState('')
-  const [errorEmailmessage, setErrorEmailMessage] = useState(" ")
-  const [errorPassmessage, setErrorPassMessage] = useState(" ")
-  const [check, setCheck] = useState(true)
+  const [errors, setErrors] = useState<any>(initialErrors);
+  const [hasErrors, setHasErrors] = useState(true);
+
+  const [check, setCheck] = useState(true);
   //const [message, setMessage] = useState('');
 
   const [data, setData] = useState({
     "email": "",
-    "password": "",
-    "source": "gestor"
-  })
-
+    "password": ""
+  });
+  // Expresion regular - valida que la contraseña cumpla con la documentacion (Un numero, una letra mayuscula y una minuscula, al menos 8 caracteres de longitud, )
 
   function isValidEmail(email: any) {
     return /\S+@\S+\.\S+/.test(email);
@@ -29,15 +38,16 @@ const SignIn = () => {
   const { email, password } = data;
 
   const changeHandler = (e: any) => {
+    const validationErrors: any = { ...errors };
 
     if (e.target.name === "email") {
       //si no es digitado el correo o esta vacio . saldra error si tambien se verifica que lo que se este verificando sea el campo correo o pass
-      if (!isValidEmail(e.target.value) || e.target.value.lenght === 0) {
+      if (!isValidEmail(e.target.value) || e.target.value.length === 0) {
         validator.isEmail(e.target.value)
-        setErrorEmailMessage("Correo Invalido o vacio")
+        validationErrors.email = "Correo Invalido o vacio";
 
       } else {
-        setErrorEmailMessage("")
+        delete validationErrors.email;
       }
 
       setData({ ...data, [e.target.name]: e.target.value })
@@ -45,38 +55,74 @@ const SignIn = () => {
     }
 
     if (e.target.name === 'password') {
-      //Password solo numeros
 
-      setErrorPassMessage("")
+      // Expresion regular - valida que la contraseña cumpla con la documentacion (Un numero, una letra mayuscula y una minuscula, al menos 8 caracteres de longitud, )
+      const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+      validationErrors.password = [];
 
-      setData({ ...data, [e.target.name]: e.target.value })
-      setError("");
+      if (!passwordRegex.test(e.target.value)) {
+        // Agregamos los mensajes de error al array 'validationErrors.password'
+        if (e.target.value.length < 8) {
+          validationErrors.password.push(" La contraseña debe tener al menos 8 caracteres");
+        }
+        if (!/\d/.test(e.target.value)) {
+          validationErrors.password.push(" Contener al menos un número");
+        }
+        if (!/[A-Z]/.test(e.target.value)) {
+          validationErrors.password.push(" Incluir al menos una letra mayúscula");
+        }
+        if (!/[a-z]/.test(e.target.value)) {
+          validationErrors.password.push(" Incluir al menos una letra minúscula");
+        }
+      } else {
+        delete validationErrors.password;
+      }
 
+      setData((prev: any) => ({ ...prev, [e.target.name]: e.target.value }));
     }
+
     //Se evalua si el checkbox a sido clickeado y se actualiza el estado
     if (e.target.type === "checkbox") {
       setCheck(!e.target.checked)
     }
-  }
 
-  let navigate = useNavigate();
-  const routeChange = () => {
-    let path = `${process.env.PUBLIC_URL}/dashboard/dashboard-1/`;
-    navigate(path);
-  }
-
-  const Login = async (e: any) => {
-    e.preventDefault()
-    let Mapa = JSON.stringify(data)
-    let datt = await PostLogin(Mapa)
-
-    if (datt?.['success']) {
-      routeChange()
+    // Si hay errores, actualiza el estado con ellos
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setHasErrors(true);
     } else {
-      let mensaje = (datt?.['success'] === false) ? datt?.['message'] : 'lo que sea'
-      setError(mensaje)
+      setErrors({});
+      setHasErrors(false);
     }
   }
+
+
+  // Dentro de tu función Login
+  const Login = async (e: any) => {
+    e.preventDefault();
+    const config = Config();
+    const { endpoint } = config;
+    const payload = {
+      email: data.email,
+      password: data.password,
+    };
+    try {
+      const response = await axios.post(`${endpoint}/api/auth/signin`, payload);
+      if (response?.data.status) {
+        sessionStorage.setItem("nombre", response.data.user.user_name);
+        sessionStorage.setItem("token", response.data.token);
+        dispatch(actionLogin(response.data.user));
+        navigate(`${process.env.PUBLIC_URL}/dashboard`);
+      } else {
+        let mensaje = response?.data.message || 'Error en la petición';
+        setError(mensaje);
+      }
+    } catch (error) {
+      console.error('Error en la petición:', error);
+      setError('Error en la petición');
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="square-box"> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> </div>
@@ -96,60 +142,57 @@ const SignIn = () => {
                   {/* <!-- Demo content--> */}
                   <div className="main-card-signin d-md-flex">
                     <div className="wd-100p">
-                      <div className="text-center">
+                      <div className="text-center mb-5">
                         <Link to="#">
                           <img
-                            src={require("../assets/img/brand/logo-nexos2.png")}
+                            src={require("../assets/img/logos/logo.png")}
                             className="sign-favicon"
                             alt="logo"
                           />
                         </Link>
                       </div>
-                      <div className="">
+                      <div className="my-5">
                         <div className="main-signup-header">
-                          <div className='text-center'>
-                            <h2>Nexos</h2>
-                            <h6 className="font-weight-semibold mb-4 ">
-                              Mensaje de bienvenida.
-                            </h6>
-                          </div>
                           <div className="panel panel-primary">
                             <div className=" tab-menu-heading mb-2 border-bottom-0">
                               <div className="tabs-menu1">
-                                <div className='text-center'>
+                                <div className='text-center text-primary'>
                                   {err && <Alert variant="danger">{err}</Alert>}
                                 </div>
                                 <Form >
                                   <Form.Group className="form-group">
                                     <Form.Label className=''>Email</Form.Label>{""}
-                                    <Form.Control
-                                      className="form-control"
-                                      placeholder="Enter your email"
-                                      name="email"
-                                      type='text'
-                                      value={email}
-                                      onChange={changeHandler}
-                                      required
-                                    />
-                                    <span className="tag-outline-info">{errorEmailmessage}</span>
-
+                                    <InputErrorMessage message={errors.email} inputFocus={true}>
+                                      <Form.Control
+                                        className="form-control"
+                                        placeholder="Enter your email"
+                                        name="email"
+                                        type='text'
+                                        value={email}
+                                        onChange={changeHandler}
+                                        required
+                                      />
+                                    </InputErrorMessage>
                                   </Form.Group>
 
                                   <Form.Group className="form-group">
                                     <Form.Label>Password</Form.Label>{" "}
-                                    <Form.Control
-                                      className="form-control"
-                                      placeholder="Enter your password"
-                                      name="password"
-                                      type='password'
-                                      value={password}
-                                      onChange={changeHandler}
-                                      required
-                                    />
-                                    <span className="tag-outline-info">{errorPassmessage}</span>
+                                    <InputErrorMessage message={errors.password} inputFocus={true}>
+                                      <Form.Control
+                                        className="form-control"
+                                        placeholder="Enter your password"
+                                        name="password"
+                                        type='password'
+                                        value={password}
+                                        onChange={changeHandler}
+                                        autoComplete='current-password'
+                                        required
+                                      />
+                                    </InputErrorMessage>
                                   </Form.Group>
                                   <Button
                                     variant=""
+                                    disabled={hasErrors || check}
                                     type='submit'
                                     className="btn btn-primary btn-block"
                                     onClick={Login}
@@ -184,7 +227,7 @@ const SignIn = () => {
                                   </div>
                                   <div className="mt-4 d-flex text-center justify-content-center mb-2">
                                     <a className='btn btn-icon me-3'
-                                      href='https://www.facebook.com/GRUPONEXOS/?locale=es_LA'
+                                      href='https://web.facebook.com/estudiosprofesionaleseningles'
                                       target="_blank"
                                       rel="noreferrer"
                                     >
@@ -194,7 +237,7 @@ const SignIn = () => {
                                       </span>
                                     </a>
                                     <a
-                                      href="https://twitter.com/nexosge?lang=es"
+                                      href="https://www.tiktok.com/@epicontigo"
                                       target="_blank"
                                       rel="noreferrer"
                                       className="btn btn-icon me-3"
@@ -202,11 +245,11 @@ const SignIn = () => {
                                     >
                                       <span className="btn-inner--icon">
                                         {" "}
-                                        <i className="bx bxl-twitter tx-18 tx-prime"></i>{" "}
+                                        <i className="bxl-tiktok tx-18 tx-prime"></i>{" "}
                                       </span>
                                     </a>
                                     <a
-                                      href="https://co.linkedin.com/in/grupo-empresarial-nexos"
+                                      href="https://www.linkedin.com/company/estudios-profesionales-en-ingles/"
                                       target="_blank"
                                       rel="noreferrer"
                                       className="btn btn-icon me-3"
@@ -217,7 +260,7 @@ const SignIn = () => {
                                       </span>
                                     </a>
                                     <a
-                                      href="https://www.instagram.com/nexosge/?hl=es-la"
+                                      href="https://www.instagram.com/epicontigo/"
                                       target="_blank"
                                       rel="noreferrer"
                                       className="btn  btn-icon me-3"

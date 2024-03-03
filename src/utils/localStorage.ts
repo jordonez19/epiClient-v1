@@ -1,12 +1,12 @@
 export const obtenerLocalStorage = () => {
-  const user = localStorage.getItem('user')
-  if (user === null) {
-      return undefined
+  const userData = localStorage.getItem('user');
+  if (!userData) {
+    return undefined;
   }
-  return JSON.parse(user)
-}
+  return JSON.parse(userData);
+};
 
 export const guardarLocalStorage = (state: any) => {
-  const user = JSON.stringify(state);
-  localStorage.setItem('user', user);
-}
+  const userData = JSON.stringify(state);
+  localStorage.setItem('user', userData);
+};

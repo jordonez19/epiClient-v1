@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import { useSelector } from 'react-redux'
-import ProductService from '../../../../services/ProductService';
 import Select from 'react-select';
 
 const ProductDetails = () => {
@@ -16,7 +15,7 @@ const ProductDetails = () => {
   const [Data, setData] = useState<any>([]);
 
 
-  const id = ProductService.returnId()
+  const id = 1
  const compare = () => {
     let comparedata = getdata.filter((e:any) => {
       console.log(e, id)

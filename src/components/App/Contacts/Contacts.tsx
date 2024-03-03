@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Card, Col, Dropdown, Nav, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
-import { Scrollbars } from "react-custom-scrollbars";
+import { Scrollbars } from "react-custom-scrollbars-2";
 import { Link } from "react-router-dom";
 
 const Contacts = () => (
@@ -20,7 +20,7 @@ const Contacts = () => (
 
     {/* <!-- row --> */}
     <Row className="row-sm">
-      <Col sm={12}lg={5}xl={4}xxl={3}>
+      <Col sm={12} lg={5} xl={4} xxl={3}>
         <Card className="custom-card">
           <div className="">
             <div className="main-content-contacts pt-0">
@@ -410,7 +410,7 @@ const Contacts = () => (
           </div>
         </Card>
       </Col>
-      <Col sm={12} lg={7} xl={8}xxl={9}>
+      <Col sm={12} lg={7} xl={8} xxl={9}>
         <div className="">
           <Link className="main-header-arrow" to="#" id="ChatBodyHide">
             <i className="icon ion-md-arrow-back"></i>
