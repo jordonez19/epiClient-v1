@@ -7,13 +7,14 @@ import {
   usePagination,
 } from "react-table";
 import { Link } from "react-router-dom";
-import { ConfirmationCardButton, Loader } from "./";
 /* Date Filter */
 import dayjs, { Dayjs } from "dayjs";
 import TextField from "@mui/material/TextField";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import ConfirmationCardButton from "./ConfirmationCardButton";
+import { Loader } from "./Loader";
 
 // Interface for table props
 interface TableProps {
@@ -34,7 +35,7 @@ interface TableProps {
 }
 
 // BasicDataTable component
-export const BasicDataTable: React.FC<TableProps> = ({
+const BasicDataTable: React.FC<TableProps> = ({
   data,
   columns,
   addButtonLink = "",
@@ -155,7 +156,6 @@ export const BasicDataTable: React.FC<TableProps> = ({
           {!isLoading && data.length > 0 && (
             <div
               className="table-responsive rounded"
-              style={{ borderTop: "1px solid #9c9ca1" }}
             >
               <table {...getTableProps()} className="table table-hover mb-0">
                 <thead>
@@ -169,8 +169,9 @@ export const BasicDataTable: React.FC<TableProps> = ({
                           )}
                           className={column.className}
                           style={{
-                            borderRight: "1px solid #9c9ca1",
-                            borderLeft: "1px solid #9c9ca1",
+                            borderRight: "1px solid #e8e8e8",
+                            borderLeft: "1px solid #e8e8e8",
+                            textTransform: "uppercase"
                           }}
                         >
                           {/* Show column header */}
@@ -206,10 +207,6 @@ export const BasicDataTable: React.FC<TableProps> = ({
                             <td
                               className="borderrigth"
                               {...cell.getCellProps()}
-                              style={{
-                                borderTop: "1px solid #9c9ca1",
-                                borderBottom: "1px solid #9c9ca1",
-                              }}
                             >
                               {/* Show cell content */}
                               {cell.render("Cell")}
@@ -288,9 +285,9 @@ export const BasicDataTable: React.FC<TableProps> = ({
         </Card.Body>
       </Card>
 
-       {/* Conditionally render the TotalCard component */}
-       {totalFunc && totalFunc()}
-       
+      {/* Conditionally render the TotalCard component */}
+      {totalFunc && totalFunc()}
+
     </>
   );
 };
@@ -308,3 +305,5 @@ const GlobalFilter = ({ filter, setFilter, hasAddButton }: any) => {
     </span>
   );
 };
+
+export default BasicDataTable;

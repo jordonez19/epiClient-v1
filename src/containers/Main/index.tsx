@@ -7,7 +7,7 @@ const MainContainer = () => {
         <div>
             <h1>Página principal</h1>
             {/* Botón de inicio de sesión */}
-            <Link to={`authentication`}>
+            <Link to={`auth/login`}>
                 <button>Iniciar sesión</button>
             </Link>
         </div>

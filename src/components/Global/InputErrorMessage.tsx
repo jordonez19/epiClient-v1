@@ -6,7 +6,7 @@ export interface Content {
     inputFocus: boolean;
 }
 
-export const InputErrorMessage: React.FC<Content> = ({ message, children, inputFocus }) => {
+const InputErrorMessage: React.FC<Content> = ({ message, children, inputFocus }) => {
     // Initialize the validation status as "unchecked" (0), "success" (1), or "error" (2)
     const [validationStatus, setValidationStatus] = useState(0);
     // Function to handle form validation based on the message
@@ -57,3 +57,4 @@ export const InputErrorMessage: React.FC<Content> = ({ message, children, inputF
         </div>
     );
 };
+export default InputErrorMessage;

@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Typography } from "antd";
 import React from "react";
 import { Breadcrumb } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
@@ -9,7 +9,7 @@ interface BreadCrumbProps {
     baseURL: string[];
 }
 
-export const BreadCrumb: React.FC<BreadCrumbProps> = ({ items, baseURL }) => {
+const BreadCrumb: React.FC<BreadCrumbProps> = ({ items, baseURL }) => {
     if (!Array.isArray(items) || items.length === 0 || !Array.isArray(baseURL) || baseURL.length !== items.length) {
         return null; // Return null if the items array is empty, baseURL is not an array, or the lengths of items and baseURL don't match
     }
@@ -29,17 +29,13 @@ export const BreadCrumb: React.FC<BreadCrumbProps> = ({ items, baseURL }) => {
                 <Breadcrumb className="breadcrumb">
                     {items.map((item, index) => {
                         return (index === items.length - 1) ? (
-                            <TextField
-                                variant="standard"
-                                key={index}
-                                className={
-                                    index === items.length - 1
-                                        ? "breadcrumb-item active"
-                                        : "breadcrumb-item tx-15"
-                                }
-                            >
+                            <Typography key={index} className={
+                                index === items.length - 1
+                                    ? "breadcrumb-item active"
+                                    : "breadcrumb-item tx-15"
+                            }>
                                 {item.toUpperCase()}
-                            </TextField>
+                            </Typography>
                         ) : (
                             <NavLink
                                 key={index}
@@ -67,3 +63,4 @@ export const BreadCrumb: React.FC<BreadCrumbProps> = ({ items, baseURL }) => {
         </div>
     );
 };
+export default BreadCrumb;

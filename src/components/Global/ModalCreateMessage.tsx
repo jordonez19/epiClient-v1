@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import { TitleComponent } from "./TitleComponent";
+import TitleComponent from "./TitleComponent";
 
 const ModalCreateMessage = ({
   showModal,

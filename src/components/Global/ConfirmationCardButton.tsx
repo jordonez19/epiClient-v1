@@ -9,7 +9,7 @@ interface CardConfirmation {
   addButton?: boolean;
 }
 
-export const ConfirmationCardButton: React.FC<CardConfirmation> = ({
+const ConfirmationCardButton: React.FC<CardConfirmation> = ({
   title,
   subtitle,
   message,
@@ -40,3 +40,5 @@ export const ConfirmationCardButton: React.FC<CardConfirmation> = ({
     </div>
   );
 };
+
+export default ConfirmationCardButton;

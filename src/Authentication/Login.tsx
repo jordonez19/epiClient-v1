@@ -6,9 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { actionLogin } from '../redux/actions/authActions';
 import validator from 'validator'
-import { InputErrorMessage } from '../components/Global';
 import axios from "axios";
 import Config from '../services/config';
+import InputErrorMessage from '../components/Global/InputErrorMessage';
 
 const initialErrors = {
   email: "",
@@ -108,9 +108,9 @@ const SignIn = () => {
     };
     try {
       const response = await axios.post(`${endpoint}/api/auth/signin`, payload);
-      if (response?.data.status) {
+      if (response?.data.success) {
         sessionStorage.setItem("nombre", response.data.user.user_name);
-        sessionStorage.setItem("token", response.data.token);
+        sessionStorage.setItem("token", response.data.user.token);
         dispatch(actionLogin(response.data.user));
         navigate(`${process.env.PUBLIC_URL}/dashboard`);
       } else {

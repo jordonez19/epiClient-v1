@@ -81,7 +81,7 @@ export default function Header() {
   }
 
   const salir = (() => {
-    localStorage.clear();
+    sessionStorage.clear();
   })
 
 
@@ -118,11 +118,6 @@ export default function Header() {
         <div className="main-header-left ">
           <div className="responsive-logo">
             <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
-              <img
-                src={require("../../assets/img/logos/logo.png")}
-                className="mobile-logo logo-1"
-                alt="logo"
-              />
               <img
                 src={require("../../assets/img/logos/logo_collapse.png")}
                 className="mobile-logo dark-logo-1"
@@ -277,7 +272,7 @@ export default function Header() {
                     </span>
                   </Link>
                 </li>
-                <Dropdown className=" nav-item main-header-notification d-flex">
+                {/*   <Dropdown className=" nav-item main-header-notification d-flex">
                   <Dropdown.Toggle className="new nav-link" variant="">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -431,7 +426,7 @@ export default function Header() {
                       </Link>
                     </div>
                   </Dropdown.Menu>
-                </Dropdown>
+                </Dropdown> */}
                 <li
                   className="nav-item full-screen fullscreen-button"
                   onClick={() => Fullscreen(fullscreens)}

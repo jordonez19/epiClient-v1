@@ -4,7 +4,7 @@ type Title = {
     subtitle?: string,
     description?: string,
 }
-export const TitleComponent = ({ title = "", align = 'left', subtitle = "", description = "" }: Title) => {
+const TitleComponent = ({ title = "", align = 'left', subtitle = "", description = "" }: Title) => {
     return (
         <>
             <div className={`mt-4 mb-3 text-${align}`}>
@@ -21,3 +21,4 @@ export const TitleComponent = ({ title = "", align = 'left', subtitle = "", desc
         </>
     )
 }
+export default TitleComponent; 

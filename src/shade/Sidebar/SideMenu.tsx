@@ -7,7 +7,7 @@ export const MENUITEMS = [
     menutitle: "Main",
     Items: [
       {
-        path: `${process.env.PUBLIC_URL}/dashboard/dashboard-1`,
+        path: `${process.env.PUBLIC_URL}/dashboard`,
         type: "link",
         active: false,
         selected: false,

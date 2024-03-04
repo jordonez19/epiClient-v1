@@ -1,7 +1,8 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { BreadCrumb, TitleComponent } from '../../components/Global';
 import CardComponent from '../../components/Global/CardComponent';
+import BreadCrumb from '../../components/Global/BreadCrumb';
+import TitleComponent from '../../components/Global/TitleComponent';
 
 const cardsData = [
     {
