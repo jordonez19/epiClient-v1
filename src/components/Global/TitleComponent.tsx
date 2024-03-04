@@ -1,3 +1,5 @@
+import { Divider } from "@mui/material";
+
 type Title = {
     title?: string,
     align?: string,
@@ -7,7 +9,7 @@ type Title = {
 const TitleComponent = ({ title = "", align = 'left', subtitle = "", description = "" }: Title) => {
     return (
         <>
-            <div className={`mt-4 mb-3 text-${align}`}>
+            <div className={`mt-4 mb-5 text-${align}`}>
                 {title && (
                     <h2 className="text-uppercase p-0 m-0 fw-bold" >{title}</h2>
                 )}
