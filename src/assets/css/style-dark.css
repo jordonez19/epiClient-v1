@@ -2597,7 +2597,7 @@ body.dark-theme {
 }
 
 .dark-theme .bg-secondary {
-    background-color: #f74f75 !important;
+    background-color: #1B4E7F !important;
 }
 
 .dark-theme .bg-gray-800 {
@@ -3967,7 +3967,7 @@ body.dark-theme {
 }
 
 .dark-theme .alert-secondary .alert-link {
-    color: #f74f75;
+    color: #1B4E7F;
 }
 
 .dark-theme .alert-success .alert-link {
@@ -5775,4 +5775,5 @@ body.dark-theme {
 .transparent-theme .formselect__single-value {
     color: #fff;
 }
+
 /*# sourceMappingURL=style-dark.css.map */

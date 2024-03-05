@@ -3,7 +3,7 @@ ChartJS.register(...registerables);
 
 export const Linechart = {
   responsive: true,
- 
+
 };
 // linechartdata
 export const linechartdata = {
@@ -26,22 +26,22 @@ export const linechartdata = {
       data: [12, 15, 18, 40, 35, 38, 32, 20, 25, 15, 25, 30],
       borderColor: "#38cab3 ",
       borderWidth: 1,
-      
+
       tension: 0.4,
     },
     {
       data: [10, 20, 25, 55, 50, 45, 35, 30, 45, 35, 55, 40, 80],
-      borderColor: "#f74f75",
+      borderColor: "#1B4E7F",
       borderWidth: 1,
-      
+
       tension: 0.4,
     },
   ],
-  
+
 };
 // Bar-chart 1
 export const Barchart1 = {
-  
+
   responsive: true,
   scales: {
     x: {
@@ -57,7 +57,7 @@ export const barchart1data = {
   datasets: [
     {
       data: [10, 24, 20, 25, 35, 50],
-      backgroundColor: "#f74f75",
+      backgroundColor: "#1B4E7F",
       borderWidth: 1,
       fill: true,
     },
@@ -76,7 +76,7 @@ export const barchart1data = {
   ],
 };
 //Horizontalbar
-export const Horizontalbarchart:any = {
+export const Horizontalbarchart: any = {
   indexAxis: "y",
   elements: {
     bar: {
@@ -92,14 +92,14 @@ export const Horizontalbarchart:any = {
       stacked: true,
     },
   },
-  
+
 };
 export const Horizontalbarchartdata = {
   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
   datasets: [
     {
       data: [10, 24, 20, 25, 35, 50],
-      backgroundColor: "#f74f75",
+      backgroundColor: "#1B4E7F",
       borderWidth: 1,
       fill: true,
     },
@@ -120,7 +120,7 @@ export const Horizontalbarchartdata = {
 
 // Solid Color 
 export const SolidColor = {
-  
+
   responsive: true,
   scales: {
     x: {
@@ -145,7 +145,7 @@ export const SolidColordata = {
 
 // With Transparency 
 export const Transparency = {
-  
+
   responsive: true,
   scales: {
     x: {
@@ -168,7 +168,7 @@ export const Transparencydata = {
 
 // Using Gradient Color 
 export const GradientColor = {
- 
+
   responsive: true,
   scales: {
     x: {
@@ -189,7 +189,7 @@ export const GradientColordata = {
     },
   ],
 };
-export const Horizontalbarchart1:any = {
+export const Horizontalbarchart1: any = {
   indexAxis: "y",
   elements: {
     bar: {
@@ -212,7 +212,7 @@ export const Horizontalbarchartdata1 = {
     backgroundColor: ['#6d26be', '#ffbd5a', '#38cab3', '#673ab7', '#ffc107', '#1a9c86']
   }]
 };
-export const Horizontalbarchart2:any = {
+export const Horizontalbarchart2: any = {
   indexAxis: "y",
   elements: {
     bar: {
@@ -255,7 +255,7 @@ export const dchart = {
   datasets: [
     {
       data: [20, 20, 30, 5, 25],
-      backgroundColor: ["#6d26be", "#ffbd5a", "#4ec2f0", "#1a9c86", "#f74f75"],
+      backgroundColor: ["#6d26be", "#ffbd5a", "#4ec2f0", "#1a9c86", "#1B4E7F"],
     },
   ],
   hoverOffset: 4,
@@ -267,7 +267,7 @@ export const piechart = {
   datasets: [
     {
       data: [20, 20, 30, 5, 25],
-      backgroundColor: ["#6d26be", "#ffbd5a", "#4ec2f0", "#1a9c86", "#f74f75"],
+      backgroundColor: ["#6d26be", "#ffbd5a", "#4ec2f0", "#1a9c86", "#1B4E7F"],
     },
   ],
   hoverOffset: 4,
@@ -275,15 +275,15 @@ export const piechart = {
 
 export const Areachart = {
   responsive: true,
-  
+
 };
 //areachart
-export const areachart:any = {
+export const areachart: any = {
   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
   datasets: [
     {
       label: "Data 1 ",
-      borderColor: "#f74f75",
+      borderColor: "#1B4E7F",
       borderWidth: "1",
       //   backgroundColor: "rgba(	235, 111, 51, 0.7)",
       pointHighlightStroke: "rgba(235, 111, 51 ,1)",

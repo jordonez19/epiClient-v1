@@ -46,57 +46,57 @@ const Filemanager = () => (
             <div className="main-mail-menu">
               <Nav className="main-nav-column" defaultActiveKey="Images">
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Images">
-                  <i className="fe fe-image"></i> Images{" "}
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Images">
+                    <i className="fe fe-image"></i> Images{" "}
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Music">
-                  <i className="fe fe-music"></i> Music
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Music">
+                    <i className="fe fe-music"></i> Music
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="ideos">
-                  <i className="fe fe-video"></i> Videos
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="ideos">
+                    <i className="fe fe-video"></i> Videos
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="APKS">
-                  <i className="fe fe-smartphone"></i> APKS
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="APKS">
+                    <i className="fe fe-smartphone"></i> APKS
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Downloads">
-                  <i className="fe fe-download"></i> Downloads
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Downloads">
+                    <i className="fe fe-download"></i> Downloads
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Favourites">
-                  <i className="fe fe-heart"></i> Favourites
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Favourites">
+                    <i className="fe fe-heart"></i> Favourites
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Hidden">
-                  <i className="fe fe-eye"></i> Hidden FIles
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Hidden">
+                    <i className="fe fe-eye"></i> Hidden FIles
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Transfer">
-                  <i className="fe fe-share"></i> Transfer files{" "}
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Transfer">
+                    <i className="fe fe-share"></i> Transfer files{" "}
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Google">
-                  <i className="fe fe-database"></i> Google Drive
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Google">
+                    <i className="fe fe-database"></i> Google Drive
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="FTP">
-                  <i className="fe fe-airplay"></i> FTP
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="FTP">
+                    <i className="fe fe-airplay"></i> FTP
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Private">
-                  <i className="fe fe-lock"></i> Private FIles
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Private">
+                    <i className="fe fe-lock"></i> Private FIles
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="Deep">
-                  <i className="fe fe-wind"></i> Deep Clean
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="Deep">
+                    <i className="fe fe-wind"></i> Deep Clean
+                  </Nav.Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Link className="thumb" eventKey="More">
-                  <i className="fe fe-grid "></i> More
-                </Nav.Link></Nav.Item>
+                  <Nav.Link className="thumb" eventKey="More">
+                    <i className="fe fe-grid "></i> More
+                  </Nav.Link></Nav.Item>
               </Nav>
               {/* </div><!-- main-mail-menu --> */}
               <Card className="custom-card mt-3 pb-0 mb-0">
@@ -163,7 +163,7 @@ const Filemanager = () => (
                         d="M18.12158,11.88672c-1.18039-1.14226-3.05327-1.14485-4.23681-0.00586l-1.58985,1.58008c-0.39155,0.38922-0.39343,1.02216-0.00421,1.41371c0.00043,0.00043,0.00085,0.00086,0.00128,0.00129l4.67481,4.68457L17.14148,20H19c1.65611-0.00181,2.99819-1.34389,3-3v-0.83008c-0.00009-0.26567-0.10585-0.52039-0.29395-0.708L18.12158,11.88672z"
                       />
                       <path
-                        fill="#f74f75"
+                        fill="#1B4E7F"
                         d="M5,20h14c0.355-0.00278,0.70662-0.06923,1.03815-0.19617l-9.91657-9.91711C8.94094,8.74376,7.06706,8.74161,5.88379,9.88184L2.294,13.46191c-0.18812,0.1876-0.2939,0.44232-0.294,0.708V17C2.00181,18.65611,3.34389,19.99819,5,20z"
                       />
                       <path
@@ -180,7 +180,7 @@ const Filemanager = () => (
               </Link>
             </Card>
           </Col>
-          <Col md={6}xl={3}>
+          <Col md={6} xl={3}>
             <Card>
               <Link to={`${process.env.PUBLIC_URL}/app/filemanager1`}>
                 <Card.Body>
@@ -209,7 +209,7 @@ const Filemanager = () => (
               </Link>
             </Card>
           </Col>
-          <Col md={6}xl={3}>
+          <Col md={6} xl={3}>
             <Card>
               <Link to={`${process.env.PUBLIC_URL}/app/filemanager1`}>
                 <Card.Body>
@@ -235,7 +235,7 @@ const Filemanager = () => (
               </Link>
             </Card>
           </Col>
-          <Col md={6}xl={3}>
+          <Col md={6} xl={3}>
             <Card>
               <Link to={`${process.env.PUBLIC_URL}/app/filemanager1`}>
                 <Card.Body>
@@ -259,7 +259,7 @@ const Filemanager = () => (
               </Link>
             </Card>
           </Col>
-          <Col md={6}xl={3}>
+          <Col md={6} xl={3}>
             <Card>
               <Link to={`${process.env.PUBLIC_URL}/app/filemanager1`}>
                 <Card.Body>
@@ -292,7 +292,7 @@ const Filemanager = () => (
               </Link>
             </Card>
           </Col>
-          <Col md={6}xl={3}>
+          <Col md={6} xl={3}>
             <Card>
               <Link to={`${process.env.PUBLIC_URL}/app/filemanager1`}>
                 <Card.Body>
@@ -324,7 +324,7 @@ const Filemanager = () => (
               </Link>
             </Card>
           </Col>
-          <Col md={6}xl={3}>
+          <Col md={6} xl={3}>
             <Card>
               <Link to={`${process.env.PUBLIC_URL}/app/filemanager1`}>
                 <Card.Body>
@@ -352,7 +352,7 @@ const Filemanager = () => (
               </Link>
             </Card>
           </Col>
-          <Col md={6}xl={3}>
+          <Col md={6} xl={3}>
             <Card>
               <Link to={`${process.env.PUBLIC_URL}/app/filemanager1`}>
                 <Card.Body>
@@ -367,7 +367,7 @@ const Filemanager = () => (
                         height="9"
                         x="2"
                         y="2"
-                        fill="#f74f75"
+                        fill="#1B4E7F"
                         rx="1"
                       />
                       <rect

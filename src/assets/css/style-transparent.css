@@ -3186,7 +3186,7 @@ body.transparent-theme.bg-img4 {
 }
 
 .transparent-theme .bg-secondary {
-    background-color: #f74f75 !important;
+    background-color: #1B4E7F !important;
 }
 
 .transparent-theme .bg-gray-800 {
@@ -4627,7 +4627,7 @@ body.transparent-theme.bg-img4 {
 }
 
 .transparent-theme .alert-secondary .alert-link {
-    color: #f74f75;
+    color: #1B4E7F;
 }
 
 .transparent-theme .alert-success .alert-link {
@@ -6363,4 +6363,5 @@ body.transparent-theme.bg-img4 {
     --rmsc-selected: #38cab3;
     --rmsc-bg: #38cab3;
 }
+
 /*# sourceMappingURL=style-transparent.css.map */
