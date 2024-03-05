@@ -2825,7 +2825,7 @@ a.text-primary {
 
 a.text-secondary {
   &:hover, &:focus {
-    color: #f5436c !important;
+    color: $primary !important;
   }
 }
 

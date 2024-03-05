@@ -102,17 +102,17 @@ fieldset:disabled a.btn {
 .btn-secondary {
   color: $white;
   background-color: $secondary;
-  border-color: #f5567b;
+  border-color: #1b4c7abc;
 
   &:hover {
     color: $white;
-    background-color: #f33461;
-    border-color: rgb(245, 86, 142);
+    background-color: $secondary;
+    border-color: #1b4c7abc;
   }
 
   &:focus,
   &.focus {
-    box-shadow: 0 0 0 0.2rem #f33e68;
+    box-shadow: 0 0 0 0.2rem #1b4c7abc;
   }
 
   &.disabled,
@@ -127,7 +127,7 @@ fieldset:disabled a.btn {
     &.active {
       color: $white;
       background-color: $secondary;
-      border-color: #f5567b;
+      border-color: #1b4c7abc;
     }
   }
 }
@@ -146,7 +146,7 @@ fieldset:disabled a.btn {
 }
 
 .show > .btn-secondary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(247, 79, 117, 0.5);
+  box-shadow: 0 0 0 0.2rem #1b4c7abc;
 }
 
 .btn-success {

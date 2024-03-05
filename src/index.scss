@@ -27,6 +27,12 @@
 @import "./assets/switcher/css/switcher.css";
 @import "./assets/switcher/demo.css";
 
+//website
+.fs-navbar {
+  font-size: 16px;
+  font-weight: 600;
+}
+
 //Maps
 .slide-item.active,
 .slide-item:hover,
@@ -798,8 +804,8 @@
 }
 .btn-outline-secondary:hover {
   color: #fff !important;
-  background-color: #1B4E7F !important;
-  border-color: #1B4E7F !important;
+  background-color: #1b4e7f !important;
+  border-color: #1b4e7f !important;
 }
 
 .carousel-slider #thumbcarousel .carousel-item .thumb {

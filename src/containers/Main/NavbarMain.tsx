@@ -2,29 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const NavbarMain = () => {
-    const [menu, setMenu] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    const handleMenu = () => {
-        setMenu(!menu);
+    const handleMenuToggle = () => {
+        setMenuOpen(!menuOpen);
     };
 
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth >= 768) { // Tamaño md
-                setMenu(true);
-            } else {
-                setMenu(false);
-            }
-        };
+    const closeMenuOnResize = () => {
+        if (window.innerWidth >= 768) { // Tamaño md
+            setMenuOpen(false);
+        }
+    };
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+    // Cerrar el menú cuando la ventana cambia de tamaño
+    useEffect(() => {
+        window.addEventListener('resize', closeMenuOnResize);
+        return () => window.removeEventListener('resize', closeMenuOnResize);
     }, []);
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-light bg-light py-4">
             <div className="container-fluid container d-flex justify-content-between align-items-center">
                 <Link to="/" className="navbar-brand">
                     <img
@@ -33,39 +33,82 @@ const NavbarMain = () => {
                         style={{ width: 150 }}
                     />
                 </Link>
-                <MenuIcon
-                    className={`text-secondary me-2 my-1 d-lg-none`}
-                    onClick={handleMenu}
-                />
-                <div className={`collapse navbar-collapse ${menu ? 'show' : ''}`}>
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link className="nav-link text-secondary fw-bold" aria-current="page" to="#">HOME</Link>
+                <div className={`d-md-block d-sm-none`}>
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0 flex-row fs-navbar">
+                        <li className="me-3">
+                            <Link className="text-secondary" aria-current="page" to="#">HOME</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-secondary fw-bold" to="#">INGLÉS</Link>
+                        <li className=" me-3">
+                            <Link className="text-secondary" to="#">INGLÉS</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-secondary fw-bold" to="#">UNIVERSIDADES</Link>
+                        <li className=" me-3">
+                            <Link className="text-secondary" to="#">UNIVERSIDADES</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-secondary fw-bold" to="#">¿POR QUÉ EPI?</Link>
+                        <li className=" me-3">
+                            <Link className="text-secondary" to="#">¿POR QUÉ EPI?</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link text-secondary fw-bold" to="#">NEWS</Link>
+                        <li className=" me-3">
+                            <Link className="text-secondary" to="#">NEWS</Link>
                         </li>
                     </ul>
-                    {menu ? (
-                        <Link to="/auth/login" >
-                            <Button
-                                variant=""
-                                className="btn btn-primary me-2 my-1 d-none d-lg-inline d-block"
-                            >
-                                Mi Tablero
-                            </Button>
-                        </Link>
-                    ) : null}
                 </div>
+                <div className="d-flex align-items-center d-md-block d-sm-none">
+                    <Link to="auth/login" >
+                        <Button
+                            variant=""
+                            className="btn btn-primary me-2 my-1 d-lg-inline d-block"
+                        >
+                            Mi Tablero
+                        </Button>
+                    </Link>
+                </div>
+                <div className="d-flex align-items-center d-md-none">
+                    {menuOpen ?
+                        (
+                            <CloseIcon
+                                className="text-secondary me-2 my-1 d-lg-none"
+                                onClick={handleMenuToggle}
+                            />
+                        ) :
+                        (
+                            <MenuIcon
+                                className="text-secondary me-2 my-1 d-lg-none"
+                                onClick={handleMenuToggle}
+                            />
+                        )}
+                </div>
+            </div>
+            <div className="w-100 d-flex flex-column">
+                {menuOpen &&
+                    (
+                        <div className="navbar-nav ms-auto mb-2 mb-lg-0 w-100 p-4">
+                            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 w-100">
+                                <li className="nav-item">
+                                    <Link className="nav-link text-secondary fw-bold" aria-current="page" to="#">HOME</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link text-secondary fw-bold" to="#">INGLÉS</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link text-secondary fw-bold" to="#">UNIVERSIDADES</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link text-secondary fw-bold" to="#">¿POR QUÉ EPI?</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link text-secondary fw-bold" to="#">NEWS</Link>
+                                </li>
+                            </ul>
+                            <div className="d-flex align-items-center">
+                                <Button
+                                    variant=""
+                                    className="btn btn-primary me-2 my-1 d-lg-inline d-block"
+                                >
+                                    Mi Tablero
+                                </Button>
+                            </div>
+                        </div>
+                    )}
             </div>
         </nav>
     );

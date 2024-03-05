@@ -29,7 +29,6 @@ const SignIn = () => {
     "email": "",
     "password": ""
   });
-  // Expresion regular - valida que la contraseña cumpla con la documentacion (Un numero, una letra mayuscula y una minuscula, al menos 8 caracteres de longitud, )
 
   function isValidEmail(email: any) {
     return /\S+@\S+\.\S+/.test(email);
@@ -56,7 +55,6 @@ const SignIn = () => {
 
     if (e.target.name === 'password') {
 
-      // Expresion regular - valida que la contraseña cumpla con la documentacion (Un numero, una letra mayuscula y una minuscula, al menos 8 caracteres de longitud, )
       const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
       validationErrors.password = [];
 
