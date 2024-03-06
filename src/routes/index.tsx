@@ -16,7 +16,7 @@ const Auth = React.lazy(() => import('../Authentication/auth'));
 const SignIn = React.lazy(() => import('../components/Pages/Authentication/SignIn/SignIn'));
 const SignUp = React.lazy(() => import('../components/Pages/Authentication/SignUp/SignUp'));
 const MainContainer = React.lazy(() => import('../containers/Main'));
-const PublicSchool = React.lazy(() => import('../containers/Schools/PublicPage'));
+const PublicSchool = React.lazy(() => import('../containers/Main/PublicPage'));
 
 //customPages
 const App = React.lazy(() => import('../shade/layouts/App'));
