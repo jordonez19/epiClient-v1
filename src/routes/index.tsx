@@ -3,8 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 
 //PrivatePages
-const Dashboard = React.lazy(() => import('../components/Dashboard/Dashboard-1/Dashboard'));
+const Dashboard = React.lazy(() => import('../containers/Dashboard'));
+const Dashboard_1 = React.lazy(() => import('../components/Dashboard/Dashboard-1/Dashboard'));
 const UniversitiesContainer = React.lazy(() => import('../containers/Universities'));
+const UniversitiesAction = React.lazy(() => import('../containers/Universities/CreateOrEditUniversities'));
 const SchoolsContainer = React.lazy(() => import('../containers/Schools'));
 const CitiesContainer = React.lazy(() => import('../containers/Schools'));
 const ProfileContainer = React.lazy(() => import('../containers/Profile'));
@@ -14,6 +16,7 @@ const Auth = React.lazy(() => import('../Authentication/auth'));
 const SignIn = React.lazy(() => import('../components/Pages/Authentication/SignIn/SignIn'));
 const SignUp = React.lazy(() => import('../components/Pages/Authentication/SignUp/SignUp'));
 const MainContainer = React.lazy(() => import('../containers/Main'));
+const PublicSchool = React.lazy(() => import('../containers/Schools/PublicPage'));
 
 //customPages
 const App = React.lazy(() => import('../shade/layouts/App'));
@@ -29,12 +32,12 @@ const Error500 = React.lazy(() => import('../components/Pages/Authentication/500
 
 const RoutesConfig = () => (
     <Routes>
-
+        {/* dominio.com/auth/login */}
         {/* //PublicPages */}
         <Route index element={<MainContainer />} />
         {/* landing */}
         <Route path="/" element={<MainContainer />} />
-        <Route path="/ingles" element={<MainContainer />} />
+        <Route path="/ingles" element={<PublicSchool />} />
         <Route path="/universities" element={<MainContainer />} />
         <Route path="/porqueepi" element={<MainContainer />} />
         <Route path="/news" element={<MainContainer />} />
@@ -45,11 +48,21 @@ const RoutesConfig = () => (
         </Route>
         {/* //PrivatePages */}
         <Route path="/" element={<App />}>
+
+            {/* dashboard main */}
+            <Route path="/dashboard1" element={<PrivateRoute element={<Dashboard_1 />} />} />
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
+            {/* schools */}
             <Route path="/dashboard/ingles" element={<PrivateRoute element={<SchoolsContainer />} />} />
+            {/* universities */}
             <Route path="/dashboard/universities" element={<PrivateRoute element={<UniversitiesContainer />} />} />
-            <Route path="/dashboard/porque-epi" element={<PrivateRoute element={<UniversitiesContainer />} />} />
-            <Route path="/dashboard/news" element={<PrivateRoute element={<UniversitiesContainer />} />} />
+            <Route path="/dashboard/universities/action" element={<PrivateRoute element={<UniversitiesAction />} />} />
+
+            {/* cities */}
+            <Route path="/dashboard/cities" element={<PrivateRoute element={<Dashboard />} />} />
+            {/*  */}
+            <Route path="/dashboard/porque-epi" element={<PrivateRoute element={<Dashboard />} />} />
+            <Route path="/dashboard/news" element={<PrivateRoute element={<Dashboard />} />} />
             <Route path="/dashboard/profile" element={<PrivateRoute element={<ProfileContainer />} />} />
             <Route path="/dashboard/profile" element={<PrivateRoute element={<CitiesContainer />} />} />
             <Route path="*" element={<AuthLogin />} />

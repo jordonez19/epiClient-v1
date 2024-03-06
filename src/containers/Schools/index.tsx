@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { useApi } from '../../hooks/useApi';
+import { useApi } from '../../api/useApi';
 import BasicDataTable from '../../components/Global/BasicDataTable';
 import BreadCrumb from '../../components/Global/BreadCrumb';
 import TitleComponent from '../../components/Global/TitleComponent';

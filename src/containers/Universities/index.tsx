@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { useApi } from '../../hooks/useApi';
+import { useApi } from '../../api/useApi';
 import BasicDataTable from '../../components/Global/BasicDataTable';
 import BreadCrumb from '../../components/Global/BreadCrumb';
 import TitleComponent from '../../components/Global/TitleComponent';
@@ -86,7 +86,7 @@ const columns: any[] = [
 const UniversitiesContainer = () => {
     //geting data
     const [data, setData] = useState<any>([]);
-    const { get, isLoading, error } = useApi();
+    const { isLoading, error } = useApi();
 
     const handleGetData = async () => {
         try {
@@ -127,7 +127,7 @@ const UniversitiesContainer = () => {
                     columns={columns}
                     data={data}
                     isLoading={isLoading}
-                    addButtonLink={`${process.env.PUBLIC_URL}/crearciudad`}
+                    addButtonLink="/dashboard/universities/action"
                 />
             )}
         </div>

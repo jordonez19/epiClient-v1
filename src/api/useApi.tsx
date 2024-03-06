@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useAlert } from "./useAlert";
+import { useAlert } from "../hooks/useAlert";
 import Config from "../services/config";
 import { actionLogout } from "../redux/actions/authActions";
 

@@ -40,7 +40,6 @@ const SignIn = () => {
     const validationErrors: any = { ...errors };
 
     if (e.target.name === "email") {
-      //si no es digitado el correo o esta vacio . saldra error si tambien se verifica que lo que se este verificando sea el campo correo o pass
       if (!isValidEmail(e.target.value) || e.target.value.length === 0) {
         validator.isEmail(e.target.value)
         validationErrors.email = "Correo Invalido o vacio";
@@ -59,7 +58,6 @@ const SignIn = () => {
       validationErrors.password = [];
 
       if (!passwordRegex.test(e.target.value)) {
-        // Agregamos los mensajes de error al array 'validationErrors.password'
         if (e.target.value.length < 8) {
           validationErrors.password.push(" La contraseña debe tener al menos 8 caracteres");
         }

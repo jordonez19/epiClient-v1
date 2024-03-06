@@ -3,12 +3,12 @@ import { Accordion, Breadcrumb, Card, Col, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
-const Accordions = () => (
+const Accordions = ({ name }: any) => (
   <>
     {/* <!-- breadcrumb --> */}
     <div className="breadcrumb-header justify-content-between">
       <div className="left-content">
-        <span className="main-content-title mg-b-0 mg-b-lg-1">ACCORDION</span>
+        <span className="main-content-title mg-b-0 mg-b-lg-1">{name}</span>
       </div>
       <div className="justify-content-center mt-2">
         <Breadcrumb className="breadcrumb">
@@ -201,7 +201,7 @@ const Accordions = () => (
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
-                    <Accordion.Header  id="headingTwo2">
+                    <Accordion.Header id="headingTwo2">
                       {" "}
                       Accordions with images
                     </Accordion.Header>
@@ -415,9 +415,9 @@ const Accordions = () => (
     {/* <!-- row closed --> */}
   </>
 );
-
+/* 
 Accordions.propTypes = {};
 
-Accordions.defaultProps = {};
+Accordions.defaultProps = {}; */
 
 export default Accordions;

@@ -491,8 +491,8 @@ export default function Header() {
                   >
                     <img
                       alt=""
-                      src={require("../../assets/img/faces/2.jpg")}
-                      className=""
+                      src={require("../../assets/img/logos/logo_collapse.png")}
+                      className="cover"
                     />
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
@@ -501,40 +501,19 @@ export default function Header() {
                         <div className="main-img-user">
                           <img
                             alt=""
-                            src={require("../../assets/img/faces/2.jpg")}
-                            className=""
+                            src={require("../../assets/img/logos/logo_collapse.png")}
+                            className="cover"
                           />
                         </div>
                         <div className="ms-3 my-auto">
                           <h6 className="tx-15 font-weight-semibold mb-0">
                             {user_name}
                           </h6>
-                          <span className="dropdown-title-text subtext op-6  tx-12">
-                            Premium Member
-                          </span>
                         </div>
                       </div>
                     </div>
                     <Dropdown.Item className="dropdown-item" href={`${process.env.PUBLIC_URL}/pages/profile`}>
                       <i className="far fa-user-circle"></i>Profile
-                    </Dropdown.Item>
-                    <Dropdown.Item className="dropdown-item" href={`${process.env.PUBLIC_URL}/pages/mail/chat`}>
-                      <i className="far fa-smile"></i> chat
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      className="dropdown-item"
-                      href={`${process.env.PUBLIC_URL}/pages/mail/readmail`}
-                    >
-                      <i className="far fa-envelope "></i>Inbox
-                    </Dropdown.Item>
-                    <Dropdown.Item className="dropdown-item" href={`${process.env.PUBLIC_URL}/pages/mail/mail`}>
-                      <i className="far fa-comment-dots"></i>Messages
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      className="dropdown-item"
-                      href={`${process.env.PUBLIC_URL}/pages/mail/mailsettings`}
-                    >
-                      <i className="far fa-sun"></i> Settings
                     </Dropdown.Item>
                     <Dropdown.Item className="dropdown-item" onClick={() => { auth.signOut(); routeChange(); salir() }} >
                       <i className="far fa-arrow-alt-circle-left"></i> Sign Out
