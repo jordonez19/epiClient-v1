@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import check from './sweetAlert.module.scss';
-import styles from './sweetAlert.module.scss';
 
 export const useAlert = () => {
   const navigate = useNavigate();
