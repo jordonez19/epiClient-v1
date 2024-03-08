@@ -8,7 +8,7 @@ const Dashboard1 = React.lazy(() => import('../components/Dashboard/Dashboard-1/
 const UniversitiesContainer = React.lazy(() => import('../containers/Universities'));
 const UniversitiesAction = React.lazy(() => import('../containers/Universities/CreateOrEditUniversities'));
 const SchoolsContainer = React.lazy(() => import('../containers/Schools'));
-const CitiesContainer = React.lazy(() => import('../containers/Schools'));
+const CitiesContainer = React.lazy(() => import('../containers/Cities/ListCities')); 
 const ProfileContainer = React.lazy(() => import('../containers/Profile'));
 
 //PublicPages
@@ -47,8 +47,7 @@ const RoutesConfig = () => (
             <Route path="/auth/signup" element={<AuthSignup />} />
         </Route>
         {/* //PrivatePages */}
-        <Route path="/" element={<App />}>
-
+        <Route path="/dashboard" element={<App />}>
             {/* dashboard main */}
             <Route path="/dashboard1" element={<PrivateRoute element={<Dashboard1 />} />} />
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
@@ -59,12 +58,11 @@ const RoutesConfig = () => (
             <Route path="/dashboard/universities/action" element={<PrivateRoute element={<UniversitiesAction />} />} />
 
             {/* cities */}
-            <Route path="/dashboard/cities" element={<PrivateRoute element={<Dashboard />} />} />
+            <Route path="/dashboard/cities" element={<PrivateRoute element={<CitiesContainer />} />} />
             {/*  */}
             <Route path="/dashboard/porque-epi" element={<PrivateRoute element={<Dashboard />} />} />
             <Route path="/dashboard/news" element={<PrivateRoute element={<Dashboard />} />} />
             <Route path="/dashboard/profile" element={<PrivateRoute element={<ProfileContainer />} />} />
-            <Route path="/dashboard/profile" element={<PrivateRoute element={<CitiesContainer />} />} />
             <Route path="*" element={<AuthLogin />} />
         </Route>
         {/* //customPages */}
