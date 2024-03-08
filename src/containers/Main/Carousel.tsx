@@ -14,19 +14,19 @@ const Carousel = () => {
                         <img
                             style={{ borderRadius: '10px', height: '500px', objectFit: 'contain' }}
                             className="d-block w-auto mx-auto"
-                            src={require("../../assets/img/brand/Comics.jpg")} alt="First slide" />
+                            src={require("../../assets/img/photos/countrybg.jpg")} alt="First slide" />
                     </div>
                     <div className="carousel-item">
                         <img
                             style={{ borderRadius: '10px', height: '500px', objectFit: 'contain' }}
                             className="d-block w-auto mx-auto"
-                            src={require("../../assets/img/brand/Comics.jpg")} alt="Second slide" />
+                            src={require("../../assets/img/photos/countrybg.jpg")} alt="Second slide" />
                     </div>
                     <div className="carousel-item">
                         <img
                             style={{ borderRadius: '10px', height: '500px', objectFit: 'contain' }}
                             className="d-block w-auto mx-auto"
-                            src={require("../../assets/img/brand/Comics.jpg")} alt="Third slide" />
+                            src={require("../../assets/img/photos/countrybg.jpg")} alt="Third slide" />
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

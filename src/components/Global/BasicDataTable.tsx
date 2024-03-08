@@ -14,7 +14,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import ConfirmationCardButton from "./ConfirmationCardButton";
-import { Loader } from "./Loader";
+import Loader from "../../shade/Loaders/Loaders";
 
 // Interface for table props
 interface TableProps {

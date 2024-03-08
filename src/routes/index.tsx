@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
-import { Loader } from '../components/Global/Loader';
+import Loader from '../shade/Loaders/Loaders';
 
 //PrivatePages
 const Dashboard = React.lazy(() => import('../containers/Dashboard'));

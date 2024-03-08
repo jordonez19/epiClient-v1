@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader } from "./Loader";
+import Loader from "../../shade/Loaders/Loaders";
 
 interface PDFViewerProps {
   pdfUrl: string;

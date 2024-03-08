@@ -107,7 +107,7 @@ const SignUp = () => {
                                     <div className="d-flex mb-4">
                                         <Link to="#">
                                             <img
-                                                src={require("../assets/img/brand/favicon.png")}
+                                                src={require("../assets/img/logos/logo_collapse.png")}
                                                 className="sign-favicon ht-40"
                                                 alt="logo"
                                             />

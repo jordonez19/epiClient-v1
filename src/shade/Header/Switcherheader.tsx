@@ -91,12 +91,12 @@ export default function Header() {
             <div className="responsive-logo">
               <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
                 <img
-                  src={require("../../assets/img/brand/logo.png")}
+                  src={require("../../assets/img/logos/logo_collapse.png")}
                   className="mobile-logo logo-1"
                   alt="logo"
                 />
                 <img
-                  src={require("../../assets/img/brand/logo-white.png")}
+                  src={require("../../assets/img/logos/logo_collapse.png")}
                   className="mobile-logo dark-logo-1"
                   alt="logo"
                 />
@@ -117,12 +117,12 @@ export default function Header() {
             <div className="logo-horizontal">
               <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
                 <img
-                  src={require("../../assets/img/brand/logo.png")}
+                  src={require("../../assets/img/logos/logo_collapse.png")}
                   className="mobile-logo logo-1"
                   alt="logo"
                 />
                 <img
-                  src={require("../../assets/img/brand/logo-white.png")}
+                  src={require("../../assets/img/logos/logo_collapse.png")}
                   className="mobile-logo dark-logo-1"
                   alt="logo"
                 />
