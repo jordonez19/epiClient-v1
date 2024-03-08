@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { Navbar, Dropdown, Button, Form, Col, Row, Modal } from "react-bootstrap";
-import { Scrollbars } from 'react-custom-scrollbars-2';
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { auth } from "../../Firebase/firebase";
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,10 +31,7 @@ export default function Header() {
   const openCloseSidebar = () => {
     document.querySelector("body")?.classList.toggle("sidenav-toggled");
   };
-  //rightsidebar
-  const Rightsidebar = () => {
-    document.querySelector(".sidebar-right")?.classList.add("sidebar-open");
-  };
+
   const Darkmode = () => {
     document.querySelector(".app")?.classList.toggle("dark-theme");
     document.querySelector(".app")?.classList.remove("light-theme");
@@ -44,14 +41,9 @@ export default function Header() {
   const responsivesearch = () => {
     document.querySelector(".navbar-form")?.classList.toggle("active");
   };
-  //swichermainright
-  const swichermainright = () => {
-    document.querySelector(".demo_changer")?.classList.toggle("active");
-    let rightSidebar: any = document.querySelector(".demo_changer")
-    rightSidebar.style.right = "0px";
-  };
+
   const [price, setPrice] = React.useState(0);
-  // console.log(price);
+  console.log(price);
 
   let getdata: any = useSelector((state: any) => state.cartreducer.carts);
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { Card, Col, Row, Button, Form, FormGroup, FormCheck } from 'react-bootstrap';
 import { useLocation } from "react-router-dom";

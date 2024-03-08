@@ -1,9 +1,7 @@
 import React from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import CardComponent from '../../components/Global/CardComponent';
+import { Card, Col, Row } from 'react-bootstrap';
 import BreadCrumb from '../../components/Global/BreadCrumb';
 import TitleComponent from '../../components/Global/TitleComponent';
-import ReactApexChart from 'react-apexcharts';
 
 
 const Dashboard = () => {
