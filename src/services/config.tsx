@@ -7,7 +7,7 @@ const Config = () => {
    const environment: string = pkj.homepage.includes('dev') ? 'dev' : 'prod'
 
    const production = {
-      endpoint: 'https://v1api.epicontigo.com/',
+      endpoint: 'https://v1api.epicontigo.com',
    };
 
    const localhost = {
