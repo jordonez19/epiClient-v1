@@ -1,8 +1,8 @@
 {
-  "name": "Epi",
+  "name": "epi",
   "version": "0.1.0",
   "private": true,
-  "homepage": "dev",
+  "homepage": "https://v1client.epicontigo.com/",
   "dependencies": {
     "@coreui/react": "^4.3.1",
     "@emotion/react": "^11.10.0",
