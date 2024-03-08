@@ -33,19 +33,20 @@ const ResetPassword = React.lazy(() => import('../components/Pages/Authenticatio
 
 const RoutesConfig = () => (
     <Routes>
-        {/* //PublicPages */}
-        {/* landing */}
+        {/* //Public Pages */}
         <Route path="/" element={<Suspense fallback={<Loader />}><MainContainer /></Suspense>} />
         <Route path="/ingles" element={<Suspense fallback={<Loader />}><PublicSchool /></Suspense>} />
-        <Route path="/universities" element={<Suspense fallback={<div>Loading...</div>}><MainContainer /></Suspense>} />
-        <Route path="/porqueepi" element={<Suspense fallback={<div>Loading...</div>}><MainContainer /></Suspense>} />
-        <Route path="/news" element={<Suspense fallback={<div>Loading...</div>}><MainContainer /></Suspense>} />
+        <Route path="/universities" element={<Suspense fallback={<Loader />}><MainContainer /></Suspense>} />
+        <Route path="/porqueepi" element={<Suspense fallback={<Loader />}><MainContainer /></Suspense>} />
+        <Route path="/news" element={<Suspense fallback={<Loader />}><MainContainer /></Suspense>} />
         <Route path="/pages/Authentication/404error" element={<Error404 />} />
         <Route path="/pages/Authentication/500error" element={<Error500 />} />
         <Route path="/auth" element={<Auth />}>
             <Route path="/auth/login" element={<AuthLogin />} />
             <Route path="/auth/signup" element={<AuthSignup />} />
         </Route>
+
+        {/* Private Pages */}
         <Route path="/dashboard" element={<App />}>
             <Route path="/dashboard1" element={<PrivateRoute element={<Dashboard1 />} />} />
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />

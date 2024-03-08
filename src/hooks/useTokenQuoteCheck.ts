@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAlert } from './useAlert';
 
 export const useTokenQuoteCheck = () => {
