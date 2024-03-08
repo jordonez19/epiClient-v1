@@ -1,7 +1,3 @@
-import {
-  OverlayTrigger,
-} from "react-bootstrap";
-
 export const MENUITEMS = [
   {
     menutitle: "Main",

@@ -1,4 +1,3 @@
-import { Divider } from "@mui/material";
 
 type Title = {
     title?: string,

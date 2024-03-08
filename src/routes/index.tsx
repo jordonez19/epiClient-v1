@@ -4,7 +4,7 @@ import PrivateRoute from './PrivateRoute';
 
 //PrivatePages
 const Dashboard = React.lazy(() => import('../containers/Dashboard'));
-const Dashboard_1 = React.lazy(() => import('../components/Dashboard/Dashboard-1/Dashboard'));
+const Dashboard1 = React.lazy(() => import('../components/Dashboard/Dashboard-1/Dashboard'));
 const UniversitiesContainer = React.lazy(() => import('../containers/Universities'));
 const UniversitiesAction = React.lazy(() => import('../containers/Universities/CreateOrEditUniversities'));
 const SchoolsContainer = React.lazy(() => import('../containers/Schools'));
@@ -50,7 +50,7 @@ const RoutesConfig = () => (
         <Route path="/" element={<App />}>
 
             {/* dashboard main */}
-            <Route path="/dashboard1" element={<PrivateRoute element={<Dashboard_1 />} />} />
+            <Route path="/dashboard1" element={<PrivateRoute element={<Dashboard1 />} />} />
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
             {/* schools */}
             <Route path="/dashboard/ingles" element={<PrivateRoute element={<SchoolsContainer />} />} />
