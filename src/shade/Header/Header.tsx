@@ -43,7 +43,6 @@ export default function Header() {
   };
 
   const [price, setPrice] = React.useState(0);
-  console.log(price);
 
   let getdata: any = useSelector((state: any) => state.cartreducer.carts);
 
@@ -54,7 +53,6 @@ export default function Header() {
   const open: any = Boolean(anchorEl);
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
-    console.log(open)
   };
 
   const [Data, setData] = React.useState([]);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { useApi } from '../../api/useApi';
+import { useApi } from '../../hooks/useApi';
 import BasicDataTable from '../../components/Global/BasicDataTable';
 import BreadCrumb from '../../components/Global/BreadCrumb';
 import TitleComponent from '../../components/Global/TitleComponent';
@@ -85,14 +85,12 @@ const columns: any[] = [
 const UniversitiesContainer = () => {
     //geting data
     const [data, setData] = useState<any>([]);
-    const { isLoading, error } = useApi();
+    const { isLoading, error, get } = useApi();
 
     const handleGetData = async () => {
-        try {
-            const response: any = await axios.get('http://localhost:3002/api/universities');
-            setData(response.data);
-        } catch (error) {
-        }
+        const response: any = await get('universities');
+        setData(response);
+
     }
 
     useEffect(() => {

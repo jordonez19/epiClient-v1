@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { useApi } from '../../api/useApi';
+import { useApi } from '../../hooks/useApi';
 import BasicDataTable from '../../components/Global/BasicDataTable';
 import BreadCrumb from '../../components/Global/BreadCrumb';
 import TitleComponent from '../../components/Global/TitleComponent';

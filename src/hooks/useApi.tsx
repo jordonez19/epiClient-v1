@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useAlert } from "../hooks/useAlert";
+import { useAlert } from "./useAlert";
 import Config from "../services/config";
 import { actionLogout } from "../redux/actions/authActions";
 
@@ -36,18 +36,17 @@ export const useApi = () => {
     setError({ success: false, message: "Error al realizar la solicitud." });
   };
 
-  const fetchData = async (method: any, path: any, data?: any) => {
-    const api_method = method === "get" ? axios.get : method === "post" ? axios.post : method === "put" ? axios.put : axios.delete;
+
+  const get = async (path: string, params = {}) => {
     try {
       setIsLoading(true);
       const token = sessionStorage.getItem("token");
-      const response = await api_method(endpoint + `api/${path}`, {
-        headers: { 'Authorization': token },
-        data
+      const response = await axios.get(`${endpoint}/api/${path}`, {
+        headers: { 'access-token': token }
       });
       handleResponseError(response);
       setIsLoading(false);
-      return response?.data?.content || [];
+      return response?.data || [];
     } catch (error) {
       handleError(error);
       setIsLoading(false);
@@ -55,20 +54,55 @@ export const useApi = () => {
     }
   };
 
-  const get = async (path: string, params = {}) => {
-    return fetchData("get", path);
-  };
-
   const post = async (path: string, data: any) => {
-    return fetchData("post", path, data);
+    try {
+      setIsLoading(true);
+      const token = sessionStorage.getItem("token");
+      const response = await axios.post(`${endpoint}/api/${path}`, data, {
+        headers: { 'access-token': token }
+      });
+      handleResponseError(response);
+      setIsLoading(false);
+      return response?.data || [];
+    } catch (error) {
+      handleError(error);
+      setIsLoading(false);
+      return [];
+    }
   };
 
   const put = async (path: string, data: any) => {
-    return fetchData("put", path, data);
+    try {
+      setIsLoading(true);
+      const token = sessionStorage.getItem("token");
+      const response = await axios.put(`${endpoint}/api/${path}`, data, {
+        headers: { 'access-token': token }
+      });
+      handleResponseError(response);
+      setIsLoading(false);
+      return response?.data || [];
+    } catch (error) {
+      handleError(error);
+      setIsLoading(false);
+      return [];
+    }
   };
 
-  const del = async (path: string) => {
-    return fetchData("delete", path);
+  const del = async (path: string, data: any) => {
+    try {
+      setIsLoading(true);
+      const token = sessionStorage.getItem("token");
+      const response = await axios.get(`${endpoint}/api/${path}`, {
+        headers: { 'access-token': token }
+      });
+      handleResponseError(response);
+      setIsLoading(false);
+      return response?.data || [];
+    } catch (error) {
+      handleError(error);
+      setIsLoading(false);
+      return [];
+    }
   };
 
   return {
