@@ -91,12 +91,12 @@ export default function Header() {
             <div className="responsive-logo">
               <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
                 <img
-                  src={require("../../assets/img/logos/logo_collapse.png")}
+                  src={"logos/logo_collapse.png"}
                   className="mobile-logo logo-1"
                   alt="logo"
                 />
                 <img
-                  src={require("../../assets/img/logos/logo_collapse.png")}
+                  src={"logos/logo_collapse.png"}
                   className="mobile-logo dark-logo-1"
                   alt="logo"
                 />
@@ -117,12 +117,12 @@ export default function Header() {
             <div className="logo-horizontal">
               <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
                 <img
-                  src={require("../../assets/img/logos/logo_collapse.png")}
+                  src={"logos/logo_collapse.png"}
                   className="mobile-logo logo-1"
                   alt="logo"
                 />
                 <img
-                  src={require("../../assets/img/logos/logo_collapse.png")}
+                  src={"logos/logo_collapse.png"}
                   className="mobile-logo dark-logo-1"
                   alt="logo"
                 />
@@ -193,7 +193,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/us_flag.jpg")}
+                                    src={"flags/us_flag.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -207,7 +207,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/italy_flag.jpg")}
+                                    src={"flags/italy_flag.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -221,7 +221,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/spain_flag.jpg")}
+                                    src={"flags/spain_flag.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -235,7 +235,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/india_flag.jpg")}
+                                    src={"flags/india_flag.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -249,7 +249,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/french_flag.jpg")}
+                                    src={"flags/french_flag.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -263,7 +263,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/mexico.jpg")}
+                                    src={"flags/mexico.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -277,7 +277,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/singapore.jpg")}
+                                    src={"flags/singapore.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -291,7 +291,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/poland.jpg")}
+                                    src={"flags/poland.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -305,7 +305,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/austria.jpg")}
+                                    src={"flags/austria.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -319,7 +319,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/russia_flag.jpg")}
+                                    src={"flags/russia_flag.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -333,7 +333,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/germany_flag.jpg")}
+                                    src={"flags/germany_flag.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -347,7 +347,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/argentina.jpg")}
+                                    src={"flags/argentina.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -361,7 +361,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/brazil.jpg")}
+                                    src={"flags/brazil.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -375,7 +375,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/uae.jpg")}
+                                    src={"flags/uae.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -389,7 +389,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/china.jpg")}
+                                    src={"flags/china.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -403,7 +403,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/uk.jpg")}
+                                    src={"flags/uk.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -417,7 +417,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/malaysia.jpg")}
+                                    src={"flags/malaysia.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -431,7 +431,7 @@ export default function Header() {
                                 <span className="country-selector">
                                   <img
                                     alt=""
-                                    src={require("../../assets/img/flags/canada.jpg")}
+                                    src={"flags/canada.jpg"}
                                     className="me-3 language"
                                   />
                                 </span>
@@ -563,7 +563,7 @@ export default function Header() {
 
                               <img
                                 className="drop-img cover-image"
-                                src={require("../../assets/img/ecommerce/05.jpg")}
+                                src={"ecommerce/05.jpg"}
                                 alt=""
                               />
                               <div className="ms-3 text-start">
@@ -589,7 +589,7 @@ export default function Header() {
                                 <img
                                   alt=""
                                   className="drop-img cover-image"
-                                  src={require("../../assets/img/ecommerce/02.jpg")}
+                                  src={"ecommerce/02.jpg"}
                                 />
                                 <div className="ms-3 text-start">
                                   <h5 className="mb-1 text-muted tx-13">
@@ -615,7 +615,7 @@ export default function Header() {
                                 <img
                                   alt=""
                                   className="drop-img cover-image"
-                                  src={require("../../assets/img/ecommerce/12.jpg")}
+                                  src={"ecommerce/12.jpg"}
                                 />
                                 <div className="ms-3 text-start">
                                   <h5 className="mb-1 text-muted tx-13">
@@ -639,7 +639,7 @@ export default function Header() {
                                 <img
                                   alt=""
                                   className="drop-img cover-image"
-                                  src={require("../../assets/img/ecommerce/06.jpg")}
+                                  src={"ecommerce/06.jpg"}
                                 />
                                 <div className="ms-3 text-start">
                                   <h5 className="mb-1 text-muted tx-13">
@@ -663,7 +663,7 @@ export default function Header() {
 
                                 <img
                                   className="drop-img cover-image"
-                                  src={require("../../assets/img/ecommerce/04.jpg")}
+                                  src={"ecommerce/04.jpg"}
                                   alt=""
                                 />
 
@@ -734,7 +734,7 @@ export default function Header() {
                             <img
                               className="  drop-img  cover-image  "
                               alt=""
-                              src={require("../../assets/img/faces/3.jpg")}
+                              src={"faces/3.jpg"}
                             />
                             <span className="avatar-status bg-teal"></span>
 
@@ -758,7 +758,7 @@ export default function Header() {
                             <img
                               className="drop-img cover-image"
                               alt=""
-                              src={require("../../assets/img/faces/2.jpg")}
+                              src={"faces/2.jpg"}
                             />
                             <span className="avatar-status bg-teal"></span>
 
@@ -781,7 +781,7 @@ export default function Header() {
                             <img
                               className="drop-img cover-image"
                               alt=""
-                              src={require("../../assets/img/faces/9.jpg")}
+                              src={"faces/9.jpg"}
                             />
                             <span className="avatar-status bg-teal"></span>
 
@@ -804,7 +804,7 @@ export default function Header() {
                             <img
                               className="drop-img cover-image"
                               alt=""
-                              src={require("../../assets/img/faces/12.jpg")}
+                              src={"faces/12.jpg"}
                             />
                             <span className="avatar-status bg-teal"></span>
                             <div className="wd-90p">
@@ -826,7 +826,7 @@ export default function Header() {
                             <img
                               className="drop-img cover-image"
                               alt=""
-                              src={require("../../assets/img/faces/5.jpg")}
+                              src={"faces/5.jpg"}
                             />
                             <span className="avatar-status bg-teal"></span>
 
@@ -1093,7 +1093,7 @@ export default function Header() {
                     >
                       <img
                         alt=""
-                        src={require("../../assets/img/faces/2.jpg")}
+                        src={"faces/2.jpg"}
                         className=""
                       />
                     </Dropdown.Toggle>
@@ -1103,7 +1103,7 @@ export default function Header() {
                           <div className="main-img-user">
                             <img
                               alt=""
-                              src={require("../../assets/img/faces/2.jpg")}
+                              src={"faces/2.jpg"}
                               className=""
                             />
                           </div>

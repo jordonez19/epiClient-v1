@@ -141,7 +141,7 @@ const SignIn = () => {
                       <div className="text-center mb-5">
                         <Link to="#">
                           <img
-                            src={require("../assets/img/logos/logo.png")}
+                            src={"/logos/logo.png"}
                             className="sign-favicon"
                             alt="logo"
                           />

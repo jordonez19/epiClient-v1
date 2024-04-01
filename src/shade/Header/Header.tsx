@@ -111,7 +111,7 @@ export default function Header() {
           <div className="responsive-logo">
             <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
               <img
-                src={require("../../assets/img/logos/logo_collapse.png")}
+                src={"/logos/logo_collapse.png"}
                 className="mobile-logo dark-logo-1"
                 alt="logo"
               />
@@ -132,12 +132,12 @@ export default function Header() {
           <div className="logo-horizontal">
             <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
               <img
-                src={require("../../assets/img/logos/logo.png")}
+                src={"/logos/logo.png"}
                 className="mobile-logo logo-1"
                 alt="logo"
               />
               <img
-                src={require("../../assets/img/logos/logo_collapse.png")}
+                src={"/logos/logo_collapse.png"}
                 className="mobile-logo dark-logo-1"
                 alt="logo"
               />
@@ -208,7 +208,7 @@ export default function Header() {
                               <span className="country-selector">
                                 <img
                                   alt=""
-                                  src={require("../../assets/img/flags/us_flag.jpg")}
+                                  src={"/flags/us_flag.jpg"}
                                   className="me-3 language"
                                 />
                               </span>
@@ -222,7 +222,7 @@ export default function Header() {
                               <span className="country-selector">
                                 <img
                                   alt=""
-                                  src={require("../../assets/img/flags/spain_flag.jpg")}
+                                  src={"/flags/spain_flag.jpg"}
                                   className="me-3 language"
                                 />
                               </span>
@@ -483,7 +483,7 @@ export default function Header() {
                   >
                     <img
                       alt=""
-                      src={require("../../assets/img/logos/logo_collapse.png")}
+                      src={"/logos/logo_collapse.png"}
                       className="cover"
                     />
                   </Dropdown.Toggle>
@@ -493,7 +493,7 @@ export default function Header() {
                         <div className="main-img-user">
                           <img
                             alt=""
-                            src={require("../../assets/img/logos/logo_collapse.png")}
+                            src={"/logos/logo_collapse.png"}
                             className="cover"
                           />
                         </div>

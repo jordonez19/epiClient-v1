@@ -1,8 +1,8 @@
 
 const Loader = () => {
-    return(
+    return (
         <div id="global-loader">
-            <img src={require("../../assets/img/loader.svg").default} className="loader-img" alt="Loader"/>
+            <img src={"/loader.svg"} className="loader-img" alt="Loader" />
         </div>
     )
 }
