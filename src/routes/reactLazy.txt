@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+/* import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import Loader from '../shade/Loaders/Loaders';
@@ -14,7 +14,6 @@ const ProfileContainer = React.lazy(() => import('../containers/Profile'));
 
 //PublicPages
 const Auth = React.lazy(() => import('../Authentication/auth'));
-/* const SignUp = React.lazy(() => import('../components/Pages/Authentication/SignUp/SignUp'));*/
 const MainContainer = React.lazy(() => import('../containers/Main'));
 const PublicSchool = React.lazy(() => import('../containers/Main/PublicPage'));
 
@@ -26,14 +25,15 @@ const AuthSignup = React.lazy(() => import('../Authentication/Signup'));
 const Error404 = React.lazy(() => import('../components/Pages/Authentication/404Error/404Error'));
 const Error500 = React.lazy(() => import('../components/Pages/Authentication/500Error/500Error'));
 
-/* const Custompages = React.lazy(() => import('../shade/layouts/custompages'));
+const Custompages = React.lazy(() => import('../shade/layouts/custompages'));
 const ForgotPassword = React.lazy(() => import('../components/Pages/Authentication/ForgotPassword/ForgotPassword'));
 const Lockscreen = React.lazy(() => import('../components/Pages/Authentication/Lockscreen/Lockscreen'));
-const ResetPassword = React.lazy(() => import('../components/Pages/Authentication/ResetPassword/ResetPassword')); */
+const ResetPassword = React.lazy(() => import('../components/Pages/Authentication/ResetPassword/ResetPassword'));
+const SignUp = React.lazy(() => import('../components/Pages/Authentication/SignUp/SignUp'));
 
 const RoutesConfig = () => (
     <Routes>
-        {/* //Public Pages */}
+        //Public Pages 
         <Route path="/" element={<Suspense fallback={<Loader />}><MainContainer /></Suspense>} />
         <Route path="/ingles" element={<Suspense fallback={<Loader />}><PublicSchool /></Suspense>} />
         <Route path="/universities" element={<Suspense fallback={<Loader />}><MainContainer /></Suspense>} />
@@ -46,7 +46,7 @@ const RoutesConfig = () => (
             <Route path="/auth/signup" element={<AuthSignup />} />
         </Route>
 
-        {/* Private Pages */}
+        // Private Pages 
         <Route path="/dashboard" element={<App />}>
             <Route path="/dashboard1" element={<PrivateRoute element={<Dashboard1 />} />} />
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
@@ -65,3 +65,4 @@ const RoutesConfig = () => (
 );
 
 export default RoutesConfig;
+ */
