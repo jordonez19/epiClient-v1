@@ -3,27 +3,37 @@ import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import Loader from '../shade/Loaders/Loaders';
 
-// Importaciones directas de los componentes
-import Dashboard from '../containers/Dashboard';
-import Dashboard1 from '../components/Dashboard/Dashboard';
-import UniversitiesContainer from '../containers/Universities';
-import UniversitiesAction from '../containers/Universities/CreateOrEditUniversities';
-import SchoolsContainer from '../containers/Schools';
-import CitiesContainer from '../containers/Cities/ListCities';
-import ProfileContainer from '../containers/Profile';
-import Auth from '../Authentication/auth';
-import MainContainer from '../containers/Main';
-import PublicSchool from '../containers/Main/PublicPage';
-import App from '../shade/layouts/App';
-import Switcherapp from '../shade/layouts/Switcherapp';
-import AuthLogin from '../Authentication/Login';
-import AuthSignup from '../Authentication/Signup';
-import Error404 from '../components/Pages/Authentication/404Error/404Error';
-import Error500 from '../components/Pages/Authentication/500Error/500Error';
+//PrivatePages
+const Dashboard = React.lazy(() => import('../containers/Dashboard'));
+const Dashboard1 = React.lazy(() => import('../components/Dashboard/Dashboard'));
+const UniversitiesContainer = React.lazy(() => import('../containers/Universities'));
+const UniversitiesAction = React.lazy(() => import('../containers/Universities/CreateOrEditUniversities'));
+const SchoolsContainer = React.lazy(() => import('../containers/Schools'));
+const CitiesContainer = React.lazy(() => import('../containers/Cities/ListCities'));
+const ProfileContainer = React.lazy(() => import('../containers/Profile'));
+
+//PublicPages
+const Auth = React.lazy(() => import('../Authentication/auth'));
+/* const SignUp = React.lazy(() => import('../components/Pages/Authentication/SignUp/SignUp'));*/
+const MainContainer = React.lazy(() => import('../containers/Main'));
+const PublicSchool = React.lazy(() => import('../containers/Main/PublicPage'));
+
+//customPages
+const App = React.lazy(() => import('../shade/layouts/App'));
+const Switcherapp = React.lazy(() => import('../shade/layouts/Switcherapp'));
+const AuthLogin = React.lazy(() => import('../Authentication/Login'));
+const AuthSignup = React.lazy(() => import('../Authentication/Signup'));
+const Error404 = React.lazy(() => import('../components/Pages/Authentication/404Error/404Error'));
+const Error500 = React.lazy(() => import('../components/Pages/Authentication/500Error/500Error'));
+
+/* const Custompages = React.lazy(() => import('../shade/layouts/custompages'));
+const ForgotPassword = React.lazy(() => import('../components/Pages/Authentication/ForgotPassword/ForgotPassword'));
+const Lockscreen = React.lazy(() => import('../components/Pages/Authentication/Lockscreen/Lockscreen'));
+const ResetPassword = React.lazy(() => import('../components/Pages/Authentication/ResetPassword/ResetPassword')); */
 
 const RoutesConfig = () => (
     <Routes>
-        {/* Páginas públicas */}
+        {/* //Public Pages */}
         <Route path="/" element={<Suspense fallback={<Loader />}><MainContainer /></Suspense>} />
         <Route path="/ingles" element={<Suspense fallback={<Loader />}><PublicSchool /></Suspense>} />
         <Route path="/universities" element={<Suspense fallback={<Loader />}><MainContainer /></Suspense>} />
@@ -36,7 +46,7 @@ const RoutesConfig = () => (
             <Route path="/auth/signup" element={<AuthSignup />} />
         </Route>
 
-        {/* Páginas privadas */}
+        {/* Private Pages */}
         <Route path="/dashboard" element={<App />}>
             <Route path="/dashboard1" element={<PrivateRoute element={<Dashboard1 />} />} />
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
