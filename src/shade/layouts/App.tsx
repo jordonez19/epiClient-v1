@@ -9,8 +9,6 @@ import TabToTop from "../TabToTop/TabToTop";
 import { Provider } from "react-redux";
 import Store from "../../redux/store/store"
 export default function App() {
-
-
   
   //The created store
   document.querySelector("body")?.classList.add("ltr", "main-body", "app", "sidebar-mini");
@@ -55,7 +53,6 @@ export default function App() {
                 <div className="side-app">
                   <div
                     className="main-container container-fluid"
-                   
                   >
                     <Outlet />
                   </div>

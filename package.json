@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://v1client.epicontigo.com/",
+  "type": "module",
   "dependencies": {
     "@coreui/react": "^4.3.1",
     "@emotion/react": "^11.10.0",

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Button, FormControlLabel, Grid, Switch, TextField } from "@mui/material";
+import { Button, FormControlLabel, Grid, Switch, TextField, IconButton, InputAdornment, Card, Box } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import BreadCrumb from "../../components/Global/BreadCrumb";
 import TitleComponent from "../../components/Global/TitleComponent";
 
 const ProfileContainer = ({ user, token }: any) => {
     const [status, setStatus] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = (values: any) => {
         console.log("Form values:", values);
@@ -12,6 +14,10 @@ const ProfileContainer = ({ user, token }: any) => {
 
     const handleStatusChange = (event: any) => {
         setStatus(event.target.checked);
+    };
+
+    const handleShowPasswordClick = () => {
+        setShowPassword((prev) => !prev);
     };
 
     return (
@@ -23,40 +29,66 @@ const ProfileContainer = ({ user, token }: any) => {
             <TitleComponent title={"Perfil"} />
 
             <form onSubmit={handleSubmit} className="container">
-                <Grid container spacing={3}>
-                    <Grid item md={6} sm={12}>
-                        <div className="content-profile">
-                            <div className="profile_picture_content">
-                                {/* Image */}
-                                <div className="circle-bg-img">
-                                    <img src={require("../../assets/img/logos/logo_collapse.png")} width={200} alt="epi-foto-de-perfil" className="circle-img" />
-                                    <span className={`badge ${status ? "badge-green" : "badge-red"}`}></span>
+                <Grid container spacing={2}>
+                    {/* Primera columna: Tarjeta con la imagen y el estado */}
+                    <Grid item xs={12} lg={4}>
+                        <Card>
+                            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} p={2}>
+                                <div className="profile_picture_content">
+                                    {/* Image */}
+                                    <div className="main-img-user avatar-lg ">
+                                        <img
+                                            alt="avatar"
+                                            className="rounded-circle"
+                                            style={{
+                                                objectFit: "contain",
+                                                boxShadow: '0 0 15px rgba(0,0,0,0.1)',
+                                            }}
+                                            src={"/logos/logo_collapse.png"}
+                                        />
+                                    </div>
                                 </div>
-                                
-                                <div className="mt-3">
-                                    <ul>
-                                        <li>Admin</li>
-                                        <li>Moderador</li>
-                                        <li>Usuario</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            
-                            <FormControlLabel control={<Switch checked={status} onChange={handleStatusChange} />} label="Estado" />
-                        </div>
+                                {/* updating status */}
+                                <FormControlLabel control={<Switch checked={status} onChange={handleStatusChange} />} label="Estado" />
+                                <Button variant="contained" size="small" color="primary" type="submit">
+                                    CAMBIAR IMAGEN
+                                </Button>
+                            </Box>
+                        </Card>
                     </Grid>
 
-                    <Grid item md={6} sm={12}>
-                        <TextField label="Nombre de usuario" defaultValue="Nombre de Usuario" variant="outlined" fullWidth margin="normal" />
-                        <TextField label="Correo" defaultValue="Correo Electrónico" variant="outlined" fullWidth margin="normal" />
-                        <TextField label="Cambiar contraseña" type="password" variant="outlined" fullWidth margin="normal" />
-                        <Button variant="contained" color="primary" type="submit">
-                            Guardar cambios
-                        </Button>
+                    {/* Segunda columna: Tarjeta con los campos de perfil */}
+                    <Grid item xs={12} lg={8}>
+                        <Card>
+                            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} p={2} m={2}>
+                                <TextField label="Nombre de usuario" defaultValue="Nombre de Usuario" variant="outlined" fullWidth margin="normal" />
+                                <TextField label="Correo" defaultValue="Correo Electrónico" variant="outlined" fullWidth margin="normal" />
+                                <TextField
+                                    label="Contraseña"
+                                    type={showPassword ? "text" : "password"}
+                                    defaultValue=""
+                                    variant="outlined"
+                                    fullWidth
+                                    margin="normal"
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="end">
+                                                <IconButton onClick={handleShowPasswordClick} edge="end">
+                                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                />
+                            </Box>
+                        </Card>
+                        <Box display={'flex'} justifyContent={'end'}>
+                            <Button className="mt-4" variant="contained" color="primary" type="submit">
+                                GUARDAR
+                            </Button>
+                        </Box>
                     </Grid>
                 </Grid>
-
             </form>
         </div>
     );

@@ -504,7 +504,7 @@ export default function Header() {
                         </div>
                       </div>
                     </div>
-                    <Dropdown.Item className="dropdown-item" href={`${process.env.PUBLIC_URL}/pages/profile`}>
+                    <Dropdown.Item className="dropdown-item" href={`${process.env.PUBLIC_URL}/dashboard/profile`}>
                       <i className="far fa-user-circle"></i>Profile
                     </Dropdown.Item>
                     <Dropdown.Item className="dropdown-item" onClick={() => { auth.signOut(); routeChange(); salir() }} >

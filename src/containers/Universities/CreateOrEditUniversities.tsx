@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { Card, Col, Row, Button, Form, FormGroup, FormCheck } from 'react-bootstrap';
 import { useLocation } from "react-router-dom";
@@ -28,8 +27,10 @@ const fieldConfig: FieldConfig[] = [
     { label: "DURACIÓN", name: "duration", type: "text" },
     { label: "IELTS", name: "ielts", type: "text" },
     { label: "DESCRIPCIÓN", name: "description", type: "textarea" },
-    { label: "CHECKBOX", name: "checkboxField", type: "checkbox" },
+
+    { label: "CHECKBOX de check", name: "checkboxField", type: "checkbox" },
     { label: "RADIO BUTTONS", name: "radioButtonsField", type: "radio", options: ["Option 1", "Option 2", "Option 3"] }
+
 ];
 
 const CreateOrEditUniversities: React.FC = () => {
@@ -52,7 +53,7 @@ const CreateOrEditUniversities: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Aquí puedes manejar la lógica para enviar el formulario
+        
     };
 
     return (
@@ -65,8 +66,8 @@ const CreateOrEditUniversities: React.FC = () => {
                 <Card className="w-100">
                     <Card.Body className="w-100">
                         <Row>
-                            {fieldConfig.map((field, index) => (
-                                <Col key={index} sm={12} md={12} lg={6} xl={6}>
+                            {fieldConfig && fieldConfig?.map((field, index) => (
+                                <Col key={index} sm={12} md={12} lg={4} xl={4}>
                                     <FormGroup className="form-group w-100 m-0">
                                         <Form.Label className="mb-3">{field.label}</Form.Label>
                                         {field.type === "textarea" ? (
@@ -76,36 +77,10 @@ const CreateOrEditUniversities: React.FC = () => {
                                                 placeholder=""
                                                 name={field.name}
                                                 required={field.required || false}
-                                                value={form[field.name].toString() || ""}
+                                                value={form[field.name]?.toString() || ""}
                                                 onChange={handleChange}
                                                 onFocus={handleInputFocus}
                                             />
-                                        ) : field.type === "checkbox" ? (
-                                            <FormCheck
-                                                type="checkbox"
-                                                className={`form-check-input`}
-                                                label={field.label}
-                                                name={field.name}
-                                                checked={form[field.name] ? true : false}
-                                                onChange={handleChange}
-                                                onFocus={handleInputFocus}
-                                            />
-                                        ) : field.type === "radio" ? (
-                                            <div>
-                                                {field.options?.map((option, optionIndex) => (
-                                                    <FormCheck
-                                                        key={optionIndex}
-                                                        type="radio"
-                                                        className={`form-check-input`}
-                                                        label={option}
-                                                        name={field.name}
-                                                        checked={form[field.name] === option}
-                                                        value={option}
-                                                        onChange={handleChange}
-                                                        onFocus={handleInputFocus}
-                                                    />
-                                                ))}
-                                            </div>
                                         ) : (
                                             <Form.Control
                                                 type={field.type}
@@ -113,7 +88,7 @@ const CreateOrEditUniversities: React.FC = () => {
                                                 placeholder=""
                                                 name={field.name}
                                                 required={field.required || false}
-                                                value={form[field.name].toString() || ""}
+                                                value={form[field.name]?.toString() || ""}
                                                 onChange={handleChange}
                                                 onFocus={handleInputFocus}
                                             />
@@ -125,8 +100,7 @@ const CreateOrEditUniversities: React.FC = () => {
                         <Row className='w-100' >
                             <Col className='mt-4 d-flex justify-content-end'>
                                 <Button
-                                    variant=""
-                                    className="btn btn-primary"
+                                    variant="primary"
                                     style={{ width: "200px" }}
                                     type="submit"
                                 >

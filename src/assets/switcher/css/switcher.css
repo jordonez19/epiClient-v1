@@ -90,11 +90,10 @@
 .evo-palette div.sep {
 	height: 3px
 }
-.evo-palette, .evo-palette-ie {
+/* .evo-palette, .evo-palette-ie {
 	border-collapse: separate;
 	border-spacing: 4px 0;
-	*border-collapse:expression('separate', cellSpacing='2px')
-}
+} */
 .evo-palette th, .evo-palette-ie th {
 	border: 0;
 	padding: 5px 3px;

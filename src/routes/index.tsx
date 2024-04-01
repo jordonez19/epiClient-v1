@@ -5,7 +5,7 @@ import Loader from '../shade/Loaders/Loaders';
 
 //PrivatePages
 const Dashboard = React.lazy(() => import('../containers/Dashboard'));
-const Dashboard1 = React.lazy(() => import('../components/Dashboard/Dashboard-1/Dashboard'));
+const Dashboard1 = React.lazy(() => import('../components/Dashboard/Dashboard'));
 const UniversitiesContainer = React.lazy(() => import('../containers/Universities'));
 const UniversitiesAction = React.lazy(() => import('../containers/Universities/CreateOrEditUniversities'));
 const SchoolsContainer = React.lazy(() => import('../containers/Schools'));

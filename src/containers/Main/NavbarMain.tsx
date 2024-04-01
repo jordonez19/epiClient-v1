@@ -28,7 +28,7 @@ const NavbarMain = () => {
             <div className="container-fluid container d-flex justify-content-between align-items-center">
                 <Link to="/" className="navbar-brand">
                     <img
-                        src={require("../../assets/img/logos/logo.png")}
+                        src={"logos/logo.png"}
                         alt="EpiContigo"
                         style={{ width: 150 }}
                     />

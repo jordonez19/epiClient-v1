@@ -4288,10 +4288,11 @@ body.dark-theme {
 }
 
 .dark-theme #country-selector .modal-body {
-    background-image: url(../../assets/img/png/countrymap1.png) !important;
+    /*   background-image: url(../../assets/img/png/countrymap1.png) !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    */
     position: relative;
 }
 
@@ -4490,10 +4491,10 @@ body.dark-theme {
 }
 
 .dark-theme .background-image-blog {
-    background-image: url(../../assets/img/photos/error.jpg) !important;
+   /*  background-image: url(../../assets/img/photos/error.jpg) !important;
     background-position: center !important;
     background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-repeat: no-repeat !important; */
     height: 320px;
     position: relative;
     border-top-left-radius: calc(0.25rem - 1px);

@@ -9,7 +9,6 @@ export default function Custompages() {
     return (
         <Provider store={Store}>
             <React.Fragment>
-
                 <Custompagesswitcher />
                 <Outlet />
             </React.Fragment>

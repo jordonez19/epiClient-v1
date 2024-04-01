@@ -214,22 +214,22 @@ const Sidebar = () => {
             <div className="main-sidebar-header active">
               <NavLink className="header-logo active" to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`}>
                 <img
-                  src={require("../../assets/img/logos/logo.png")}
+                  src={"logos/logo.png"}
                   className="main-logo  desktop-logo"
                   alt="logo"
                 />
                 <img
-                  src={require("../../assets/img/logos/logo_collapse.png")}
+                  src={"/logos/logo_collapse.png"}
                   className="main-logo  desktop-dark mt-1"
                   alt="logo"
                 />
                 <img
-                  src={require("../../assets/img/logos/logo_collapse.png")}
+                  src={"/logos/logo_collapse.png"}
                   className="main-logo  mobile-logo mt-1"
                   alt="logo"
                 />
                 <img
-                  src={require("../../assets/img/logos/logo_collapse.png")}
+                  src={"/logos/logo_collapse.png"}
                   className="main-logo  mobile-dark mt-1"
                   alt="logo"
                 />

@@ -16,11 +16,14 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ items, baseURL }) => {
         <div className="breadcrumb-header justify-content-between">
             <div className="left-content">
                 {/*<span className="main-content-title mg-b-0 mg-b-lg-1">EMPTY PAGE</span>*/}
-                <div className="main-img-user avatar-lg">
+                <div className="main-img-user avatar-md">
                     <img
                         alt="avatar"
                         className="rounded-circle"
-                        src={require("../../assets/img/logos/logo_collapse.png")}
+                        style={{
+                            objectFit: "contain",
+                        }}
+                        src={"/logos/logo_collapse.png"}
                     />
                 </div>
             </div>

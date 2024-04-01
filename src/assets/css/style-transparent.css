@@ -14,12 +14,12 @@ body.transparent-theme {
 }
 
 body.transparent-theme.bg-img1 {
-    background: url(../img/media/bg-img1.jpg) !important;
+   /*  background: url(../img/media/bg-img1.jpg) !important;
     background-blend-mode: overlay;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
+    background-attachment: fixed !important; */
     content: "";
     left: 0;
     right: 0;
@@ -29,12 +29,12 @@ body.transparent-theme.bg-img1 {
 }
 
 body.transparent-theme.bg-img2 {
-    background: url(../img/media/bg-img2.jpg) !important;
+   /*  background: url(../img/media/bg-img2.jpg) !important;
     background-blend-mode: overlay;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
+    background-attachment: fixed !important; */
     content: "";
     left: 0;
     right: 0;
@@ -44,12 +44,12 @@ body.transparent-theme.bg-img2 {
 }
 
 body.transparent-theme.bg-img3 {
-    background: url(../img/media/bg-img3.jpg) !important;
+    /* background: url(../img/media/bg-img3.jpg) !important;
     background-blend-mode: overlay;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
+    background-attachment: fixed !important; */
     content: "";
     left: 0;
     right: 0;
@@ -59,12 +59,12 @@ body.transparent-theme.bg-img3 {
 }
 
 body.transparent-theme.bg-img4 {
-    background: url(../img/media/bg-img4.jpg) !important;
+    /* background: url(../img/media/bg-img4.jpg) !important;
     background-blend-mode: overlay;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
+    background-attachment: fixed !important; */
     content: "";
     left: 0;
     right: 0;
@@ -5173,10 +5173,10 @@ body.transparent-theme.bg-img4 {
 }
 
 .transparent-theme .background-image-blog {
-    background-image: url(../../assets/img/photos/error.jpg) !important;
+    /* background-image: url(../../assets/img/photos/error.jpg) !important;
     background-position: center !important;
     background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-repeat: no-repeat !important; */
     height: 320px;
     position: relative;
     border-top-left-radius: calc(0.25rem - 1px);

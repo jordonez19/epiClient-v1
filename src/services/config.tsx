@@ -13,8 +13,8 @@ const Config = () => {
    const localhost = {
       endpoint: 'http://localhost:3002',
    };
-   return production
-   //return localhost
+   //return production
+   return localhost
    //return environment === 'dev' ? development : production;
 };
 

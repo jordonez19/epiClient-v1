@@ -261,7 +261,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-3">
                               <img alt=""
                                 className="avatar avatar-lg brround cover-image"
-                                src={require("../../assets/img/faces/12.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -275,7 +275,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-3">
                               <img alt=""
                                 className="avatar avatar-lg brround cover-image"
-                                src={require("../../assets/img/faces/1.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div>
@@ -287,7 +287,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-3">
                               <img alt=""
                                 className="avatar avatar-lg brround cover-image"
-                                src={require("../../assets/img/faces/2.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -302,7 +302,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-3">
                               <img alt=""
                                 className="avatar avatar-lg brround cover-image"
-                                src={require("../../assets/img/faces/8.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -316,7 +316,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-3">
                               <img alt=""
                                 className="avatar avatar-lg brround cover-image"
-                                src={require("../../assets/img/faces/11.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div>
@@ -328,7 +328,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-3">
                               <img alt=""
                                 className="avatar avatar-lg brround cover-image"
-                                src={require("../../assets/img/faces/6.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -343,7 +343,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-3">
                               <img alt=""
                                 className="avatar avatar-lg brround cover-image"
-                                src={require("../../assets/img/faces/9.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -367,7 +367,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/9.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -395,7 +395,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/11.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div className="">
@@ -422,7 +422,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/10.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -450,7 +450,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/2.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -478,7 +478,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/13.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div className="">
@@ -505,7 +505,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/12.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -531,7 +531,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/4.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div className="">
@@ -558,7 +558,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/7.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div className="">
@@ -583,7 +583,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/2.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div className="">
@@ -610,7 +610,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/14.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -638,7 +638,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/11.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div className="">
@@ -665,7 +665,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/9.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div className="">
@@ -692,7 +692,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/15.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                               <span className="avatar-status bg-success"></span>
                             </div>
@@ -720,7 +720,7 @@ import Scrollbars from "react-custom-scrollbars-2"; export default function Righ
                             <div className="me-2">
                               <img alt=""
                                 className="avatar avatar-md brround cover-image"
-                                src={require("../../assets/img/faces/4.jpg")}
+                                src={"/logos/logo_collapse.png"}
                               />
                             </div>
                             <div className="">
