@@ -72,7 +72,7 @@ const columns: any[] = [
         Cell: ({ row }: { row: any }) => {
             return (
                 <Link
-                    to={`${process.env.PUBLIC_URL}/escuelas/`}
+                    to={`${process.env.PUBLIC_URL}/schools/`}
                     state={row.original}
                 >
                     <span className="material-icons md-5 md-dark">&#xe3c9;</span>
@@ -104,13 +104,13 @@ const UniversitiesContainer = () => {
         <div>
             {/* Breadcrumb */}
             <BreadCrumb
-                items={['inicio', 'escuelas']}
+                items={['home', 'schools']}
                 baseURL={['dashboard', 'dashboard/escuelas/']}
             />
 
             {/* Component Title */}
             <TitleComponent
-                title={'LISTA DE escuelas'}
+                title={'SCHOOLS'}
             />
 
             {error && (

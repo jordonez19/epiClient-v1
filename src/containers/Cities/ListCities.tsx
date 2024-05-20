@@ -77,7 +77,7 @@ const ListCities = () => {
     <div>
       {/* Breadcrumb */}
       <BreadCrumb
-        items={['inicio', 'Configuraciones', 'ciudades']}
+        items={['home', 'Configuraciones', 'ciudades']}
         baseURL={['', 'configuraciones', 'listarciudades']}
       />
 

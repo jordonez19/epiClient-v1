@@ -81,7 +81,7 @@ const Sidebar = () => {
             items.active = false;
             items.selected = false;
             if (location.pathname === '/Epi/preview/' || location.pathname === '/Epi/preview/') {
-              location.pathname = '/Epi/preview/dashboard/dashboard-1/';
+              location.pathname = '/Epi/preview/dashboard/';
             }
             if (location.pathname === items.path + '/') {
               items.active = true;
@@ -212,9 +212,9 @@ const Sidebar = () => {
             style={{ position: "absolute" }}
           >
             <div className="main-sidebar-header active">
-              <NavLink className="header-logo active" to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`}>
+              <NavLink className="header-logo active" to={`${process.env.PUBLIC_URL}/dashboard`}>
                 <img
-                  src={"logos/logo.png"}
+                  src={"/logos/logo.png"}
                   className="main-logo  desktop-logo"
                   alt="logo"
                 />

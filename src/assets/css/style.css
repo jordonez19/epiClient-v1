@@ -19823,7 +19823,6 @@ hr {
 .circle-icon {
     height: 40px;
     width: 40px;
-    position: absolute;
     top: 40px;
     border-radius: 5px;
     right: 40px;
@@ -58075,7 +58074,6 @@ License: MIT
     display: inline-block;
     *display: inline;
     *zoom: 1;
-    /* https://github.com/bgrins/spectrum/issues/40 */
     z-index: 9999994;
     overflow: hidden;
     -webkit-box-sizing: content-box;

@@ -58,9 +58,11 @@ const CreateOrEditSchools: React.FC = () => {
     return (
         <>
             <BreadCrumb
-                items={['inicio', 'escuelas', location?.state?.id ? "Editar escuela" : "Agregar escuela"]}
-                baseURL={['', 'escuela/action', location?.state?.id ? "escuela/action" + location?.state?.id : "crearciudad"]} />
-            <TitleComponent title={location?.state?.id ? "Editar escuela" : "Agregar escuela"} />
+                items={['home', 'schools', location?.state?.id ? "Edit school" : "Add schools"]}
+                baseURL={['', 'school/action', location?.state?.id ? "school/action" + location?.state?.id : "crearciudad"]} />
+            
+            <TitleComponent title={location?.state?.id ? "Edit schools" : "Add schools"} />
+            
             <Card className="w-100">
                 <Card.Body className="w-100">
                     <Row>

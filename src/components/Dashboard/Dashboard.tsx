@@ -108,71 +108,7 @@ export default function Dashboard() {
                   <div className="col-8">
                     <div className="ps-4 pt-4 pe-3 pb-4">
                       <div className="">
-                        <h6 className="mb-2 tx-12 ">Today Orders</h6>
-                      </div>
-                      <div className="pb-0 mt-0">
-                        <div className="d-flex">
-                          <h4 className="tx-20 font-weight-semibold mb-2">
-                            5,472
-                          </h4>
-                        </div>
-                        <p className="mb-0 tx-12 text-muted">
-                          Last week
-                          <i className="fa fa-caret-up mx-2 text-success"></i>
-                          <span className="text-success font-weight-semibold">
-                            +427
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-4">
-                    <div className="circle-icon bg-primary-transparent text-center align-self-center overflow-hidden">
-                      <i className="fe fe-shopping-bag tx-16 text-primary"></i>
-                    </div>
-                  </div>
-                </Row>
-              </Card>
-            </Col>
-            <Col xl={6} lg={12} md={12} xs={12}>
-              <Card className="sales-card">
-                <Row>
-                  <div className="col-8">
-                    <div className="ps-4 pt-4 pe-3 pb-4">
-                      <div className="">
-                        <h6 className="mb-2 tx-12">Today Earnings</h6>
-                      </div>
-                      <div className="pb-0 mt-0">
-                        <div className="d-flex">
-                          <h4 className="tx-20 font-weight-semibold mb-2">
-                            $47,589
-                          </h4>
-                        </div>
-                        <p className="mb-0 tx-12 text-muted">
-                          Last week
-                          <i className="fa fa-caret-down mx-2 text-danger"></i>
-                          <span className="font-weight-semibold text-danger">
-                            -453
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-4">
-                    <div className="circle-icon bg-info-transparent text-center align-self-center overflow-hidden">
-                      <i className="fe fe-dollar-sign tx-16 text-info"></i>
-                    </div>
-                  </div>
-                </Row>
-              </Card>
-            </Col>
-            <Col xl={6} lg={12} md={12} xs={12}>
-              <Card className=" sales-card">
-                <Row>
-                  <div className="col-8">
-                    <div className="ps-4 pt-4 pe-3 pb-4">
-                      <div className="">
-                        <h6 className="mb-2 tx-12">Profit Gain</h6>
+                        <h6 className="mb-2 tx-12">Universidades</h6>
                       </div>
                       <div className="pb-0 mt-0">
                         <div className="d-flex">

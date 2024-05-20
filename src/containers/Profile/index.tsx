@@ -23,36 +23,30 @@ const ProfileContainer = ({ user, token }: any) => {
     return (
         <div className="profile-view">
             {/* Breadcrumb */}
-            <BreadCrumb items={["inicio", "profile"]} baseURL={["dashboard", "dashboard/profile/"]} />
+            <BreadCrumb items={["home", "profile"]} baseURL={["dashboard", "dashboard/profile/"]} />
 
             {/* Component Title */}
-            <TitleComponent title={"Perfil"} />
+            <TitleComponent title={"Profile"} />
 
             <form onSubmit={handleSubmit} className="container">
                 <Grid container spacing={2}>
                     {/* Primera columna: Tarjeta con la imagen y el estado */}
                     <Grid item xs={12} lg={4}>
                         <Card>
-                            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} p={2}>
-                                <div className="profile_picture_content">
+                            <Box style={{ height: '300px' }} display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} p={2}>
+                                <div className="">
                                     {/* Image */}
-                                    <div className="main-img-user avatar-lg ">
+                                    <div className="">
                                         <img
-                                            alt="avatar"
-                                            className="rounded-circle"
-                                            style={{
-                                                objectFit: "contain",
-                                                boxShadow: '0 0 15px rgba(0,0,0,0.1)',
-                                            }}
                                             src={"/logos/logo_collapse.png"}
+                                            alt="profile epi logo"
                                         />
                                     </div>
                                 </div>
                                 {/* updating status */}
-                                <FormControlLabel control={<Switch checked={status} onChange={handleStatusChange} />} label="Estado" />
-                                <Button variant="contained" size="small" color="primary" type="submit">
+                                {/* <FormControlLabel control={<Switch checked={status} onChange={handleStatusChange} />} label={status ? 'Active' : 'Inactive'} /> */}                                {/* <Button variant="contained" size="small" color="primary" type="submit">
                                     CAMBIAR IMAGEN
-                                </Button>
+                                </Button> */}
                             </Box>
                         </Card>
                     </Grid>
@@ -83,7 +77,7 @@ const ProfileContainer = ({ user, token }: any) => {
                             </Box>
                         </Card>
                         <Box display={'flex'} justifyContent={'end'}>
-                            <Button className="mt-4" variant="contained" color="primary" type="submit">
+                            <Button className="my-4" variant="contained" color="primary" type="submit">
                                 GUARDAR
                             </Button>
                         </Box>

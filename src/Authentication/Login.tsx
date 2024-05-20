@@ -188,7 +188,7 @@ const SignIn = () => {
                                   </Form.Group>
                                   <Button
                                     variant=""
-                                    disabled={hasErrors || check}
+                                    disabled={hasErrors}// || check}
                                     type='submit'
                                     className="btn btn-primary btn-block"
                                     onClick={Login}
@@ -196,7 +196,7 @@ const SignIn = () => {
                                     Sign In
                                   </Button>
 
-                                  <div className="was-validated">
+                                 {/*  <div className="was-validated">
                                     <div className="form-check mb-3 mt-3">
                                       <input
                                         type="checkbox"
@@ -220,7 +220,8 @@ const SignIn = () => {
                                         Aceptar los terminos y condiciones
                                       </div>
                                     </div>
-                                  </div>
+                                  </div> */}
+
                                   <div className="mt-4 d-flex text-center justify-content-center mb-2">
                                     <a className='btn btn-icon me-3'
                                       href='https://web.facebook.com/estudiosprofesionaleseningles'
@@ -232,18 +233,17 @@ const SignIn = () => {
                                         <i className="bx bxl-facebook tx-18 tx-prime"></i>{" "}
                                       </span>
                                     </a>
-                                    <a
+                                   {/*  <a
                                       href="https://www.tiktok.com/@epicontigo"
                                       target="_blank"
                                       rel="noreferrer"
                                       className="btn btn-icon me-3"
-
                                     >
                                       <span className="btn-inner--icon">
                                         {" "}
-                                        <i className="bxl-tiktok tx-18 tx-prime"></i>{" "}
+                                        <i className="bx bxl-tiktok tx-18 tx-prime"></i>{" "}
                                       </span>
-                                    </a>
+                                    </a> */}
                                     <a
                                       href="https://www.linkedin.com/company/estudios-profesionales-en-ingles/"
                                       target="_blank"

@@ -7,7 +7,7 @@ export default function Footer() {
     <div className="main-footer">
       <Col md={12} sm={12} className=" text-center">
         <div className="container-fluid pt-0 ht-100p">
-          Copyright © 2022{" "}
+          Copyright © 2024{" "}
           <Link to="#" className="text-primary">
             Epi Contigo
           </Link>

@@ -8,7 +8,7 @@ const PrivateRoute = ({ element, ...rest }: any) => {
         // Renderiza el elemento protegido si el usuario está autenticado
         element
     ) : (
-        // Redirige a la página de inicio de sesión si el usuario no está autenticado
+        // Redirige a la página de home de sesión si el usuario no está autenticado
         <Navigate to="/auth/login" replace />
     );
 };

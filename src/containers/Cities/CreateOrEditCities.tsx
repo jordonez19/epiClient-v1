@@ -177,7 +177,7 @@ const CreateOrEditCities = () => {
     return (
         <>
             <BreadCrumb
-                items={['inicio', 'ciudades', location?.state?.id ? "Editar ciudad" : "Agregar ciudad"]}
+                items={['home', 'ciudades', location?.state?.id ? "Editar ciudad" : "Agregar ciudad"]}
                 baseURL={['', 'listarciudades', location?.state?.id ? "editarciudad/" + location?.state?.id : "crearciudad"]} />
             <TitleComponent title={location?.state?.id ? "Editar ciudad" : "Agregar ciudad"} />
             <Form className="form-horizontal" onSubmit={handleSubmit}>

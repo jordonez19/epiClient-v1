@@ -64,6 +64,7 @@ const BasicDataTable: React.FC<TableProps> = ({
 
   // Destructure the properties from the table instance
   const {
+    gotoPage,
     getTableProps,
     headerGroups,
     getTableBodyProps,
@@ -157,7 +158,7 @@ const BasicDataTable: React.FC<TableProps> = ({
             <div
               className="table-responsive rounded"
             >
-              <table {...getTableProps()} className="table table-hover mb-0">
+              <table {...getTableProps()} className="table table-hover mb-0 cursor-pointer">
                 <thead>
                   {/* Render header rows */}
                   {headerGroups.map((headerGroup: any) => (
@@ -235,11 +236,10 @@ const BasicDataTable: React.FC<TableProps> = ({
               </strong>{" "}
             </span>
             <span className="ms-sm-auto">
-              {/* Pagination buttons */}
               <Button
                 variant=""
                 className="btn-default tablebutton me-2 my-1"
-                onClick={() => previousPage()}
+                onClick={() => gotoPage(0)}
                 disabled={!canPreviousPage}
               >
                 {" << "}
@@ -263,7 +263,7 @@ const BasicDataTable: React.FC<TableProps> = ({
               <Button
                 variant=""
                 className="btn-default tablebutton me-2 my-1"
-                onClick={() => nextPage()}
+                onClick={() => gotoPage(pageOptions.length - 1)}
                 disabled={!canNextPage}
               >
                 {" >> "}
@@ -275,7 +275,7 @@ const BasicDataTable: React.FC<TableProps> = ({
               value={pageSize}
               onChange={(e) => setPageSize(Number(e.target.value))}
             >
-              {[10, 25, 50].map((pageSize) => (
+              {[10, 25, 50, 100, 200].map((pageSize) => (
                 <option key={pageSize} value={pageSize}>
                   Mostrar {pageSize}
                 </option>
@@ -284,6 +284,7 @@ const BasicDataTable: React.FC<TableProps> = ({
           </div>
         </Card.Body>
       </Card>
+
 
       {/* Conditionally render the TotalCard component */}
       {totalFunc && totalFunc()}

@@ -107,7 +107,7 @@ export default function Header() {
       <div className="main-container container-fluid">
         <div className="main-header-left ">
           <div className="responsive-logo">
-            <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
+            <Link to={`${process.env.PUBLIC_URL}/dashboard`} className="header-logo">
               <img
                 src={"/logos/logo_collapse.png"}
                 className="mobile-logo dark-logo-1"
@@ -128,7 +128,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="logo-horizontal">
-            <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
+            <Link to={`${process.env.PUBLIC_URL}/dashboard`} className="header-logo">
               <img
                 src={"/logos/logo.png"}
                 className="mobile-logo logo-1"
@@ -162,7 +162,7 @@ export default function Header() {
           <div className="mb-0 navbar navbar-expand-lg   navbar-nav-right responsive-navbar navbar-dark p-0">
             <Navbar.Collapse className="collapse" id="navbarSupportedContent-4">
               <ul className="nav nav-item header-icons navbar-nav-right ">
-                <li className="dropdown nav-item">
+              {/*   <li className="dropdown nav-item">
                   <>
                     <Link
                       className="new nav-link"
@@ -231,7 +231,7 @@ export default function Header() {
                       </Modal.Body>
                     </Modal>
                   </>
-                </li>
+                </li> */}
                 <li className="dropdown nav-item">
                   <Link
                     to="#"
@@ -481,7 +481,7 @@ export default function Header() {
                   >
                     <img
                       alt=""
-                      src={"/logos/logo_collapse.png"}
+                      src={"https://www.tenforums.com/attachments/user-accounts-family-safety/322690d1615743307-user-account-image-log-user.png"}
                       className="cover"
                     />
                   </Dropdown.Toggle>

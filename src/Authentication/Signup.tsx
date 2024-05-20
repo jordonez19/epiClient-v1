@@ -82,7 +82,7 @@ const SignUp = () => {
     }
     let navigate = useNavigate();
     const routeChange = () => {
-        let path = `${process.env.PUBLIC_URL}/dashboard/dashboard-1/`;
+        let path = `${process.env.PUBLIC_URL}/dashboard`;
         navigate(path);
     }
     return (

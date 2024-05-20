@@ -89,7 +89,7 @@ export default function Header() {
         <div className="main-container container-fluid">
           <div className="main-header-left ">
             <div className="responsive-logo">
-              <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
+              <Link to={`${process.env.PUBLIC_URL}/dashboard`} className="header-logo">
                 <img
                   src={"/logos/logo_collapse.png"}
                   className="mobile-logo logo-1"
@@ -115,7 +115,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="logo-horizontal">
-              <Link to={`${process.env.PUBLIC_URL}/dashboard/dashboard-1`} className="header-logo">
+              <Link to={`${process.env.PUBLIC_URL}/dashboard`} className="header-logo">
                 <img
                   src={"/logos/logo_collapse.png"}
                   className="mobile-logo logo-1"
