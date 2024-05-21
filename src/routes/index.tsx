@@ -21,15 +21,15 @@ const RoutesConfig = () => (
         <Route path="/" element={<Suspense fallback={<Loader />}><AuthLogin /></Suspense>} />
         <Route path="/pages/Authentication/404error" element={<Error404 />} />
         <Route path="/pages/Authentication/500error" element={<Error500 />} />
-        
-        
-        
+
         {/* Páginas privadas */}
         <Route path="/dashboard" element={<App />}>
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
             <Route path="/dashboard/schools" element={<PrivateRoute element={<SchoolsContainer />} />} />
             <Route path="/dashboard/universities" element={<PrivateRoute element={<UniversitiesContainer />} />} />
             <Route path="/dashboard/universities/action" element={<PrivateRoute element={<UniversitiesAction />} />} />
+            <Route path="/dashboard/users" element={<PrivateRoute element={<UniversitiesAction />} roles={['admin']} />} />
+            <Route path="/dashboard/users/action" element={<PrivateRoute element={<UniversitiesAction />} roles={['admin']} />} />
             <Route path="/dashboard/cities" element={<PrivateRoute element={<CitiesContainer />} />} />
             <Route path="/dashboard/profile" element={<PrivateRoute element={<ProfileContainer />} />} />
             <Route path="*" element={<AuthLogin />} />

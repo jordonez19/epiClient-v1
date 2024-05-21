@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
 const ModalDetails = ({ show, onHide, data }: any) => (
-    <Modal show={show} onHide={onHide} scrollable>
+    <Modal size='lg' show={show} onHide={onHide} scrollable>
         <Modal.Header closeButton>
             <Modal.Title>Detalles de la Universidad</Modal.Title>
         </Modal.Header>

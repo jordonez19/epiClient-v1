@@ -88,11 +88,11 @@ export const useApi = () => {
     }
   };
 
-  const del = async (path: string, data: any) => {
+  const del = async (path: string) => {
     try {
       setIsLoading(true);
       const token = sessionStorage.getItem("token");
-      const response = await axios.get(`${endpoint}/api/${path}`, {
+      const response = await axios.delete(`${endpoint}/api/${path}`, {
         headers: { 'access-token': token }
       });
       handleResponseError(response);

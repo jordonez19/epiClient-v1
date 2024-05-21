@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import { Button, FormControlLabel, Grid, Switch, TextField, IconButton, InputAdornment, Card, Box } from "@mui/material";
+import { Button, Grid, TextField, IconButton, InputAdornment, Card, Box } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import BreadCrumb from "../../components/Global/BreadCrumb";
 import TitleComponent from "../../components/Global/TitleComponent";
 
 const ProfileContainer = ({ user, token }: any) => {
-    const [status, setStatus] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = (values: any) => {
         console.log("Form values:", values);
-    };
 
-    const handleStatusChange = (event: any) => {
-        setStatus(event.target.checked);
+        
     };
 
     const handleShowPasswordClick = () => {
@@ -78,7 +75,7 @@ const ProfileContainer = ({ user, token }: any) => {
                         </Card>
                         <Box display={'flex'} justifyContent={'end'}>
                             <Button className="my-4" variant="contained" color="primary" type="submit">
-                                GUARDAR
+                                UPDATE
                             </Button>
                         </Box>
                     </Grid>

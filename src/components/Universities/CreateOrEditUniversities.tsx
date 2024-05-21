@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { Card, Col, Row, Button, Form, FormGroup } from 'react-bootstrap';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import BreadCrumb from '../Global/BreadCrumb';
 import TitleComponent from '../Global/TitleComponent';
 import InputErrorMessage from '../Global/InputErrorMessage';
-import { useApi } from '../../hooks';
+import { useAlert, useApi } from '../../hooks';
 
 interface FormValues {
     [key: string]: string | boolean;
@@ -40,7 +41,11 @@ const CreateOrEditUniversities: React.FC = () => {
     const [form, setForm] = useState<FormValues>({});
     const [inputFocus, setInputFocus] = useState(false);
     const [errors, setErrors] = useState<{ [key: string]: string | undefined }>({});
-    const { get, post, put, del } = useApi();
+    const { post, put } = useApi();
+    const navigate = useNavigate();
+    const { handleSuccessAlert, handleErrorAlert } = useAlert();
+
+
     useEffect(() => {
         if (location.state) {
             setForm(location.state);
@@ -66,7 +71,6 @@ const CreateOrEditUniversities: React.FC = () => {
                 return; // Invalid input, do not update the state
             }
         }
-
         setForm({
             ...form,
             [name]: fieldValue
@@ -84,19 +88,25 @@ const CreateOrEditUniversities: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        let res;
         // Use put or post based on whether it's an edit or add operation
         if (location.state) {
-
-            await put(`universities/${location.state.ID}`, form);
+            res = await put(`universities/${location.state.ID}`, form);
         } else {
-            await post('universities', form);
+            res = await post('universities', form);
+        }
+        if (!!res.status) {
+            handleSuccessAlert(res.message);
+            navigate('/dashboard/universities');
+        } else {
+            handleErrorAlert(res.message);
         }
     };
 
     return (
         <>
             <BreadCrumb
-                items={['home', 'universitiies', location?.state?.row ? "Edit universities" : "Add university"]}
+                items={['home', 'universitiies', location?.state.ID > 0 ? "Edit universities" : "Add university"]}
                 baseURL={['dashboard', 'dashboard/universities/', location?.state?.row ? "dashboard/universities/action" : "dashboard/universities/action"]} />
 
             <TitleComponent title={location?.state?.row ? "Edit university" : "Add university"} />
