@@ -19,10 +19,10 @@ export const Error404 = () => {
         {/* <!-- Main-error-wrapper --> */}
         <div className="main-error-wrapper page page-h">
           <div>
-            <h1 className="text-white">
+            <h1 className="text-primary">
               404<span className="tx-20">error</span>
             </h1>
-            <h2 className="text-white">
+            <h2 className="text-primary">
               Oopps. The page you were looking for doesn't exist.
             </h2>
             <h6 className="tx-white-6">

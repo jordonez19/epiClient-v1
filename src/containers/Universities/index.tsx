@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useApi } from '../../hooks/useApi';
 import BasicDataTable from '../../components/Global/BasicDataTable';
 import BreadCrumb from '../../components/Global/BreadCrumb';
@@ -16,13 +16,12 @@ const UniversitiesContainer = () => {
     const [selectedRowData, setSelectedRowData] = useState<any>(null);
     const { isLoading, error, get, del } = useApi();
     const { handleSuccessAlert, handleErrorAlert, handleEditConfirmation } = useAlert();
-
     const handleGetData = async () => {
         const response: any = await get('universities');
         setData(response);
     };
+
     const handleDelete = async (id: number) => {
-        console.log(id)
         const answer = await handleEditConfirmation("Are you sure you want to delete this record?");
         if (answer.isConfirmed) {
             const res: any = await del(`universities/${id}`);
@@ -35,9 +34,16 @@ const UniversitiesContainer = () => {
         }
     }
 
-    useEffect(() => {
-        handleGetData();
-    }, []);
+    const handleOpenModal = (rowData: any) => {
+        setSelectedRowData(rowData);
+        setOpenDetails(true);
+    };
+
+    const handleCloseModal = () => {
+        setOpenDetails(false);
+        setSelectedRowData(null);
+    };
+
 
     /* Columns for the Data Table */
     const columns: any[] = [
@@ -126,7 +132,8 @@ const UniversitiesContainer = () => {
                 <svg
                     onClick={() => handleOpenModal(row.original)}
                     className='cursor-pointer'
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(252,179,60,1)"><path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 11.4872 7.07719 10.9925 7.22057 10.5268C7.61175 11.3954 8.48527 12 9.5 12C10.8807 12 12 10.8807 12 9.5C12 8.48527 11.3954 7.61175 10.5269 7.21995C10.9925 7.07719 11.4872 7 12 7Z"></path></svg>
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(252,179,60,1)">
+                    <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748ZM12.1779 7.17624C11.4834 7.48982 11 8.18846 11 9C11 10.1046 11.8954 11 13 11C13.8115 11 14.5102 10.5166 14.8238 9.82212C14.9383 10.1945 15 10.59 15 11C15 13.2091 13.2091 15 11 15C8.79086 15 7 13.2091 7 11C7 8.79086 8.79086 7 11 7C11.41 7 11.8055 7.06167 12.1779 7.17624Z"></path></svg>
             ),
         },
         {
@@ -154,16 +161,9 @@ const UniversitiesContainer = () => {
         }
     ];
 
-
-    const handleOpenModal = (rowData: any) => {
-        setSelectedRowData(rowData);
-        setOpenDetails(true);
-    };
-
-    const handleCloseModal = () => {
-        setOpenDetails(false);
-        setSelectedRowData(null);
-    };
+    useEffect(() => {
+        handleGetData();
+    }, []);
 
     return (
         <div>

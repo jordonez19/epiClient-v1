@@ -15,7 +15,7 @@ export const useAlert = () => {
         icon: check.customClass,
         container: 'swal2-container',
       },
-      iconColor: '#fd7e14', // Cambia el color del icono de check aquí
+      iconColor: '#fd7e14',
       confirmButtonColor: '#fd7e14',
     }
     ).then(() => {
@@ -34,7 +34,7 @@ export const useAlert = () => {
         container: 'swal2-container',
       },
       confirmButtonText: "OK",
-      iconColor: '#fd7e14', // Cambia el color del icono de check aquí
+      iconColor: '#fd7e14',
       confirmButtonColor: '#fd7e14',
     });
     if (path) {
@@ -50,7 +50,7 @@ export const useAlert = () => {
         container: 'swal2-container',
       },
       confirmButtonText: "OK",
-      iconColor: '#fd7e14', // Cambia el color del icono de check aquí
+      iconColor: '#fd7e14',
       confirmButtonColor: '#fd7e14',
     });
     if (path) {
@@ -68,7 +68,7 @@ export const useAlert = () => {
       showCancelButton: true,
       confirmButtonText: "Si",
       cancelButtonText: "No",
-      iconColor: '#fd7e14', // Cambia el color del icono de check aquí
+      iconColor: '#fd7e14',
       confirmButtonColor: '#fd7e14',
     });
 
@@ -84,7 +84,7 @@ export const useAlert = () => {
       },
       showCancelButton: false,
       confirmButtonText: "Ok",
-      iconColor: '#fd7e14', // Cambia el color del icono de check aquí
+      iconColor: '#fd7e14',
       confirmButtonColor: '#fd7e14',
     });
 

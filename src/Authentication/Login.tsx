@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { Button, Col, Form, Row, Alert } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
@@ -107,6 +108,7 @@ const SignIn = () => {
       if (response?.data.success) {
         sessionStorage.setItem("nombre", response.data.user.user_name);
         sessionStorage.setItem("token", response.data.user.token);
+        sessionStorage.setItem("userRoles", response.data.user.roles);
         dispatch(actionLogin(response.data.user));
         navigate(`${process.env.PUBLIC_URL}/dashboard`);
       } else {
