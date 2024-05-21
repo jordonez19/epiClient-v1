@@ -48,7 +48,7 @@ const Lockscreen = () => (
                         {" "}
                         <Link to={`${process.env.PUBLIC_URL}/dashboard`} className="mx-auto d-flex">
                           <img
-                            src={require("../../../../assets/img/brand/favicon.png")}
+                            src={require("../../../../assets/img/brand/favicon.ico")}
                             className="sign-favicon ht-40 mx-auto"
                             alt="logo"
                           />

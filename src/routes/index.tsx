@@ -5,19 +5,13 @@ import Loader from '../shade/Loaders/Loaders';
 
 // Importaciones directas de los componentes
 import Dashboard from '../containers/Dashboard';
-import Dashboard1 from '../components/Dashboard/Dashboard';
 import UniversitiesContainer from '../containers/Universities';
 import UniversitiesAction from '../components/Universities/CreateOrEditUniversities';
 import SchoolsContainer from '../containers/Schools';
 import CitiesContainer from '../containers/Cities/ListCities';
 import ProfileContainer from '../containers/Profile';
-import Auth from '../Authentication/auth';
-import MainContainer from '../containers/Main';
-import PublicSchool from '../containers/Main/PublicPage';
 import App from '../shade/layouts/App';
-import Switcherapp from '../shade/layouts/Switcherapp';
 import AuthLogin from '../Authentication/Login';
-import AuthSignup from '../Authentication/Signup';
 import Error404 from '../components/Pages/Authentication/404Error/404Error';
 import Error500 from '../components/Pages/Authentication/500Error/500Error';
 

@@ -48,7 +48,7 @@ const ForgotPassword = () => (
                         {" "}
                         <Link to={`${process.env.PUBLIC_URL}/dashboard`}>
                           <img
-                            src={require("../../../../assets/img/brand/favicon.png")}
+                            src={require("../../../../assets/img/brand/favicon.ico")}
                             className="sign-favicon ht-40"
                             alt="logo"
                           />
